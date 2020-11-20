@@ -23,7 +23,7 @@ From the root of QMK, run `python3 util/vial_generate_keyboard_uid.py` in order 
 #define VIAL_KEYBOARD_UID {0xXX, 0xXX, 0xXX, 0xXX, 0xXX, 0xXX, 0xXX, 0xXX}
 ```
 
-Then, add this line to your keyboard's `config.h` under `#define DESCRIPTION`. <sup>[(example)](https://github.com/vial-kb/vial-qmk/blob/a88f05ea1e2d6bf32dee4dae3be50f5de28b7263/keyboards/xyz/g60/config.h#L28)</sup>
+Then, add this `#define` to your keyboard's `config.h` as a new line. <sup>[(example)](https://github.com/vial-kb/vial-qmk/blob/a88f05ea1e2d6bf32dee4dae3be50f5de28b7263/keyboards/xyz/g60/config.h#L28)</sup>
 
 ## Done!
 
