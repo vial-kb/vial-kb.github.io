@@ -70,6 +70,8 @@ Ensure everything is set up correctly by compiling and flashing your keyboard wi
 
 ## Create a KLE for VIA
 
+### Create a basic layout
+
 VIA layouts are based on KLE data with additional information encoded within keys' legends. Go to http://www.keyboard-layout-editor.com/ and create a layout that physically represents your keyboard. Use the "Tools -> Remove Legends" action in order to clean up any existing legends:
 
 ![](img/kle-empty.png)
@@ -85,6 +87,61 @@ For example, here the Tab key is identified as K_15. In the schematic, it is con
 Complete the layout by filling the data for every key:
 
 ![](img/kle-complete.png)
+
+### Create layout options
+
+For keyboards with multiple layout options, such as supporting ISO Enter or different bottom rows, you can configure additional layout options that will be displayed in the GUI and change how the keyboard is displayed to the user.
+
+* Create labels for the options. You can have boolean (on/off) options, or choice (select box) options. A boolean option is represented as a string, a choice is represented as a list of options with the first element being the caption. These labels will be used in a further step. For example:
+
+<table>
+<tr>
+<td>
+<pre>
+"labels":[
+    "Split Backspace",
+    "ISO Enter",
+    "Split Left Shift",
+    "Full Right Shift",
+    [
+        "Bottom Row",
+        "WKL",
+        "Blockerless",
+        "MX HHKB",
+        "True HHKB"
+    ]
+],
+</pre>
+</td>
+<td><img src="img/layout-options-sample.png"></td>
+</tr>
+</table>
+
+* Modify your KLE to include layout options. Layout options utilize bottom right legends in KLE. An option is two numbers separated by a comma, the first is a zero-based option index (in this example, 0: "Split Backspace", ..., 4: "Bottom Row"), second is option choice.
+* Layout option keys are separate keys which are typically located to the side of the default option. You can move the entire keyboard around in order to make space for layout option keys.
+* For example:
+<table>
+<tr>
+<td><img src="img/layout-options-lshift.png"></td>
+<td>This configures the option at index 2 ("Split Left Shift"). When the option is enabled (1), the keys indicated with "2,1" become active. When the option is disabled (0), the key indicated with "2,0" is active.</td>
+</tr>
+<tr>
+<td><img src="img/layout-options-bottom-row.png"></td>
+<td>
+This configures the option at index 4 ("Bottom Row"). All the different choices ("WKL": "4,0"; "Blockerless": "4,1"; "MX HHKB": "4,2"; "True HHKB": "4,3") are set up as separate rows.
+
+Notice that decal keys are used in place of blockers.
+
+<img src="img/layout-options-decal.png">
+</td>
+</tr>
+</table>
+
+* Ensure that the optional keys have the same bounding box. For example, if your left shift is set up as a 2.25u key, the split left shift should have 1.25u+1u keys without any space in between. If the total size of the bottom row is 15u, every bottom row option should be 15u, and decal keys can be used to pad it for layouts such as HHKB. (While this is not strictly required for Vial, it is good practice for VIA compatibility).
+* The final layout might looks as follows:<sup>[(example)](http://www.keyboard-layout-editor.com/#/gists/a93f0e6f320439e4e1d678cb04ac9af6)</sup>
+![](img/layout-options-final.png)
+
+### Download the JSON
 
 Once the layout is complete, go to the "Raw data" tab in KLE and click on the "Download JSON" button located bottom right. In my case, the output starts like this:
 
@@ -116,6 +173,7 @@ Start with the following JSON template:
         "cols": 0
     },
     "layouts": {
+        "labels":
         "keymap":
     }
 }
@@ -130,6 +188,7 @@ Fill in all the fields:
   * `rows`: enter the number of rows your keyboard has, this value should match `MATRIX_ROWS` you have in `config.h`
   * `cols`: similarly, this value should match `MATRIX_COLS`
 * `layouts`
+  * `labels`: layout options array described above goes here; if your keyboard does not have any layout option, you should delete that line
   * `keymap`: paste the full contents of KLE JSON you've downloaded in the previous step after the colon symbol
 
 ## Done!
