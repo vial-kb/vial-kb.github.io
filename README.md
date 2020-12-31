@@ -14,6 +14,6 @@ Vial implements several additional quality-of-life features that are documented 
 
 ## Documentation topics
 
-* [Porting a keyboard to VIA](porting-via.md)
-* [Porting a VIA keyboard to Vial](porting-vial.md)
+* [Porting a keyboard to VIA](doc/porting-via.md)
+* [Porting a VIA keyboard to Vial](doc/porting-vial.md)
 * [Implementing Vial encoder support](doc/encoders.md)

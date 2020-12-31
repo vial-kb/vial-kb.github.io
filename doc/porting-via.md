@@ -74,19 +74,19 @@ Ensure everything is set up correctly by compiling and flashing your keyboard wi
 
 VIA layouts are based on KLE data with additional information encoded within keys' legends. Go to http://www.keyboard-layout-editor.com/ and create a layout that physically represents your keyboard. Use the "Tools -> Remove Legends" action in order to clean up any existing legends:
 
-![](img/kle-empty.png)
+![](../img/kle-empty.png)
 
 At this point you will need to correlate physical keyboard layout to the switch matrix. VIA uses top-left legend of every key to identify its position in the matrix, encoded as `row,col`.
 
-![](img/kicad1.png) ![](img/kicad2.png)
+![](../img/kicad1.png) ![](../img/kicad2.png)
 
 For example, here the Tab key is identified as K_15. In the schematic, it is connected to row1 and col0. Therefore, the top-left legend for it should be set to `1,0`. Note that row comes first and that the indexes are zero-based: if in your schematic the first row and the first col are labeled as row1/col1, you will need to subtract 1 from every number you enter.
 
-![](img/kle-some.png)
+![](../img/kle-some.png)
 
 Complete the layout by filling the data for every key:
 
-![](img/kle-complete.png)
+![](../img/kle-complete.png)
 
 ### Create layout options
 
@@ -113,7 +113,7 @@ For keyboards with multiple layout options, such as supporting ISO Enter or diff
 ],
 </pre>
 </td>
-<td><img src="img/layout-options-sample.png"></td>
+<td><img src="../img/layout-options-sample.png"></td>
 </tr>
 </table>
 
@@ -122,17 +122,17 @@ For keyboards with multiple layout options, such as supporting ISO Enter or diff
 * For example:
 <table>
 <tr>
-<td><img src="img/layout-options-lshift.png"></td>
+<td><img src="../img/layout-options-lshift.png"></td>
 <td>This configures the option at index 2 ("Split Left Shift"). When the option is enabled (1), the keys indicated with "2,1" become active. When the option is disabled (0), the key indicated with "2,0" is active.</td>
 </tr>
 <tr>
-<td><img src="img/layout-options-bottom-row.png"></td>
+<td><img src="../img/layout-options-bottom-row.png"></td>
 <td>
 This configures the option at index 4 ("Bottom Row"). All the different choices ("WKL": "4,0"; "Blockerless": "4,1"; "MX HHKB": "4,2"; "True HHKB": "4,3") are set up as separate rows.
 
 Notice that decal keys are used in place of blockers.
 
-<img src="img/layout-options-decal.png">
+<img src="../img/layout-options-decal.png">
 </td>
 </tr>
 </table>
@@ -195,6 +195,6 @@ Fill in all the fields:
 
 This should be enough to get you a basic VIA JSON file. Confirm that it is working by flashing your keyboard with the `via` keymap and then opening Vial GUI and sideloading the JSON through the "File -> Sideload JSON..." menu:
 
-![](img/vial-sideload.png)
+![](../img/vial-sideload.png)
 
 Your keyboard should now be detected and you will be able to make layout changes.
