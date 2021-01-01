@@ -7,7 +7,7 @@ In order to prevent a malicious host computer from unknowingly changing sensitiv
   * First, an unlock request is sent to the keyboard through the rawhid endpoint
   * Once the unlock request is received, the keyboard kills all input handling; this is done so that the user has a chance to react if a malicious program unknowingly request unlock mode
   * The user has to hold specific keys for several seconds:
-![](img/security-user-prompt.png)
+![](../img/security-user-prompt.png)
 * Once the keyboard is unlocked, all of the security-sensitive actions are allowed (change macro, reset to bootloader, etc)
 * The keyboard can be re-locked either by restarting or manually selecting the "Lock" action from the menu
 
