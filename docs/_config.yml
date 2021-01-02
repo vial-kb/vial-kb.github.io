@@ -28,7 +28,8 @@ twitter_username:
 github_username:  vial-kb
 
 # Build settings
-theme: just-the-docs
+# theme: just-the-docs
+remote_theme: pmarsceill/just-the-docs
 color_scheme: vial
 
 aux_links:
