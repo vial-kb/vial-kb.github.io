@@ -23,7 +23,7 @@ email: none
 description: >- # this means to ignore newlines until "baseurl:"
   Vial is an open-source cross-platform (Windows, Linux and Mac) GUI and a QMK fork for configuring your keyboard in real time, similar to VIA.
 baseurl: "/vial-doc" # the subpath of your site, e.g. /blog
-url: "https://winslet.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://winslet.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username:
 github_username:  vial-kb
 
