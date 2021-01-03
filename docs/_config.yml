@@ -33,10 +33,10 @@ remote_theme: pmarsceill/just-the-docs
 color_scheme: vial
 
 aux_links:
-  "Vue Vial on GitHub":
+  "View Vial on GitHub":
     - "https://github.com/vial-kb"
 aux_links_new_tab: true
-logo: "/img/vial-logo.png"
+logo: "/img/vial-logo@2x.png"
 plugins:
   - jekyll-feed
 
