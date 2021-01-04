@@ -131,26 +131,15 @@ For keyboards with multiple layout options, such as supporting ISO Enter or diff
 * Modify your KLE to include layout options. Layout options utilize bottom right legends in KLE. An option is two numbers separated by a comma, the first is a zero-based option index (in this example, 0: "Split Backspace", ..., 4: "Bottom Row"), second is option choice.
 * Layout option keys are separate keys which are typically located to the side of the default option. You can move the entire keyboard around in order to make space for layout option keys.
 * For example:
-<table>
-<tr>
-<td><img src="../img/layout-options-lshift.png"></td>
-<td>This configures the option at index 2 ("Split Left Shift"). When the option is enabled (1), the keys indicated with "2,1" become active. When the option is disabled (0), the key indicated with "2,0" is active.</td>
-</tr>
-<tr>
-<td><img src="../img/layout-options-bottom-row.png"></td>
-<td>
-This configures the option at index 4 ("Bottom Row"). All the different choices ("WKL": "4,0"; "Blockerless": "4,1"; "MX HHKB": "4,2"; "True HHKB": "4,3") are set up as separate rows.
 
-Notice that decal keys are used in place of blockers.
-
-<img src="../img/layout-options-decal.png">
-</td>
-</tr>
-</table>
+| [![](../img/layout-options-lshift.png)](../img/layout-options-lshift.png)  | This configures the option at index 2 ("Split Left Shift"). When the option is enabled (1), the keys indicated with "2,1" become active. When the option is disabled (0), the key indicated with "2,0" is active.  |
+| [![](../img/layout-options-bottom-row.png)](../img/layout-options-bottom-row.png)  | This configures the option at index 4 ("Bottom Row"). All the different choices ("WKL": "4,0"; "Blockerless": "4,1"; "MX HHKB": "4,2"; "True HHKB": "4,3") are set up as separate rows. Notice that decal keys are used in place of blockers. [![](../img/layout-options-decal.png)](../img/layout-options-decal.png)  |
 
 * Ensure that the optional keys have the same bounding box. For example, if your left shift is set up as a 2.25u key, the split left shift should have 1.25u+1u keys without any space in between. If the total size of the bottom row is 15u, every bottom row option should be 15u, and decal keys can be used to pad it for layouts such as HHKB. (While this is not strictly required for Vial, it is good practice for VIA compatibility).
 * The final layout might looks as follows:<sup>[(example)](http://www.keyboard-layout-editor.com/#/gists/a93f0e6f320439e4e1d678cb04ac9af6)</sup>
 ![](../img/layout-options-final.png)
+
+
 
 ### Download the JSON
 
