@@ -1,3 +1,12 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: default
+title: Security
+nav_order: 3
+---
+
 # Vial security notes
 
 In order to prevent a malicious host computer from unknowingly changing sensitive firmware settings (including changing macros or flashing a different firmware), Vial implements an optional set of security features:

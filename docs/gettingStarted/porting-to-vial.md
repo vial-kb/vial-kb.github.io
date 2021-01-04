@@ -1,3 +1,10 @@
+---
+layout: default
+title: Step 2 - Porting to Vial
+parent: Getting Started
+nav_order: 2
+---
+
 # Porting a VIA keyboard to Vial
 
 The second step is to port your VIA keyboard to Vial.
@@ -27,7 +34,7 @@ Then, add this `#define` to your keyboard's `config.h` as a new line. <sup>[(exa
 
 ## Set up a secure unlock combination
 
-Vial needs a key combination in order to protect the user from a malicious host computer unknowingly changing security-sensitive settings, such as flashing a malicious firmware; for more information see [here](security.md).
+Vial needs a key combination in order to protect the user from a malicious host computer unknowingly changing security-sensitive settings, such as flashing a malicious firmware; for more information see [here](../security.md).
 
 If you do not want to utilize this feature, you should set `VIAL_INSECURE = yes` in your `keymaps/via/rules.mk`.
 
@@ -35,13 +42,13 @@ Otherwise, you should proceed to configure `VIAL_UNLOCK_COMBO_ROWS` and `VIAL_UN
 
 * You should configure a combo of at least 2 keys
 * Suppose this is your KLE and you want to configure a combo of Escape+Enter:
-![](img/security-kle.png)
+![](../img/security-kle.png)
 * The Escape key is located at [0, 0] and the Enter key is at [2, 13]
 * So you should set in your `config.h` right below the `VIAL_KEYBOARD_UID` line:
   * `#define VIAL_UNLOCK_COMBO_ROWS { 0, 2 }`
   * `#define VIAL_UNLOCK_COMBO_COLS { 0, 13 }`
 * Note that this feature works with multi-layout keyboards, however you should make sure that the keys you pick appear in every possible layout:
-![](img/security-user-prompt.png)
+![](../img/security-user-prompt.png)
 
 After you flash the firmware, check that the function works correctly by activating the "Security->Unlock" menu.
 
