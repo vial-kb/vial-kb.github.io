@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Step 2 - Porting to Vial
-parent: Getting Started
-nav_order: 2
+title: Building support 2 - Porting to Vial
+parent: Tutorials
+nav_order: 3
 ---
 
 # Porting a VIA keyboard to Vial
 
-The second step is to port your VIA keyboard to Vial.
+The second part of this tutorial will guide you through porting your VIA keyboard to Vial.
 
 ## Base your changes off `vial-kb/vial-qmk`
 

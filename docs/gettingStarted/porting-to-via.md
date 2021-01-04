@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Step 1 - Porting to VIA
-parent: Getting Started
-nav_order: 1
+title: Building support 1 - Porting to VIA
+parent: Tutorials
+nav_order: 2
 ---
 
 # Porting a keyboard to VIA
@@ -17,21 +17,22 @@ These instructions were developed specifically for Vial. While the keymap and JS
 
 ---
 
-## Base your changes off `vial-kb/vial-qmk`
+## Clone the Vial QMK fork
 
-Vial is currently not included into the main QMK repository. As such, you will need to check out Vial's QMK fork and port your keyboard there before getting started with the rest of the guide:
+Vial is currently not included into the main QMK repository. As such, you will need to check out Vial's QMK fork `vial-kb/vial-qmk` and port your keyboard there before getting started with the rest of this tutorial.
 
-Clone the latest version of the repository from https://github.com/vial-kb/vial-qmk. Then, copy your keyboard definition under `keyboards`. Make sure the `default` keymap for your keyboard compiles successfully.
+- Clone the latest version of the repository from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk).
+- Copy your keyboard definition under `keyboards`. Make sure the `default` keymap for your keyboard compiles successfully.
 
 ## Create a new `via` keymap
 
-Create a new `via` keymap folder located under a path such as `keyboards/<path-to-your-keyboard>/keymaps/via`. This folder should contain the following two files:
+- Create a new `via` keymap folder located under a path such as `keyboards/<path-to-your-keyboard>/keymaps/via`. This folder should contain the following two files:
 
-* `rules.mk`
+  - `rules.mk`
 
     Should contain a single line: `VIA_ENABLE = yes`
 
-* `keymap.c`
+  - `keymap.c`
 
     Should contain the default keymap for VIA. This file should contain 4 layers defined explicitly, with unused keys set to `KC_TRNS` by default. An example implementation for a 60% keyboard is provided below:
 
@@ -77,13 +78,13 @@ Create a new `via` keymap folder located under a path such as `keyboards/<path-t
     };
     ```
 
-Ensure everything is set up correctly by compiling and flashing your keyboard with the new `via` keymap.
+- Ensure everything is set up correctly by compiling and flashing your keyboard with the new `via` keymap.
 
 ## Create a KLE for VIA
 
 ### Create a basic layout
 
-VIA layouts are based on KLE data with additional information encoded within keys' legends. Go to http://www.keyboard-layout-editor.com/ and create a layout that physically represents your keyboard. Use the "Tools -> Remove Legends" action in order to clean up any existing legends:
+VIA layouts are based on KLE data with additional information encoded within keys' legends. Go to [http://www.keyboard-layout-editor.com/](http://www.keyboard-layout-editor.com/ ) and create a layout that physically represents your keyboard. Use the "Tools -> Remove Legends" action in order to clean up any existing legends:
 
 ![](../img/kle-empty.png)
 

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Encoders
-parent: Getting Started
-nav_order: 3
+title: Rotary Encoders
+parent: Tutorials
+nav_order: 4
 ---
 
 
-# Vial encoders
+# Rotary encoders
 
 Vial implements optional GUI configuration for rotary encoders. This allows users to set up  separate keycode actions for clockwise and counterclockwise encoder rotations. Encoders fully support QMK layers, so different keycodes can be used for different layers.
 
