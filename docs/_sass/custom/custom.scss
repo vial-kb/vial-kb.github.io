@@ -42,7 +42,8 @@
 }
 
 img {
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 hr {
@@ -55,4 +56,49 @@ hr {
 
 .main-header {
   height: 60px;
+}
+
+// Getting started buttons (for homepage)
+
+.gettingStarted {
+  height: 4rem;
+  background-color: white;
+  color: $grey-dk-300;
+  // border: 1px solid $grey-lt-200;
+  text-decoration: none;
+  width: auto;
+  text-align: left;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-right: 5px;
+
+  &.blue {
+    color: white;
+    background-color: #023E8A;
+    & a {
+      color: white;
+    }
+
+    &:hover {
+      background-color: #03045E;
+    }
+  }
+
+  & img {
+    padding: 0px;
+    padding-right: 1rem;
+  }
+
+  & a {
+    text-decoration: none;
+    background-image: none;
+
+    &:hover {
+      background-image: none;
+    }
+  }
+}
+
+.line-height-fix {
+  line-height: inherit;
 }
