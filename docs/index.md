@@ -16,6 +16,7 @@ Pre-release alpha
 
 <button type="button" name="button" class="btn gettingStarted blue">[Download Vial](/download)</button>
 <button type="button" name="button" class="btn gettingStarted">[Build support for your keyboard](/gettingStarted/porting-to-via.md)</button>
+<button type="button" name="button" class="btn gettingStarted">[Join our Discord server](https://discord.gg/6Ybrtvj6Ae)</button>
 
 <br>
 
