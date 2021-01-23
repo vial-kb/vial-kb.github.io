@@ -1,5 +1,10 @@
 .side-bar {
   width: 300px;
+
+  @media screen and (max-width: 375px) {
+    width: auto;
+  }
+
 }
 
 .nav-list-link {
@@ -62,16 +67,17 @@ hr {
 // Getting started buttons (for homepage)
 
 .gettingStarted {
-  height: 4rem;
   background-color: white;
-  color: $grey-dk-300;
-  // border: 1px solid $grey-lt-200;
+  // color: $grey-dk-300;
   text-decoration: none;
   width: auto;
   text-align: left;
   padding-left: 2rem;
   padding-right: 2rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
   margin-right: 5px;
+  margin-bottom: 1rem;
 
   &.blue {
     color: white;
@@ -126,4 +132,9 @@ blockquote {
   max-height: 500px;
   padding-left: 0.2rem !important;
   padding-right: 0.2rem !important;
+}
+
+.vial-logo {
+  width: 30%;
+  height: 30%;
 }
