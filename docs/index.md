@@ -9,6 +9,9 @@ nav_order: 1
 
 Pre-release alpha
 {: .label .label-yellow .ml-0 }
+
+![](/img/logo/png/256.png)
+
 # Vial
 {: .my-1 }
 ### **Vial is an open-source cross-platform (Windows, Linux and Mac) GUI and a QMK fork for configuring your keyboard in real time, similar to VIA.**

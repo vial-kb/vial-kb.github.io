@@ -1,6 +1,8 @@
 # Vial
 
-![](img/vial-linux.png)
+![](/docs/img/logo/png/256.png)
+
+# View the full docs at [vial-kb.github.io](vial-kb.github.io)
 
 ## What is Vial?
 

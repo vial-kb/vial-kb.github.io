@@ -36,7 +36,7 @@ aux_links:
   "View Vial on GitHub":
     - "https://github.com/vial-kb"
 aux_links_new_tab: true
-logo: "/img/vial-logo@2x.png"
+logo: "/img/logo/png/transparentDarkText512.png"
 plugins:
   - jekyll-feed
 
