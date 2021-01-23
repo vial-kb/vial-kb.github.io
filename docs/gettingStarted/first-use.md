@@ -8,6 +8,10 @@ nav_order: 1
 
 # First time use
 
+> Important
+> {: .label .label-red }
+> If you are looking to understand how to build support for a keyboard head to the [Porting a keyboard to VIA](/gettingStarted/porting-to-via.md) section of the docs.
+
 ## 1. Download Vial
 
 Hop over to the [download](/download) page to make sure you have the latest build.
