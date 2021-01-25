@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Building support 1 - Porting to VIA
+title: Build support 1 - Port to VIA
 parent: Tutorials
 nav_order: 2
 ---
@@ -14,14 +14,19 @@ The first step is to port your keyboard to VIA. If you already have a working VI
 > These instructions were developed specifically for Vial. While the keymap and JSON you obtain in this step also will work with VIA, the VIA project might have more strict requirements about the contents of your JSON (such as not using 0xFEED vendor ID, and indicating modifier keys). For official VIA documentation, see [here](https://caniusevia.com/docs/specification).
 
 
-## Clone the Vial QMK fork
+## 1. Clone the Vial QMK fork (Optional)
 
-Vial is currently not included into the main QMK repository. As such, you will need to check out Vial's QMK fork `vial-kb/vial-qmk` and port your keyboard there before getting started with the rest of this tutorial.
+Vial is currently not included into the main QMK repository. As such, you will need to check out Vial's QMK fork `vial-kb/vial-qmk` and port your keyboard there before getting started with the rest of this tutorial. If you already have QMK running locally you do not need the fork until you go onto [step 2](/porting-to-vial.md) of this tutorial.
 
 - Clone the latest version of the repository from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk).
+- Refer to the main QMK docs for the other pre-requisites [install instructions](https://docs.qmk.fm/#/newbs_getting_started)
 - Copy your keyboard definition under `keyboards`. Make sure the `default` keymap for your keyboard compiles successfully.
 
-## Create a new `via` keymap
+> Information
+> {: .label .label-green }
+> If you already have a clone of QMK you do not need the fork provided by Vial to complete the following steps and build VIA support. If you are building in a fresh system feel free to clone the Vial QMK fork for your short term development but as noted above, this fork will be closed when Vial support is included in the main QMK repository.
+
+## 2. Create a new `via` keymap
 
 - Create a new `via` keymap folder located under a path such as `keyboards/<path-to-your-keyboard>/keymaps/via`. This folder should contain the following two files:
 
@@ -77,7 +82,7 @@ Vial is currently not included into the main QMK repository. As such, you will n
 
 - Ensure everything is set up correctly by compiling and flashing your keyboard with the new `via` keymap.
 
-## Create a KLE for VIA
+## 3. Create a KLE for VIA
 
 ### Create a basic layout
 
@@ -156,7 +161,7 @@ Once the layout is complete, go to the "Raw data" tab in KLE and click on the "D
     "0,7",
 ```
 
-## Create a JSON for VIA
+## 5. Create a JSON for VIA
 
 Start with the following JSON template:
 
@@ -196,3 +201,5 @@ This should be enough to get you a basic VIA JSON file. Confirm that it is worki
 ![](../img/vial-sideload.png)
 
 Your keyboard should now be detected and you will be able to make layout changes.
+
+Next, move onto [building Vial support](/porting-to-vial.md) using your VIA base files.
