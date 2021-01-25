@@ -20,7 +20,7 @@ Vial is currently not included into the main QMK repository. As such, you will n
 
 
 ### High level guide:
-1. Clone the latest version of the repository from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) into a new directory, this can be different from your main QMK directory if you have that setup elsewhere.
+1. Clone the latest version of the repository from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) into a new directory, this can be different from your main QMK directory if you have that setup elsewhere. If you get stuck, please refer to the main QMK install guide [here](https://docs.qmk.fm/#/newbs_getting_started).
 2. Run `qmk setup` in your new directory to clone the git submodules.
 3. Continue to run your `qmk compile` for Vial builds from this directory. Make sure the `default` keymap for your keyboard compiles successfully.
 

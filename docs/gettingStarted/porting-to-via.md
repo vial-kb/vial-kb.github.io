@@ -19,6 +19,7 @@ The first step is to port your keyboard to VIA. If you already have a working VI
 Vial is currently not included into the main QMK repository. As such, you will need to check out Vial's QMK fork `vial-kb/vial-qmk` and port your keyboard there before getting started with the rest of this tutorial. If you already have QMK running locally you do not need the fork until you go onto [step 2](/porting-to-vial.md) of this tutorial.
 
 - Clone the latest version of the repository from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk).
+- Refer to the main QMK docs for the other pre-requisites [install instructions](https://docs.qmk.fm/#/newbs_getting_started)
 - Copy your keyboard definition under `keyboards`. Make sure the `default` keymap for your keyboard compiles successfully.
 
 > Information
