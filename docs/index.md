@@ -30,7 +30,7 @@ With Vial, you do not have to submit your keyboard as a pull-request for QMK and
 
 Vial implements several additional quality-of-life features that are documented in the topics linked below including support for [rotary encoders](gettingStarted/encoders.md).
 
-![](img/vial-linux.png)
+![](img/vial-win-1.png)
 
 
 ## Documentation topics
