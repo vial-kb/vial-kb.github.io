@@ -26,11 +26,11 @@ For instance, you might use the same keyboard on both your home and work compute
 
 ## `VIAL_INSECURE = yes`
 
-This option, when added to rules.mk, will disable Vial security features (including re-enabling of the RESET keycode and the VIA reset command).
+This option, when added to rules.mk, will disable Vial security features, treating the board as it is always unlocked.
 
 ## List of protected security-sensitive features
 
 * `id_switch_matrix_state` (sort of a keylogger): always disabled, even when using `VIAL_INSECURE`
 * `id_dynamic_keymap_macro_set_buffer` (changing a macro): disabled when locked
 * `id_bootloader_jump` (reset to bootloader): disabled when locked
-* `reset_keyboard()` (processing of the RESET keycode): disabled when locked
+* Assigning the RESET keycode is not allowed when the board is locked
