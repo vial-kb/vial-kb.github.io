@@ -2,7 +2,7 @@
 
 ![](/docs/img/logo/png/256.png)
 
-# View the full docs at [vial-kb.github.io](vial-kb.github.io)
+# View the full docs at [vial-kb.github.io](https://vial-kb.github.io/)
 
 ## What is Vial?
 
