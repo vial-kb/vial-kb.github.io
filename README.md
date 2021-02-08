@@ -2,7 +2,7 @@
 
 ![](/docs/img/logo/png/256.png)
 
-# View the full docs at [vial-kb.github.io](https://vial-kb.github.io/)
+# View the full docs at [get.vial.today](https://get.vial.today/)
 
 ## What is Vial?
 
@@ -13,10 +13,3 @@ If you're already familiar with VIA, the major difference is that Vial is a comp
 Another big goal for the project was to reduce reliance on third parties when developing a new keyboard. With Vial, you do not have to submit your keyboard as a pull-request for QMK and/or VIA (which usually takes several months to be accepted) before it can be used in the GUI; rather, the keymap JSON defition is stored within the keyboard firmware and is retrieved at runtime.
 
 Vial implements several additional quality-of-life features that are documented in the topics linked below.
-
-## Documentation topics
-
-* [Porting a keyboard to VIA](https://vial-kb.github.io/gettingStarted/porting-to-via.html)
-* [Porting a VIA keyboard to Vial](https://vial-kb.github.io/gettingStarted/porting-to-vial.html)
-* [Implementing Vial encoder support](https://vial-kb.github.io/gettingStarted/encoders.html)
-* [Vial security features and options](https://vial-kb.github.io/security.html)
