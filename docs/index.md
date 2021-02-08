@@ -7,7 +7,7 @@ title: Home
 nav_order: 1
 ---
 
-Pre-release alpha
+Beta version
 {: .label .label-yellow .ml-0 }
 
 ![](/img/logo/png/512.png){: .vial-logo }
