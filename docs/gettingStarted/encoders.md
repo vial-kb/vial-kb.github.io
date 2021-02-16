@@ -72,3 +72,25 @@ Building a basic 9 key macro pad and a rotary encoder (without button) will prod
 Compile and flash the firmware, and you should be able to configure encoders in the UI:
 
 ![](../img/encoders-ui.png)
+
+## Configuration options
+
+Vial encoders support the following configuration options:
+
+### `#define VIAL_ENCODER_DEFAULT { ... }`
+
+Specify default key mapping for encoders. By default all encoders are set to KC_TRNS. Specify one-dimensional array where for each layer and every encoder on that layer 2 keycodes are specified for movements anticlockwise and clockwise.
+
+For example if you have 4 layers and a single encoder and specify `#define VIAL_ENCODER_DEFAULT { KC_A, KC_B, KC_C, KC_D, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }`:
+
+* on the first layer (layer 0) the encoder will enter `KC_A` when rotated anticlockwise and `KC_B` when rotated clockwise
+* on the second layer (layer 1) the encoder will enter `KC_C` when rotated anticlockwise and `KC_D` when rotated clockwise
+* the rest of the layers are transparent and will fall through to the lower layers
+
+### `#define VIAL_ENCODER_KEYCODE_DELAY xxx`
+
+Delay for X milliseconds between pressing and releasing the encoder keycode. By default set to 10. You should set this value to at least 10, otherwise volume up/down keycodes do not work on Windows.
+
+### `#define VIAL_ENCODER_SIMPLE_TAP`
+
+Use a simple keycode entry method, based on `register_code16`/`unregister_code16`. By default unset. Use this option if you are having issues with the default method, especially on platforms with reduced memory available such as ATmega32u4. Note that this method cannot handle all keycodes, for example macro keycodes will not work.
