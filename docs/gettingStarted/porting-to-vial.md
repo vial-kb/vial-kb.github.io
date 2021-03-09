@@ -21,8 +21,8 @@ Vial is currently not included into the main QMK repository. As such, you will n
 
 ### High level guide:
 1. Clone the latest version of the repository from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) into a new directory, this can be different from your main QMK directory if you have that setup elsewhere. If you get stuck, please refer to the main QMK install guide [here](https://docs.qmk.fm/#/newbs_getting_started).
-2. Run `qmk setup` in your new directory to clone the git submodules.
-3. Continue to run your `qmk compile` for Vial builds from this directory. Make sure the `default` keymap for your keyboard compiles successfully.
+2. Run `make git-submodule` in your new directory to clone the git submodules.
+3. Continue to run your `make path/to/your/keyboard:keymap` for Vial builds from this directory. Make sure the `default` keymap for your keyboard compiles successfully. For example, if your keyboard is located in `keyboards/xyz/xyz60`, to compile it using `default` keymap type `make xyz/xyz60:default`.
 
 
 ## 2. Enable Vial in your rules file
@@ -66,7 +66,7 @@ After you flash the firmware, check that the function works correctly by activat
 
 ## 6. Compile Vial firmware
 
-Compiling and flashing can be done in the same way as QMK. Run `qmk compile` in your `[keyboard_name]/keymaps/via/` directory for the easiest results.
+Compiling and flashing can be done in the same way as QMK. For example, to compile a `via` keymap for a keyboard located under `keyboards/xyz/xyz60`, run `make xyz/xyz60:via` from the root `vial-qmk` directory.
 
 ## Done!
 
