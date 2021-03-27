@@ -5,6 +5,10 @@ parent: Tutorials
 nav_order: 2
 ---
 
+> Information
+> {: .label .label-green }
+> `vial-qmk` provides several examples of most common microcontroller configurations set up for Vial usage. You can check them out at [`vial-qmk/keyboards/vial_example`](https://github.com/vial-kb/vial-qmk/tree/vial/keyboards/vial_example).
+
 # Porting a keyboard to VIA
 
 The first step is to port your keyboard to VIA. If you already have a working VIA port, you can simply copy it into the `vial-qmk` source tree and proceed to Part 2.
@@ -16,15 +20,15 @@ The first step is to port your keyboard to VIA. If you already have a working VI
 
 ## 1. Clone the Vial QMK fork (Optional)
 
+> Information
+> {: .label .label-green }
+> If you already have a clone of QMK you do not need the fork provided by Vial to complete the following steps and build VIA support. As Vial support is currently not implemented in the main QMK repository, you should use the `vial-qmk` fork if you want to add Vial support in the next step.
+
 Vial is currently not included into the main QMK repository. As such, you will need to check out Vial's QMK fork `vial-kb/vial-qmk` and port your keyboard there before getting started with the rest of this tutorial. If you already have QMK running locally you do not need the fork until you go onto [step 2](/porting-to-vial.md) of this tutorial.
 
 - Clone the latest version of the repository from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk).
 - Refer to the main QMK docs for the other pre-requisites [install instructions](https://docs.qmk.fm/#/newbs_getting_started)
 - Copy your keyboard definition under `keyboards`. Make sure the `default` keymap for your keyboard compiles successfully.
-
-> Information
-> {: .label .label-green }
-> If you already have a clone of QMK you do not need the fork provided by Vial to complete the following steps and build VIA support. If you are building in a fresh system feel free to clone the Vial QMK fork for your short term development but as noted above, this fork will be closed when Vial support is included in the main QMK repository.
 
 ## 2. Create a new `via` keymap
 
