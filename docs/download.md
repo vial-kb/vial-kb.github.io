@@ -3,6 +3,7 @@ layout: page
 title: Download
 permalink: /download/
 nav_order: 4
+version: v0.2
 dl_win_installer: https://github.com/vial-kb/vial-gui/releases/download/v0.2/Vial-v0.2-setup.exe
 dl_win_portable: https://github.com/vial-kb/vial-gui/releases/download/v0.2/Vial-v0.2-portable.zip
 dl_mac: https://github.com/vial-kb/vial-gui/releases/download/v0.2/Vial-v0.2.dmg
@@ -11,7 +12,7 @@ dl_linux: https://github.com/vial-kb/vial-gui/releases/download/v0.2/Vial-v0.2-x
 
 # Download Vial
 
-Beta version
+Beta version {{ page.version }}
 {: .label .label-yellow .ml-0 }
 
 Currently Vial is in beta. Please report any bugs you encounter to our [issue tracker](https://github.com/vial-kb/vial-gui/issues).
