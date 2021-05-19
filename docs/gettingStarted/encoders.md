@@ -75,7 +75,7 @@ Compile and flash the firmware, and you should be able to configure encoders in 
 
 ## Configuration options
 
-Vial encoders support the following configuration options:
+Vial encoders support the following options which can be specified in `config.h`:
 
 ### `#define VIAL_ENCODER_DEFAULT { ... }`
 
