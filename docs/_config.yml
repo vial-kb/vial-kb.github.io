@@ -39,6 +39,7 @@ aux_links_new_tab: true
 logo: "/img/logo/png/transparentDarkText512.png"
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
 
 # Exclude from processing.
 # The following items will not be processed, by default.

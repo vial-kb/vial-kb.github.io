@@ -1,9 +1,9 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: default
 title: Security
+permalink: /security/
+redirect_from:
+  - /security.html
 nav_order: 3
 ---
 

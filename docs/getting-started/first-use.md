@@ -3,6 +3,8 @@ layout: default
 title: First time use
 parent: Tutorials
 nav_order: 1
+redirect_from:
+  - /gettingStarted/first-use.html
 ---
 
 

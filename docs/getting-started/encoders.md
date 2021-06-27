@@ -3,6 +3,8 @@ layout: default
 title: Rotary encoder support
 parent: Tutorials
 nav_order: 4
+redirect_from:
+  - /gettingStarted/encoders.html
 ---
 
 
