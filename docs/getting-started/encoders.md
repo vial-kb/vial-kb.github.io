@@ -92,7 +92,3 @@ For example if you have 4 layers and a single encoder and specify `#define VIAL_
 ### `#define VIAL_ENCODER_KEYCODE_DELAY xxx`
 
 Delay for X milliseconds between pressing and releasing the encoder keycode. By default set to 10. You should set this value to at least 10, otherwise volume up/down keycodes do not work on Windows.
-
-### `#define VIAL_ENCODER_SIMPLE_TAP`
-
-Use a simple keycode entry method, based on `register_code16`/`unregister_code16`. By default unset. Use this option if you are having issues with the default method, especially on platforms with reduced memory available such as ATmega32u4. Note that this method cannot handle all keycodes, for example macro keycodes will not work.
