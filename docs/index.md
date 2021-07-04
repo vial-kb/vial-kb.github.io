@@ -18,7 +18,7 @@ Beta version
 {: .mt-1 .mb-8 .text-grey-dk-100 .line-height-fix }
 
 [Download Vial](/download){: .btn .gettingStarted .blue}
-[Build support for your keyboard](/gettingStarted/porting-to-via){: .btn .gettingStarted}
+[Build support for your keyboard](/getting-started/porting-to-via.md){: .btn .gettingStarted}
 [Join our Discord server](https://discord.gg/6Ybrtvj6Ae){: .btn .gettingStarted}
 
 
@@ -28,14 +28,14 @@ Another big goal for this project is to reduce reliance on third parties when de
 
 With Vial, you do not have to submit your keyboard as a pull-request for QMK and/or VIA before it can be used in the GUI; rather, the keymap JSON definition is stored within the keyboard firmware and is retrieved at runtime.
 
-Vial implements several additional quality-of-life features that are documented in the topics linked below including support for [rotary encoders](gettingStarted/encoders).
+Vial implements several additional quality-of-life features that are documented in the topics linked below including support for [rotary encoders](getting-started/encoders.md).
 
 ![](img/vial-win-1.png)
 
 
 ## Documentation topics
 
-* [Porting a keyboard to VIA](/gettingStarted/porting-to-via)
-* [Porting a VIA keyboard to Vial](/gettingStarted/porting-to-vial)
-* [Implementing Vial encoder support](gettingStarted/encoders)
+* [Porting a keyboard to VIA](/getting-started/porting-to-via.md)
+* [Porting a VIA keyboard to Vial](/getting-started/porting-to-vial.md)
+* [Implementing Vial encoder support](getting-started/encoders.md)
 * [Vial security features and options](/security)
