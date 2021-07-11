@@ -22,7 +22,7 @@ Beta version
 
 Vial is a completely open project, with sources for all components publicly available on [GitHub](https://github.com/vial-kb).
 
-Vial is decentralized: with Vial you do not have to submit your keyboard as a pull-request for third-party repositories before it can be used in the GUI; instead, the keymap JSON definition is stored within the keyboard firmware and is retrieved at runtime.
+Vial is decentralized: with Vial you do not have to submit your keyboard as a pull-request to any third-party repositories before it can be used in the GUI; instead, the keymap JSON definition is stored within the keyboard firmware and is retrieved at runtime.
 
 For information about using Vial and porting a new keyboard to Vial, read through the manual entries linked in the sidebar on the left.
 
