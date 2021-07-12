@@ -2,7 +2,7 @@
 layout: page
 title: Download
 permalink: /download/
-nav_order: 4
+nav_order: 5
 version: v0.3
 dl_win_installer: https://github.com/vial-kb/vial-gui/releases/download/v0.3/Vial-v0.3-setup.exe
 dl_win_portable: https://github.com/vial-kb/vial-gui/releases/download/v0.3/Vial-v0.3-portable.zip

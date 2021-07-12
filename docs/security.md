@@ -4,7 +4,7 @@ title: Security
 permalink: /security/
 redirect_from:
   - /security.html
-nav_order: 3
+nav_order: 4
 ---
 
 # Vial security notes
