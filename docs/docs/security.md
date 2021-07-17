@@ -1,10 +1,11 @@
 ---
 layout: default
 title: Security
-permalink: /security/
+parent: Porting guide
+nav_order: 4
 redirect_from:
   - /security.html
-nav_order: 4
+  - /security/
 ---
 
 # Vial security notes

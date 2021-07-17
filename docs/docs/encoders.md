@@ -1,10 +1,11 @@
 ---
 layout: default
 title: Rotary encoder support
-parent: Tutorials
+parent: Porting guide
 nav_order: 4
 redirect_from:
   - /gettingStarted/encoders.html
+  - /getting-started/encoders.html
 ---
 
 

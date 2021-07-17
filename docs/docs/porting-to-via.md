@@ -1,10 +1,11 @@
 ---
 layout: default
 title: Build support 1 - Port to VIA
-parent: Tutorials
+parent: Porting guide
 nav_order: 2
 redirect_from:
   - /gettingStarted/porting-to-via.html
+  - /getting-started/porting-to-via.html
 ---
 
 > Information

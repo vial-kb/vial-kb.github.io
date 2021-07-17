@@ -1,10 +1,11 @@
 ---
 layout: default
 title: First time use
-parent: Tutorials
+parent: User manual
 nav_order: 1
 redirect_from:
   - /gettingStarted/first-use.html
+  - /getting-started/first-use.html
 ---
 
 

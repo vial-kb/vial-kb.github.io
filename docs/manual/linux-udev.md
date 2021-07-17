@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Configuring udev on Linux
-parent: Tutorials
+parent: User manual
 nav_order: 5
+redirect_from:
+  - /getting-started/linux-udev.html
 ---
 
 # Configuring udev on Linux

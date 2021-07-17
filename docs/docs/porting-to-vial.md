@@ -1,10 +1,11 @@
 ---
 layout: default
 title: Build support 2 - Port VIA to Vial
-parent: Tutorials
+parent: Porting guide
 nav_order: 3
 redirect_from:
   - /gettingStarted/porting-to-vial.html
+  - /getting-started/porting-to-vial.html
 ---
 
 > Information
