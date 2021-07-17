@@ -16,7 +16,7 @@ Beta version
 {: .mt-1 .mb-8 .text-grey-dk-100 .line-height-fix }
 
 [Download Vial](/download){: .btn .gettingStarted .blue}
-[Build support for your keyboard](/docs/porting-to-via.md){: .btn .gettingStarted}
+[Read user manual](/manual/){: .btn .gettingStarted}
 [Join our Discord server](https://discord.gg/6Ybrtvj6Ae){: .btn .gettingStarted}
 
 
