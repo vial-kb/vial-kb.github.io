@@ -2,7 +2,7 @@
 layout: default
 title: Security
 parent: Porting guide
-nav_order: 4
+nav_order: 1000
 redirect_from:
   - /security.html
   - /security/
