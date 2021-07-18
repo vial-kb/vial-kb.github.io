@@ -7,7 +7,7 @@ nav_order: -4
 
 # Version 0.4
 
-Vial version 0.4 is currently in [testing](https://github.com/vial-kb/vial-gui/tree/next). It is set to be released soon.
+Vial version 0.4 was released on July 18, 2021.
 
 ## RGB Matrix
 
