@@ -23,7 +23,7 @@ Follow [QMK documentation](https://docs.qmk.fm/#/feature_encoders?id=encoders) i
 
 ## 2. Enable Vial encoders in `rules.mk`
 
-Add `VIAL_ENCODERS_ENABLE = yes` to your `keymaps/via/rules.mk` file.
+Add `VIAL_ENCODERS_ENABLE = yes` to your `keymaps/vial/rules.mk` file.
 
 ## 3. Add Vial encoders as part of KLE keymap
 
