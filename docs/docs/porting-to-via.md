@@ -35,6 +35,10 @@ Vial is currently not included into the main QMK repository. As such, you will n
 
 ## 2. Create a new `via` keymap
 
+> Information
+> {: .label .label-green }
+> If you are interested in adding Vial support and do not care about VIA support, feel free to name this keymap `vial` instead as you would have to rename the directory to `vial` in the next step.
+
 - Create a new `via` keymap folder located under a path such as `keyboards/<path-to-your-keyboard>/keymaps/via`. This folder should contain the following two files:
 
   - `rules.mk`
