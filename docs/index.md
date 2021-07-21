@@ -21,4 +21,6 @@ Vial is decentralized: with Vial you do not have to submit your keyboard as a pu
 
 For information about using Vial and porting a new keyboard to Vial, read through the manual entries linked in the sidebar on the left.
 
+Have a feature suggestion for Vial? Feel free to submit it at the dedicated [feedback website](https://feedback.vial.today/).
+
 ![](img/vial-win-1.png)
