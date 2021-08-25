@@ -39,3 +39,6 @@ When you are satisfied with the configuration of all macros, click **save** to s
 After the macro has been configured, it can be used. Just click on a key you would like to use for a macro in the top palette then select your macro in the bottom palette. (under the macro tab)
 
 ![](../img/macro-overview.png)
+
+# More info
+Macros is a QMK feature and more detailed information can be found with the [offical QMK documenation](hhttps://docs.qmk.fm/#/feature_macros).
