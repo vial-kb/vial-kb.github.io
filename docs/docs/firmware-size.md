@@ -23,7 +23,17 @@ make: *** [Makefile:530: yd60mq:vial] Error 1
 Make finished with errors
 ```
 
-If that happens to your keyboard, you can try turning off several Vial features to make the firmware fit.
+If that happens to your keyboard, you can try utilizing of the options below to make the firmware fit.
+
+### Enable LTO
+
+To enable LTO, add the following line to your `keymaps/vial/rules.mk`:
+
+```
+LTO_ENABLE = yes
+```
+
+LTO makes the compiler work harder when optimizing your code, resulting in a smaller firmware size; it rarely exposes buggy code in a way which could break certain firmware functionality. Make sure to test your keyboard firmware after enabling this option.
 
 ### QMK Settings
 
