@@ -1,3 +1,10 @@
+---
+layout: default
+title: Macros
+parent: User manual
+nav_order: 3
+---
+
 # Macros
 
 Macros can be used to perform a pre-programmed sequence of actions or steps. 

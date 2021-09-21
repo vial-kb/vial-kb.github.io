@@ -1,5 +1,12 @@
+---
+layout: default
+title: Layers
+parent: User manual
+nav_order: 2
+---
+
 # Layers
-layers allow the ability to change the functionality of the entire keyboard based on what "layer" it's currently on. It's best to visualize layers stacked on top of each other. Most VIAL keyboards have 4 layers but the firmware can be compiled to have less. Keys can be configured to switch between layers as needed similar to function keys on a laptop.
+layers allow the ability to change the functionality of the entire keyboard based on what "layer" it's currently on. It's best to visualize layers stacked on top of each other. Most Vial devices have 4 layers but the firmware can be compiled to have less. Keys can be configured to switch between layers as needed similar to function keys on a laptop.
 
 You can view each layer available by clicking the coresponding number at the top of the interface. You can see we already have layer 0 selected.
 
@@ -13,7 +20,7 @@ A typical layer setup would include a "base" layer and a "Function" layer.
 #### Function Layer
 ![](../img/layers-layer-2.png)
 
-You can see additional key functionality is located on the "Function" layer
+You can see additional key functionality is located on the "Function" layer. This is just convention, in realality you can do whatever you want with the layers.
 
 # Moving Between Layers
 Switching between what layer is active can be done in a few ways. In the lower palette, select the **layer** tab to view all the different options. 
@@ -28,5 +35,5 @@ Switching between what layer is active can be done in a few ways. In the lower p
 
 # Additional Information on Layers
 
-#### Transparency
+### Transparency
 The Triangle symbols represent Transparency. Those mean the action is the same as the layer below it. This is useful so that keys from different layers can be pressed at the same time. 

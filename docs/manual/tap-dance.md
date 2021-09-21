@@ -1,3 +1,10 @@
+---
+layout: default
+title: Tap Dance
+parent: User manual
+nav_order: 4
+---
+
 # Tap Dance
 
 Tap Dance allows you to configure different actions depending on how a button is used. For example, the same button could be configured to active a macro when the button is tapped or activate something else when the button is held.
