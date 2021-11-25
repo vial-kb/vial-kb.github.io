@@ -42,7 +42,7 @@ In your `[keyboard_name]/keymaps/vial/rules.mk` add `VIAL_ENABLE = yes` as a new
 
 ## 4. Move JSON so Vial can find it
 
-Place your VIA JSON (made in step 1 of this tutorial) under `[keyboard_name]/keymaps/vial/vial.json` so that Vial build process can find it. <sup>[(example)](https://github.com/vial-kb/vial-qmk/blob/90f3b0e2e188eccb23ed8a2a690df278a0f1057b/keyboards/vial_example/vial_atmega32u4/keymaps/vial/vial.json)</sup>
+Place your VIA JSON (either one made in step 1 of this tutorial or downloaded from the [VIA keyboards repository](https://github.com/the-via/keyboards)) under `[keyboard_name]/keymaps/vial/vial.json` so that Vial build process can find it. <sup>[(example)](https://github.com/vial-kb/vial-qmk/blob/90f3b0e2e188eccb23ed8a2a690df278a0f1057b/keyboards/vial_example/vial_atmega32u4/keymaps/vial/vial.json)</sup>
 
 ## 5. Set up and add unique keyboard ID
 
