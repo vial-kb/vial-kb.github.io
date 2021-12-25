@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Rotary encoder support
+title: MIDI support
 parent: Porting guide
 nav_order: 6
 ---
