@@ -2,7 +2,7 @@
 layout: default
 title: Reducing firmware size
 parent: Porting guide
-nav_order: 6
+nav_order: 7
 ---
 
 # Reducing firmware size
