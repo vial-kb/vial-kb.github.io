@@ -2,7 +2,7 @@
 layout: default
 title: QMK Settings
 parent: User manual
-nav_order: 8
+nav_order: 7
 ---
 
 # QMK Settings
