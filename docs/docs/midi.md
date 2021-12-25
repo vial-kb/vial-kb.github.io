@@ -3,9 +3,6 @@ layout: default
 title: Rotary encoder support
 parent: Porting guide
 nav_order: 6
-redirect_from:
-    - /gettingStarted/midi.html
-    - /getting-started/midi.html
 ---
 
 # MIDI
