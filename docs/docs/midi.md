@@ -27,7 +27,7 @@ Add `MIDI_ENABLE = yes` to your `keymaps/vial/rules.mk` file.
 
 ## 3. Add Vial MIDI as part of KLE keymap
 
-To enable **BASIC** or **ADVANCED** **MIDI** on **VIAL** it is necessary to add one of these lines to the `vial.json` file
+To enable **BASIC** or **ADVANCED** **MIDI** on Vial it is necessary to add one of these lines to the `vial.json` file
 
 ```
 { "vial": {
