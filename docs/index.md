@@ -12,7 +12,7 @@ nav_order: 1
 
 [Download Vial](/download){: .btn .gettingStarted .blue}
 [Read user manual](/manual/){: .btn .gettingStarted}
-[Join our Discord server](https://discord.gg/6Ybrtvj6Ae){: .btn .gettingStarted}
+[Join our Discord server](https://discord.gg/zNKEUXTKwF){: .btn .gettingStarted}
 
 
 Vial is a completely open project, with sources for all components publicly available on [GitHub](https://github.com/vial-kb).
