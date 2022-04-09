@@ -7,7 +7,7 @@ nav_order: -7
 
 # Version 0.5
 
-Vial version 0.5 is currently in pre-release testing.
+Vial version 0.5 was released on April 9, 2022.
 
 ## Dynamic Key Overrides
 
@@ -20,6 +20,12 @@ The Dynamic Key Overrides feature allows configuring QMK Key Overrides in the Vi
 The redesigned macro UI allows you to easily assign arbitrary QMK keycodes to macros, including things such as layer keycodes, backlight or RGB operations, and QMK behavior toggles:
 
 ![](/img/release-0.5/complex-macros.png)
+
+## Improved Keycode Display
+
+The new keycode selection UI makes it much easier to find keys to assign. Both ANSI and ISO layouts are implemented.
+
+![](/img/release-0.5/keycode-display.png)
 
 ## About Keyboard
 
