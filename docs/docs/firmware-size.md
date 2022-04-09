@@ -63,6 +63,16 @@ To turn off this feature, add the following line to your `keymaps/vial/rules.mk`
 COMBO_ENABLE = no
 ```
 
+### Dynamic Key Overrides
+
+To reduce RAM and EEPROM usage, you can define the following in your `config.h`: `#define VIAL_KEY_OVERRIDE_ENTRIES 4`.
+
+To turn off this feature, add the following line to your `keymaps/vial/rules.mk`:
+
+```
+KEY_OVERRIDE_ENABLE = no
+```
+
 ### Reducing number of dynamic keymap layers
 
 If you are running out of EEPROM, you can reduce the number of dynamic keymap layers. The default layer count is 4. To reduce it, define in your `config.h` file:
