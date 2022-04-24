@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Build support 2 - Port VIA to Vial
+title: Build support 2 - Port to Vial
 parent: Porting guide
 nav_order: 3
 redirect_from:
@@ -12,39 +12,39 @@ redirect_from:
 > {: .label .label-green }
 > `vial-qmk` provides several examples of most common microcontroller configurations set up for Vial usage. You can check them out at [`vial-qmk/keyboards/vial_example`](https://github.com/vial-kb/vial-qmk/tree/vial/keyboards/vial_example).
 
-# Porting a VIA keyboard to Vial
+# Porting to Vial
 
-The second part of this tutorial will guide you through porting your VIA keyboard to Vial.
+The second part of this tutorial will guide you through porting your keyboard to Vial.
 
 
 ## 1. Clone the Vial QMK fork
 
 Vial is currently not included into the main QMK repository. As such, you will need to check out Vial's QMK fork `vial-kb/vial-qmk` and port your keyboard there before getting started with the rest of this tutorial.
 
-> Information
-> {: .label .label-green }
-> If you've started with the Part 1 of this tutorial, you may have already completed this step
-
-
 ### High level guide:
-1. Clone the latest version of the repository from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) into a new directory, this can be different from your main QMK directory if you have that setup elsewhere. If you get stuck, please refer to the main QMK install guide [here](https://docs.qmk.fm/#/newbs_getting_started).
-2. Run `make git-submodule` in your new directory to clone the git submodules.
-3. Continue to run your `make path/to/your/keyboard:keymap` for Vial builds from this directory. Make sure the `default` keymap for your keyboard compiles successfully. For example, if your keyboard is located in `keyboards/xyz/xyz60`, to compile it using `default` keymap type `make xyz/xyz60:default`.
+1. Clone the latest version of the repository from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) into a new directory; this can be different from your main QMK directory if you have that setup elsewhere. If you get stuck, please refer to the main QMK install guide [here](https://docs.qmk.fm/#/newbs_getting_started).
+2. Run `make git-submodule` in your new `vial-qmk` directory to clone the git submodules.
+3. Continue to run `make path/to/your/keyboard:keymap` for Vial builds from this directory. Make sure the `default` keymap for your keyboard compiles successfully. For example, if your keyboard is located in the `keyboards/xyz/xyz60` folder, to compile it using the `default` keymap, type `make xyz/xyz60:default`.
 
 
 ## 2. Create a new `vial` keymap
 
-If this is a keyboard with an existing `via` keymap or if you are adding both VIA and Vial support, copy the existing `keymaps/via` folder to `keymaps/vial`. Otherwise, if you are only interested in creating Vial support, rename your existing `keymaps/via` to `keymaps/vial`.
+Copy the existing `keymaps/default` keymap to `keymaps/vial`.
 
 ## 3. Enable Vial in your rules file
 
-In your `[keyboard_name]/keymaps/vial/rules.mk` add `VIAL_ENABLE = yes` as a new line after `VIA_ENABLE = yes`. <sup>[(example)](https://github.com/vial-kb/vial-qmk/blob/90f3b0e2e188eccb23ed8a2a690df278a0f1057b/keyboards/vial_example/vial_atmega32u4/keymaps/vial/rules.mk#L2)</sup>
+Create a new file under `[keyboard_name]/keymaps/vial/rules.mk` with the following contents:<sup>[(example)](https://github.com/vial-kb/vial-qmk/blob/90f3b0e2e188eccb23ed8a2a690df278a0f1057b/keyboards/vial_example/vial_atmega32u4/keymaps/vial/rules.mk#L2)</sup>
+
+```
+VIA_ENABLE = yes
+VIAL_ENABLE = yes
+```
 
 ## 4. Move JSON so Vial can find it
 
-Place your VIA JSON (either one made in step 1 of this tutorial or downloaded from the [VIA keyboards repository](https://github.com/the-via/keyboards)) under `[keyboard_name]/keymaps/vial/vial.json` so that Vial build process can find it. <sup>[(example)](https://github.com/vial-kb/vial-qmk/blob/90f3b0e2e188eccb23ed8a2a690df278a0f1057b/keyboards/vial_example/vial_atmega32u4/keymaps/vial/vial.json)</sup>
+Place your keyboard definition JSON (either one made in step 1 of this tutorial or downloaded from the [VIA keyboards repository](https://github.com/the-via/keyboards/tree/master/src)) under `[keyboard_name]/keymaps/vial/vial.json` so that Vial build process can find it. <sup>[(example)](https://github.com/vial-kb/vial-qmk/blob/90f3b0e2e188eccb23ed8a2a690df278a0f1057b/keyboards/vial_example/vial_atmega32u4/keymaps/vial/vial.json)</sup>
 
-## 5. Set up and add unique keyboard ID
+## 5. Generate and add unique keyboard ID
 
 From the root of vial-qmk, run `python3 util/vial_generate_keyboard_uid.py` in order to generate a unique Vial keyboard ID:
 
@@ -69,9 +69,9 @@ The last line should match what you got in the previous step. <sup>[(example)](h
 
 Vial needs a key combination in order to protect the user from a malicious host computer unknowingly changing security-sensitive settings, such as flashing a malicious firmware; for more information see [here](security.md).
 
-If you do not want to utilize this feature, you should set `VIAL_INSECURE = yes` in your `keymaps/vial/rules.mk`.
+If you do not want to utilize this feature, you should set `VIAL_INSECURE = yes` in your `keymaps/vial/rules.mk`. While you can distribute the resulting firmware to your users and will not lose any Vial functionality, note that keyboards which enable `VIAL_INSECURE` will not be accepted to the main `vial-qmk` repository.
 
-Otherwise, you should proceed to configure `VIAL_UNLOCK_COMBO_ROWS` and `VIAL_UNLOCK_COMBO_COLS` definitions:
+For keyboards that do not define `VIAL_INSECURE`, proceed to configure `VIAL_UNLOCK_COMBO_ROWS` and `VIAL_UNLOCK_COMBO_COLS` definitions:
 
 * You should configure a combo of at least 2 keys
 * Suppose this is your KLE and you want to configure a combo of Escape+Enter:
@@ -92,3 +92,5 @@ Compiling and flashing can be done in the same way as QMK. For example, to compi
 ## Done!
 
 You now should be able to compile the firmware, flash it, and have your keyboard auto-detected by Vial.
+
+Did you run into a problem? You can get porting support by joining [Vial discord](https://discord.gg/zNKEUXTKwF).

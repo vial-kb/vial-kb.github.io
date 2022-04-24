@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Build support 1 - Port to VIA
+title: Build support 1 - Create JSON
 parent: Porting guide
 nav_order: 2
 redirect_from:
@@ -12,102 +12,92 @@ redirect_from:
 > {: .label .label-green }
 > `vial-qmk` provides several examples of most common microcontroller configurations set up for Vial usage. You can check them out at [`vial-qmk/keyboards/vial_example`](https://github.com/vial-kb/vial-qmk/tree/vial/keyboards/vial_example).
 
-# Porting a keyboard to VIA
+# Create keyboard definition JSON
 
-The first step is to port your keyboard to VIA. If you already have a working VIA port, you can simply copy it into the `vial-qmk` source tree and proceed to Part 2.
+The first step for creating a Vial port is to prepare a keyboard definition which is a JSON file describing the layout of the keyboard. If your keyboard already has a VIA port, you can download its keyboard definition from the [VIA repository](https://github.com/the-via/keyboards/tree/master/src) and proceed directly to the [second step](/porting-to-vial.md): adding Vial support. Otherwise, follow the steps as described below.
 
-> Caution
-> {: .label .label-red }
-> These instructions were developed specifically for Vial. While the keymap and JSON you obtain in this step also will work with VIA, the VIA project might have more strict requirements about the contents of your JSON (such as not using 0xFEED vendor ID, and indicating modifier keys). For official VIA documentation, see [here](https://caniusevia.com/docs/specification).
+## 1. Prepare keyboard layout
 
+### Create a physical layout
 
-## 1. Clone the Vial QMK fork (Optional)
-
-> Information
-> {: .label .label-green }
-> If you already have a clone of QMK you do not need the fork provided by Vial to complete the following steps and build VIA support. As Vial support is currently not implemented in the main QMK repository, you should use the `vial-qmk` fork if you want to add Vial support in the next step.
-
-Vial is currently not included into the main QMK repository. As such, you will need to check out Vial's QMK fork `vial-kb/vial-qmk` and port your keyboard there before getting started with the rest of this tutorial. If you already have QMK running locally you do not need the fork until you go onto [step 2](/porting-to-vial.md) of this tutorial.
-
-- Clone the latest version of the repository from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk).
-- Refer to the main QMK docs for the other pre-requisites [install instructions](https://docs.qmk.fm/#/newbs_getting_started)
-- Copy your keyboard definition under `keyboards`. Make sure the `default` keymap for your keyboard compiles successfully.
-
-## 2. Create a new `via` keymap
-
-> Information
-> {: .label .label-green }
-> If you are interested in adding Vial support and do not care about VIA support, feel free to name this keymap `vial` instead as you would have to rename the directory to `vial` in the next step.
-
-- Create a new `via` keymap folder located under a path such as `keyboards/<path-to-your-keyboard>/keymaps/via`. This folder should contain the following two files:
-
-  - `rules.mk`
-
-    Should contain a single line: `VIA_ENABLE = yes`
-
-  - `keymap.c`
-
-    Should contain the default keymap for VIA. This file should contain 4 layers defined explicitly, with unused keys set to `KC_TRNS` by default. An example implementation for a 60% keyboard is provided below:
-
-    ```c
-    #include QMK_KEYBOARD_H
-
-    #define ____ KC_TRNS
-
-    const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-
-        [0] = LAYOUT(
-            KC_ESC,  KC_1,    KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSLS, KC_BSPC,
-            KC_TAB,  KC_Q,    KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,          
-            KC_CAPS, KC_A,    KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,    KC_SCLN, KC_QUOT, KC_ENT,           
-            KC_LSFT, KC_NUBS, KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, KC_UP,   
-            KC_LCTL, KC_LGUI, KC_LALT,                        KC_SPC,                          KC_RALT, KC_RGUI, KC_APP,  KC_RCTRL
-        ),
-
-        [1] = LAYOUT(
-            ____, ____,    ____,   ____,   ____,   ____,   ____,   ____,   ____,   ____,    ____,    ____, ____,  ____, ____,
-            ____, ____,    ____,   ____,   ____,   ____,   ____,   ____,   ____,   ____,    ____,    ____, ____, ____,          
-            ____, ____,    ____,   ____,   ____,   ____,   ____,   ____,   ____,   ____,    ____, ____, ____,           
-            ____, ____, ____,   ____,   ____,   ____,   ____,   ____,   ____,   ____, ____,  ____, ____, ____,   
-            ____, ____, ____,                        ____,                          ____, ____, ____,  ____
-        ),
-
-        [2] = LAYOUT(
-            ____, ____,    ____,   ____,   ____,   ____,   ____,   ____,   ____,   ____,    ____,    ____, ____,  ____, ____,
-            ____, ____,    ____,   ____,   ____,   ____,   ____,   ____,   ____,   ____,    ____,    ____, ____, ____,          
-            ____, ____,    ____,   ____,   ____,   ____,   ____,   ____,   ____,   ____,    ____, ____, ____,           
-            ____, ____, ____,   ____,   ____,   ____,   ____,   ____,   ____,   ____, ____,  ____, ____, ____,   
-            ____, ____, ____,                        ____,                          ____, ____, ____,  ____
-        ),
-
-        [3] = LAYOUT(
-            ____, ____,    ____,   ____,   ____,   ____,   ____,   ____,   ____,   ____,    ____,    ____, ____,  ____, ____,
-            ____, ____,    ____,   ____,   ____,   ____,   ____,   ____,   ____,   ____,    ____,    ____, ____, ____,          
-            ____, ____,    ____,   ____,   ____,   ____,   ____,   ____,   ____,   ____,    ____, ____, ____,           
-            ____, ____, ____,   ____,   ____,   ____,   ____,   ____,   ____,   ____, ____,  ____, ____, ____,   
-            ____, ____, ____,                        ____,                          ____, ____, ____,  ____
-        ),
-
-    };
-    ```
-
-- Ensure everything is set up correctly by compiling and flashing your keyboard with the new `via` keymap.
-
-## 3. Create a KLE for VIA
-
-### Create a basic layout
-
-VIA layouts are based on KLE data with additional information encoded within keys' legends. Go to [http://www.keyboard-layout-editor.com/](http://www.keyboard-layout-editor.com/ ) and create a layout that physically represents your keyboard. Use the "Tools -> Remove Legends" action in order to clean up any existing legends:
+Keyboard definition layouts are based on KLE data with additional information encoded within keys' legends. Go to [http://www.keyboard-layout-editor.com/](http://www.keyboard-layout-editor.com/) and create a layout that physically represents your keyboard. Use the "Tools -> Remove Legends" action in order to clean up any existing legends:
 
 ![](../img/kle-empty.png)
 
-At this point you will need to correlate physical keyboard layout to the switch matrix. VIA uses top-left legend of every key to identify its position in the matrix, encoded as `row,col`.
+Next, you will need to correlate physical keyboard layout to the switch matrix. The top-left legend of every key is used to identify its position in the matrix, encoded as `row,col`. There are two ways to prepare this data: either from the keyboard PCB and schematic files, or from the QMK layout macro.
+
+### Following an existing QMK layout
+
+If the keyboard already has a QMK port, you can follow the `LAYOUT` macro in order to assign rows and columns to the keys in the KLE. For example, let's take a look at [m0110_usb](https://github.com/vial-kb/vial-qmk/blob/12950db4d8ec1f294b1285e9b554a8fdc0a4bc6d/keyboards/converter/m0110_usb/m0110_usb.h#L69-L90):
+
+
+```
+#define LAYOUT_ansi( \
+    K32, K12, K13, K14, K15, K17, K16, K1A, K1C, K19, K1D, K1B, K18, K33,  K47, K68, K6D, K62, \
+    K30, K0C, K0D, K0E, K0F, K11, K10, K20, K22, K1F, K23, K21, K1E,       K59, K5B, K5C, K4E, \
+    K39, K00, K01, K02, K03, K05, K04, K26, K28, K25, K29, K27,      K24,  K56, K57, K58, K66, \
+    K38, K06, K07, K08, K09, K0B, K2D, K2E, K2B, K2F, K2C,           K4D,  K53, K54, K55, K4C, \
+    K3A, K37,                K31,                K34, K2A, K46, K42, K48,  K52,      K41 \
+) { \
+    { K00, K01, K02, K03, K04, K05, K06, K07 }, \
+    { K08, K09, XXX, K0B, K0C, K0D, K0E, K0F }, \
+    { K10, K11, K12, K13, K14, K15, K16, K17 }, \
+    { K18, K19, K1A, K1B, K1C, K1D, K1E, K1F }, \
+    { K20, K21, K22, K23, K24, K25, K26, K27 }, \
+    { K28, K29, K2A, K2B, K2C, K2D, K2E, K2F }, \
+    { K30, K31, K32, K33, K34, XXX, XXX, K37 }, \
+    { K38, K39, K3A, XXX, XXX, XXX, XXX, XXX }, \
+    { XXX, K41, K42, XXX, XXX, XXX, K46, K47 }, \
+    { K48, XXX, XXX, XXX, K4C, K4D, K4E, XXX }, \
+    { XXX, XXX, K52, K53, K54, K55, K56, K57 }, \
+    { K58, K59, XXX, K5B, K5C, XXX, XXX, XXX }, \
+    { XXX, XXX, K62, XXX, XXX, XXX, K66, XXX }, \
+    { K68, XXX, XXX, XXX, XXX, K6D, XXX, XXX } \
+}
+```
+
+The first section of the macro shows the layout similar to what it should look like in the KLE:
+
+<pre>
+    <b>K32</b>, K12, K13, K14, K15, K17, K16, K1A, K1C, K19, K1D, K1B, K18, K33,  K47, K68, K6D, K62, \
+    K30, K0C, K0D, K0E, K0F, K11, K10, K20, K22, K1F, K23, K21, K1E,       K59, K5B, K5C, K4E, \
+    K39, K00, K01, K02, K03, K05, K04, K26, K28, K25, K29, K27,      K24,  K56, K57, K58, K66, \
+    K38, K06, K07, K08, K09, K0B, K2D, K2E, K2B, K2F, K2C,           K4D,  K53, K54, K55, K4C, \
+    K3A, K37,                K31,                K34, K2A, K46, K42, K48,  K52,      K41 \
+</pre>
+
+The second section of the macro defines how a specific entry translates to the row and column position:
+
+<pre>
+    { K00, K01, K02, K03, K04, K05, K06, K07 }, \
+    { K08, K09, XXX, K0B, K0C, K0D, K0E, K0F }, \
+    { K10, K11, K12, K13, K14, K15, K16, K17 }, \
+    { K18, K19, K1A, K1B, K1C, K1D, K1E, K1F }, \
+    { K20, K21, K22, K23, K24, K25, K26, K27 }, \
+    { K28, K29, K2A, K2B, K2C, K2D, K2E, K2F }, \
+    { K30, K31, <b>K32</b>, K33, K34, XXX, XXX, K37 }, \
+    { K38, K39, K3A, XXX, XXX, XXX, XXX, XXX }, \
+    { XXX, K41, K42, XXX, XXX, XXX, K46, K47 }, \
+    { K48, XXX, XXX, XXX, K4C, K4D, K4E, XXX }, \
+    { XXX, XXX, K52, K53, K54, K55, K56, K57 }, \
+    { K58, K59, XXX, K5B, K5C, XXX, XXX, XXX }, \
+    { XXX, XXX, K62, XXX, XXX, XXX, K66, XXX }, \
+    { K68, XXX, XXX, XXX, XXX, K6D, XXX, XXX } \
+</pre>
+
+For example, taking the top left key: `K32`, and searching for it in the second array, we find that it is located on the 6th row and 2nd column (when counting from zero). Therefore, you would assign `6,2` to the corresponding key's top-left legend in the KLE.
+
+### Following the PCB schematic
+
+Alternatively, you can follow the PCB schematic for the keyboard in order to determine row and column positions of the keys.
 
 ![](../img/kicad1.png) ![](../img/kicad2.png)
 
 For example, here the Tab key is identified as K_15. In the schematic, it is connected to row1 and col0. Therefore, the top-left legend for it should be set to `1,0`. Note that row comes first and that the indexes are zero-based: if in your schematic the first row and the first col are labeled as row1/col1, you will need to subtract 1 from every number you enter.
 
 ![](../img/kle-some.png)
+
+### Finish preparing your layout
 
 Complete the layout by filling the data for every key:
 
@@ -149,7 +139,7 @@ For keyboards with multiple layout options, such as supporting ISO Enter or diff
 | [![](../img/layout-options-lshift.png)](../img/layout-options-lshift.png)  | This configures the option at index 2 ("Split Left Shift"). When the option is enabled (1), the keys indicated with "2,1" become active. When the option is disabled (0), the key indicated with "2,0" is active.  |
 | [![](../img/layout-options-bottom-row.png)](../img/layout-options-bottom-row.png)  | This configures the option at index 4 ("Bottom Row"). All the different choices ("WKL": "4,0"; "Blockerless": "4,1"; "MX HHKB": "4,2"; "True HHKB": "4,3") are set up as separate rows. Notice that decal keys are used in place of blockers. [![](../img/layout-options-decal.png)](../img/layout-options-decal.png)  |
 
-* Ensure that the optional keys have the same bounding box. For example, if your left shift is set up as a 2.25u key, the split left shift should have 1.25u+1u keys without any space in between. If the total size of the bottom row is 15u, every bottom row option should be 15u, and decal keys can be used to pad it for layouts such as HHKB. (While this is not strictly required for Vial, it is good practice for VIA compatibility).
+* Ensure that the optional keys have the same bounding box. For example, if your left shift is set up as a 2.25u key, the split left shift should have 1.25u+1u keys without any space in between. If the total size of the bottom row is 15u, every bottom row option should be 15u, and decal keys can be used to pad it for layouts such as HHKB.
 * The final layout might looks as follows:<sup>[(example)](http://www.keyboard-layout-editor.com/#/gists/a93f0e6f320439e4e1d678cb04ac9af6)</sup>
 ![](../img/layout-options-final.png)
 
@@ -172,15 +162,12 @@ Once the layout is complete, go to the "Raw data" tab in KLE and click on the "D
     "0,7",
 ```
 
-## 5. Create a JSON for VIA
+## 2. Create a JSON containing the full keyboard definition
 
 Start with the following JSON template:
 
 ```json
 {
-    "name": "",
-    "vendorId": "",
-    "productId": "",
     "lighting": "none",
     "matrix": {
         "rows": 0,
@@ -195,22 +182,18 @@ Start with the following JSON template:
 
 Fill in all the fields:
 
-* `name`: enter the name of the keyboard you'd like to be displayed to the user
-* `vendorId`: enter the same value you have set for `VENDOR_ID` in your keyboard's `config.h`. Make sure this is entered as hexadecimal string, e.g. `"0xFEED"`
-* `productId`: similar to the above, enter the value corresponding to `PRODUCT_ID`, e.g. `"0x6464"`
 * `matrix`
   * `rows`: enter the number of rows your keyboard has, this value should match `MATRIX_ROWS` you have in `config.h`
   * `cols`: similarly, this value should match `MATRIX_COLS`
 * `layouts`
-  * `labels`: layout options array described above goes here; if your keyboard does not have any layout option, you should delete that line
+  * `labels`: layout options array described above goes here; if your keyboard does not have any layout option, you should delete this line. If your keyboard does have layout options, make sure to terminate this line with a comma
   * `keymap`: paste the full contents of KLE JSON you've downloaded in the previous step after the colon symbol
+* `name`, `vendorId`, `productId`: while these options are required by VIA, Vial does not need them. You do not have to add them, and even if you do, their contents will not be used
+
+See [here](https://github.com/vial-kb/vial-qmk/blob/12950db4d8ec1f294b1285e9b554a8fdc0a4bc6d/keyboards/idb/idb_60/keymaps/vial/vial.json) for an example of a keyboard definition JSON with multiple layout options.
 
 ## Done!
 
-This should be enough to get you a basic VIA JSON file. Confirm that it is working by flashing your keyboard with the `via` keymap and then opening Vial GUI and sideloading the JSON through the "File -> Sideload JSON..." menu:
+This should be enough to get you a basic keyboard definition JSON file. Next, move onto [building Vial support](/porting-to-vial.md).
 
-![](../img/vial-sideload.png)
-
-Your keyboard should now be detected and you will be able to make layout changes.
-
-Next, move onto [building Vial support](/porting-to-vial.md) using your VIA base files.
+Did you run into a problem? You can get porting support by joining [Vial discord](https://discord.gg/zNKEUXTKwF).
