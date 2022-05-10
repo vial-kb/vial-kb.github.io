@@ -3,35 +3,61 @@ layout: default
 title: Configuring udev on Linux
 parent: User manual
 nav_order: 5
+has_toc: true
 redirect_from:
   - /getting-started/linux-udev.html
 ---
 
-# Configuring `udev` rules for Vial on Linux
+# Configuring `udev` rules for VIA and Vial on Linux
 
-In order for your keyboard to be detected by Vial on Linux, you need to set up a custom `udev` rule. VIA and Vial both use the `hidraw` linux driver to directly communicate configurations to your keyboard. In most situations it should be safe to use a generalized `udev` rule for all `hidraw` devices, but in other cases where you prefer or are required to restrict access on a device basis, it is possible to create a `udev` rule specifically for your keyboard.
+In order for your keyboard to be detected by both VIA and Vial on Linux, you need to set up a custom `udev` rule. Both use the `hidraw` linux driver to directly communicate configurations to your keyboard. In most situations it should be safe to use a generalized `udev` rule for all `hidraw` devices, but in other cases where you prefer or are required to restrict access on a device basis, it is possible to create a `udev` rule specifically for your keyboard.
 
 The following guides will show you how to implement these `udev` rules. You will require root access to create the files necessary.
 
-## Generalized `udev` rule
+## Vial `udev` rule
 
-For a generalized access rule for `hidraw` devices, write this text to `/etc/udev/rules.d/99-vial.rules`:
+For a generalized access rule for any device with Vial firmware, write this text to `/etc/udev/rules.d/99-vial.rules`:
 
+```
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="vial:f64c2b3c", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
+```
+
+**OR** run this in your shell (replace `sudo` with `pkexec` or `doas` if needed):
+
+```
+sudo echo "KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", ATTRS{serial}==\"vial:f64c2b3c\", MODE=\"0660\", GROUP=\"users\", TAG+=\"uaccess\", TAG+=\"udev-acl\"" > /etc/udev/rules.d/99-vial.rules
+```
+
+In order for the rule to take effect, you must [reload `udev`](#reloading-udev).
+
+## Generalized VIA `udev` rule
+
+On a kernel level, there is no way to detect if a keyboard is compatible with VIA, so you have to allow access to all `hidraw` devices, or configure it on a [device-specific basis](#device-specific-udev-rules).
+
+For a rule that allows users to access all `hidraw` devices, write this text to `/etc/udev/rules.d/92-viia.rules`:
 
 ```
 KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
 ```
 
-This rule makes the assumption that you are already in the `users` group, however, you can replace this group with any that you'd like, ideally with a group for human users on your system. This rule is tagged with `uaccess` and `udev-acl`, which applies user session and ACL restrictions if already configured.
+**OR** run this in your shell (replace `sudo` with `pkexec` or `doas` if needed):
+
+```
+sudo echo "KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", MODE=\"0660\", GROUP=\"users\", TAG+=\"uaccess\", TAG+=\"udev-acl\"" > /etc/udev/rules.d/92-viia.rules
+```
+
+In order for the rule to take effect, you must [reload `udev`](#reloading-udev).
 
 ## Device-specific `udev` rules
 
 ### Finding the vendor and product IDs
 
-Configuring device specific udev rules will requrie knowing the USB vendor and product ID of your keyboard. The easiest way to find this is using the `lsusb` command. It will list information about all of your connected USB devices. Here is a sample output for the Keychron Q2 Revision 0110:
+Configuring device specific `udev` rules will requrie knowing the USB vendor and product ID of your keyboard. The easiest way to find this is using the `lsusb` command. It will list information about all of your connected USB devices. Here is a sample output for the Keychron Q2 Revision 0110:
+
 ```
 Bus 001 Device 049: ID 3434:0110 Keychron Keychron Q2
 ```
+
 The first four hex numbers next to `ID` is the vendor ID, and the next four hex numbers after the colon is the product ID. In this case, the Keychron Q2's vendor ID is `3434` and it's product ID is `0110`.
 
 #### Where is my keyboard in `lsusb`?
@@ -51,11 +77,11 @@ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="XXXX", ATTRS{idProduct
 
 Replace the vendor and product ID with the ones you found for your keyboard using [lsusb](#finding-the-vendor-and-product-ids). Write this rule to `/etc/udev/rules.d/99-vial.rules` as root.
 
-The following is an example udev rule for the Keychron Q2:
+The following is an example `udev` rule for the Keychron Q2:
 
 ```
 # Keychron Q2
-KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="0110", MODE="0660", GROUP="users", TAG+="uaccess"
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="0110", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
 ```
 
 ## Reloading `udev`
