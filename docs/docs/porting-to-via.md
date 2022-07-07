@@ -103,6 +103,11 @@ Complete the layout by filling the data for every key:
 
 ![](../img/kle-complete.png)
 
+> Attention
+> {: .label .label-yellow }
+> Some keys may span the length of multiple physical keys, like the space bar.
+> Please make sure to follow the template you used in this regard and adjust the numbering accordingly.
+
 ### Create layout options
 
 For keyboards with multiple layout options, such as supporting ISO Enter or different bottom rows, you can configure additional layout options that will be displayed in the GUI and change how the keyboard is displayed to the user.
