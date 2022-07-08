@@ -20,8 +20,21 @@ redirect_from:
 Hop over to the [download](/download) page to make sure you have the latest build.
 
 ## 2. Run Vial
+
 ### Linux
-Unpackage the download and launch the `Vial` executable.
+
+Make sure that your downloaded file can be executed.
+You can either do this through your graphical file explorer or use the following command:
+
+```bash
+chmod +x ~/Downloads/Vial*.AppImage
+```
+
+After that simply launch the application by either double clicking on it or executing the following command:
+
+```bash
+~/Downloads/Vial*.AppImage
+```
 
 If you discover any bugs please [raise an issue](https://github.com/vial-kb/vial-gui/issues/new/choose).
 
