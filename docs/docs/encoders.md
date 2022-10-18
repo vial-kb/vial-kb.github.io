@@ -40,6 +40,8 @@ Set up encoders as 1u switches:
 
 ![](../img/encoders-kle.png)
 
+![](../img/encoders-kle2.png)
+
 ### **9 Key macro pad example**
 Building a basic 9 key macro pad and a rotary encoder (without button) will produce the following. <sup>[(example KLE file)](http://www.keyboard-layout-editor.com/#/gists/f6c1df29df0d44744d9a4dafe26178ef)</sup>
 
