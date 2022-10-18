@@ -30,11 +30,13 @@ Follow [QMK documentation](https://docs.qmk.fm/#/feature_encoders?id=encoder-map
 Set up encoders as 1u switches:
 - the center legend should be "e"
 - the top left legend is "encoder_index,encoder_rotation", for example "0,0" for rotating encoder at index 0 counterclockwise, and "0,1" for rotating encoder at index 0 clockwise. You do not need to make these values unique from your other key coordinates as these keys will be compiled differently due to the "e" present on the legends.<sup>[(example)](http://www.keyboard-layout-editor.com/#/gists/604ca4b3942891950597cbaceac8bced)</sup>
+- for push button treated it as a regular switch and use the corresponding row and col index from the matrix
 - Exporting the json from KLE will introduce the following lines to your file, these relate to the encoder:
 ```
   ["0,0\n\n\n\n\n\n\n\n\ne",
   "0,1\n\n\n\n\n\n\n\n\ne"],
 ```
+- enclose any x w h with double quote, KLE json and vial json has sight differences.
 
 ![](../img/encoders-kle.png)
 
@@ -67,6 +69,33 @@ Building a basic 9 key macro pad and a rotary encoder (without button) will prod
     }
 }
 
+```
+### A macropad with 16 keys and 3 encoders
+
+[Example KLE file](http://www.keyboard-layout-editor.com/##@@=0,0&=0,1&=0,2&=0,3&_x:0.25%3B&=0,0%0A%0A%0A%0A%0A%0A%0A%0A%0Ae&=0,1%0A%0A%0A%0A%0A%0A%0A%0A%0Ae&_x:0.25%3B&=1,0%0A%0A%0A%0A%0A%0A%0A%0A%0Ae&=1,1%0A%0A%0A%0A%0A%0A%0A%0A%0Ae%3B&@=1,0&=1,1&=1,2&=1,3&_x:0.75%3B&=0,4&_x:1.25%3B&=1,4%3B&@=2,0&=2,1&=2,2&=2,3%3B&@_y:-0.75&x:4.5%3B&=2,0%0A%0A%0A%0A%0A%0A%0A%0A%0Ae&_w:1.75&h:1.75%3B&=2,4&=2,1%0A%0A%0A%0A%0A%0A%0A%0A%0Ae%3B&@_y:-0.25%3B&=3,0&=3,1&=3,2&=3,3)
+
+![](../img/bigmacro.png)
+
+```json
+{
+    "name": "BIGMAC",
+    "vendorId": "0xXXXX",
+    "productId": "0xXXXX",
+    "lighting": "none",
+    "matrix": {
+        "rows": 4,
+        "cols": 5
+    },
+    "layouts": {
+        "keymap": [
+			["0,0","0,1","0,2","0,3",{"x":0.25},"1,0\n\n\n\n\n\n\n\n\ne","1,1\n\n\n\n\n\n\n\n\ne",{"x":0.25},"0,0\n\n\n\n\n\n\n\n\ne","0,1\n\n\n\n\n\n\n\n\ne"],
+			["1,0","1,1","1,2","1,3",{"x":0.75},"0,4",{"x":1.25},"1,4"],
+			["2,0","2,1","2,2","2,3"],
+			[{"y":-0.75,"x":4.5},"2,0\n\n\n\n\n\n\n\n\ne",{"w":1.75,"h":1.75},"2,4","2,1\n\n\n\n\n\n\n\n\ne"],
+			[{"y":-0.25},"3,0","3,1","3,2","3,3"]
+        ]
+    }
+}
 ```
 
 
