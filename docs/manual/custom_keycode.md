@@ -9,11 +9,7 @@ nav_order: 8
 
 QMK provides [a way](https://github.com/qmk/qmk_firmware/blob/master/docs/custom_quantum_functions.md) for user to redefine behavior for existing key or create new keycode.
 
-<<<<<<< HEAD
-Example: Here 3 custom keycodes are defined within `keymap.c`. Enum block is used to assign each keycode a unique hexcode, but replace `SAFE_RANGE` on the first keycode with `USER00`. The behavior of each keycode is defined inside `process_record_user()`. 
-=======
 Example: Here 3 custom keycodes are defined within `keymap.c`. Enum block is used to assign each keycode a unique hexcode, the behavior of each keycode is defined inside `process_record_user()`. The keycodes are then assigned inside PROGMEM keymaps block. 
->>>>>>> 8f4734a (revision)
 
 ```c
 enum blender_keycode {
