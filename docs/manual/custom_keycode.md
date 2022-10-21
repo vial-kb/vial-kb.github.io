@@ -21,18 +21,13 @@ enum blender_keycode {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 	switch (keycode) {
 		case B_VPAN:
-			if (record->event.pressed) { 
-                // keycode behavior
-			}
+            if (record->event.pressed) { ... }
             return 0;
         case B_DOLLY:
-            if (record->event.pressed) {
-                // keycode behavior
+            if (record->event.pressed) { ... }
             return 0;
         case B_UNDO:
-            if (record->event.pressed) {
-                // keycode behavior
-            }
+            if (record->event.pressed) { ... }
             return 0;
 	}
 }
