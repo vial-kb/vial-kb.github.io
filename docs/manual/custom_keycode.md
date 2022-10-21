@@ -9,7 +9,7 @@ nav_order: 8
 
 QMK provides [a way](https://github.com/qmk/qmk_firmware/blob/master/docs/custom_quantum_functions.md) for user to redefine behavior for existing key or create new keycode.
 
-Example: Here 3 custom keycodes are defined within `keymap.c`. Enum block is used to assign each keycode a unique hexcode, but replace `SAFE_RANGE` on the first keycode with `USER00`. The behavior of each keycode is defined inside `process_record_user()`. The keymap is assigned 
+Example: Here 3 custom keycodes are defined within `keymap.c`. Enum block is used to assign each keycode a unique hexcode, but replace `SAFE_RANGE` on the first keycode with `USER00`. The behavior of each keycode is defined inside `process_record_user()`. 
 
 ```c
 enum blender_keycode {
@@ -106,7 +106,7 @@ enum blender_keycode {
 
 Custom keycodes in the json file __must__ match what's inside the enum block, both in order and number of keycodes. 
 
-If everything goes smoothly the hexcode will be replaced with name of the keycode. You can access all your custom keycode inside the User tab.
+If everything goes smoothly the hexcode will be replaced with name of the keycode. You can access all your custom keycode inside the User tab. Do note that the firmware size will incresae slightly (this example is ~100bytes)
 
 ![](../img/vial_after.png)
 
