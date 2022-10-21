@@ -9,59 +9,46 @@ nav_order: 8
 
 QMK provides [a way](https://github.com/qmk/qmk_firmware/blob/master/docs/custom_quantum_functions.md) for user to redefine behavior for existing key or create new keycode.
 
+<<<<<<< HEAD
 Example: Here 3 custom keycodes are defined within `keymap.c`. Enum block is used to assign each keycode a unique hexcode, but replace `SAFE_RANGE` on the first keycode with `USER00`. The behavior of each keycode is defined inside `process_record_user()`. 
+=======
+Example: Here 3 custom keycodes are defined within `keymap.c`. Enum block is used to assign each keycode a unique hexcode, the behavior of each keycode is defined inside `process_record_user()`. The keycodes are then assigned inside PROGMEM keymaps block. 
+>>>>>>> 8f4734a (revision)
 
 ```c
 enum blender_keycode {
-	B_VPAN = SAFE_RANGE,  // CUSTOM KEYCODE viewport pan
-    B_DOLLY, // CUSTOM KEYCODE dolly zoom
-    B_UNDO, //CUSTOM KEYCODE
+	B_VPAN = SAFE_RANGE,  
+    B_DOLLY, 
+    B_UNDO, 
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 	switch (keycode) {
 		case B_VPAN:
-			if (record->event.pressed) { // wait_ms is needed, otherwise mod keys are not registered
-				register_code(KC_LSFT);
-                wait_ms(10);
-				register_code(KC_MS_BTN3);
-			} else {
-				unregister_code(KC_LSFT);
-				unregister_code(KC_MS_BTN3);
+			if (record->event.pressed) { 
+                // keycode behavior
 			}
             return 0;
         case B_DOLLY:
             if (record->event.pressed) {
-                register_code(KC_LCTL);
-                wait_ms(10);
-                register_code(KC_MS_BTN3);
-            } else {
-                unregister_code(KC_LCTL);
-                unregister_code(KC_MS_BTN3);
-            }
+                // keycode behavior
             return 0;
         case B_UNDO:
             if (record->event.pressed) {
-                register_code(KC_LCTL);
-                wait_ms(10);
-                register_code(KC_Z);
-            } else {
-                unregister_code(KC_LCTL);
-                unregister_code(KC_Z);
+                // keycode behavior
             }
             return 0;
 	}
 }
 ```
 
-The keycodes are then assigned inside PROGMEM keymaps block. 
-
  When you load a board with custom keycodes, they will appear as unique hexcode. You can use the any key and type in those value `0x5000` to assign them but this isn't very user friendly. 
 
 ![](../img/vial_before.png)
 
 ## 1.2 Vial custom keycode
-Via and Vial provides a way to aliase custom keycodes so that they appear as a normal keycode you can assign.
+
+Via and Vial provides a way to alias custom keycodes so that they appear as a named keycode you can assign.
 
 In `vial.json` make a new list `customKeycodes`, each of the keycode has three property:
 
@@ -98,9 +85,9 @@ In the keymap.c file, replace `SAFE_RANGE` with `USER00`
 
 ```c
 enum blender_keycode {
-	B_VPAN = USER00,  // CUSTOM KEYCODE viewport pan
-    B_DOLLY, // CUSTOM KEYCODE dolly zoom
-    B_UNDO, //CUSTOM KEYCODE
+	B_VPAN = USER00, 
+    B_DOLLY, 
+    B_UNDO, 
 }
 ```
 
