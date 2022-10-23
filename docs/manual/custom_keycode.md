@@ -13,7 +13,7 @@ Example: Here 3 custom keycodes are defined within `keymap.c`. Enum block is use
 
 ```c
 enum blender_keycode {
-	B_VPAN = SAFE_RANGE,  
+    B_VPAN = SAFE_RANGE,  
     B_DOLLY, 
     B_UNDO, 
 }
@@ -76,7 +76,7 @@ In the keymap.c file, replace `SAFE_RANGE` with `USER00`
 
 ```c
 enum blender_keycode {
-	B_VPAN = USER00, 
+    B_VPAN = USER00, 
     B_DOLLY, 
     B_UNDO, 
 }
