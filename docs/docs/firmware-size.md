@@ -80,3 +80,35 @@ If you are running out of EEPROM, you can reduce the number of dynamic keymap la
 ```
 #define DYNAMIC_KEYMAP_LAYER_COUNT 2
 ```
+
+# Using a different bootloader
+
+```
+ * The firmware is too large! 30768/28672 (2096 bytes over)
+ [ERRORS]
+
+make[1]: *** [tmk_core/rules.mk:469: check-size] Error 1
+make: *** [Makefile:530: yd60mq:vial] Error 1
+Make finished with errors
+```
+
+**If you have already done all of the above, and you still see this message trying to compile your firmware on an AVR such as the popular Atmega32u4 (used on Pro Micro), it might be time to break out of the mould a little.** 
+
+Almost all of these controllers are delivered with the Caterina bootloader, and while this bootloader is very stable and plain **just works!** in all situtations, it's also fairly old code and quite large, using ~3500kB of your codespace. Most of it for features you will never really use.
+
+Changing your bootloader to a more modern, more slim-lined one that does exactly what is needed and nothing else, can save you a whole lot of codespace for your keymap and functions.
+
+### Potential drawbacks
+**Changing the bootloader makes your firmware somewhat 'non-standard'**, so sharing them means the other user also have to swap to your preffered bootloader. It also requires you to use an ISP programmer (or another arduino) to flash the controller with the bootloader once, before it can be used as normal flashing the code over USB. (This is very similar to recovering the bootloader in the event of a bricked Pro Micro).
+
+### What do I gain?
+Codespace, glorious codespace!
+
+### What bootloader is recommended?
+There are several that should work and reduce the size to various amounts, some adding functions you might like, some being slimmed down. 
+* [LUFA-DFU](https://github.com/abcminiuser/lufa) is a popular one that is slightly smaller than Caterina, and adds features (size depends on what features you enable).
+* [QMK-DFU](https://github.com/qmk/lufa) is a fork maintained by the QMK team and also adds features.
+* [nanoBoot](https://github.com/osamuaoki/nanoBoot) is a _tiny_ 512kB HID bootloader, that does exactly _one_ thing, allowing you to hold reset on plug-in, and enter the bootloader/flashing, in the exact same way as Caterina does. 
+
+
+
