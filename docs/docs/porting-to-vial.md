@@ -15,10 +15,6 @@ redirect_from:
 # Porting to Vial
 
 The second part of this tutorial will guide you through porting your keyboard to Vial.
-### Required apps:
-* File manager (Finder for mac, File Explorer for Windows)
-* CLI (Terminal for Mac, cmd for Windows)
-* A text editor (Textedit for Mac, Notepad for Windows)
 
 Before continuing, familiarize yourself with basic command line commands (cd, mkdir, ls, rm). 
 
