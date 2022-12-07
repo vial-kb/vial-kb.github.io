@@ -30,7 +30,7 @@ In order to compile keyboard firmware, `vial-qmk` needs to be copied to the comp
 2. Run `make git-submodule` in your new `vial-qmk` directory to clone the git submodules.
 3. Continue to run `make path/to/your/keyboard:keymap` for Vial builds from this directory. Make sure the `default` keymap for your keyboard compiles successfully. For example, if your keyboard is located in the `keyboards/xyz/xyz60` folder, to compile it using the `default` keymap, type `make xyz/xyz60:default`.
 
-### If that made absolutely no sense, follow this guide:
+### If that made absolutely no sense:
 1. Download the zip from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) that is found here:
 ![](../img/download_repository.png)
 2. Unzip the zip and place the new `vial-qmk` folder in a place that is findable
