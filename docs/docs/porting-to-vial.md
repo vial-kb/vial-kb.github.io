@@ -31,9 +31,9 @@ In order to compile keyboard firmware, `vial-qmk` needs to be copied to the comp
 3. Continue to run `make path/to/your/keyboard:keymap` for Vial builds from this directory. Make sure the `default` keymap for your keyboard compiles successfully. For example, if your keyboard is located in the `keyboards/xyz/xyz60` folder, to compile it using the `default` keymap, type `make xyz/xyz60:default`.
 
 ### If that made absolutely no sense, follow this guide:
-1. Downloading the zip from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) that is found at
+1. Download the zip from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) that is found here:
 ![](../img/download_repository.png)
-2. unzip the zip and place the new `vial-qmk` folder in a place that is findable
+2. Unzip the zip and place the new `vial-qmk` folder in a place that is findable
 3. Navigate to the new `vial-qmk` directory in CLI
 4. Run `make git-submodule` from the `vial-qmk` directory
 
@@ -42,7 +42,7 @@ In order to compile keyboard firmware, `vial-qmk` needs to be copied to the comp
 
 ## 2. Create a new `vial` keymap
 
-Duplicate `vial-qmk/keyboards/[keyboard_path]/keymaps/default` and rename copy to `keymaps/vial`. Once you're done, the `keymaps` folder should have both a `default` folder and `vial` folder.
+Duplicate `keyboards/[keyboard_path]/keymaps/default` and rename copy to `keymaps/vial`. Once you're done, the `keymaps` folder should have both a `default` folder and `vial` folder.
 
 ## 3. Enable Vial in your rules file
 
@@ -101,7 +101,7 @@ After you flash the firmware, check that the function works correctly by activat
 
 ## 7. Compile Vial firmware
 
-Compiling and flashing can be done in a similar way as QMK. To compile a `vial` keymap for a keyboard located under `keyboards/xyz/xyz60`, run `make xyz/xyz60:vial` from the root `vial-qmk` directory.
+Compiling and flashing can be done in a similar way as QMK. To compile a `vial` keymap for a keyboard located at `keyboards/xyz/xyz60/`, run `make xyz/xyz60:vial` from the `vial-qmk/` directory.
 
 If at this point you're having issues making the firmware fit (running out of flash, RAM or EEPROM), see [this guide](firmware-size.md) for how to reduce Vial firmware size.
 
