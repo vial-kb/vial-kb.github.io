@@ -56,4 +56,4 @@ To increase or decrease the amount of macros you need to define it in your `keym
 Up to 109 is possible, the amount of macros will not change how much space is reserved for macros but every every blank entry will consume one byte in your EEPROM.
 
 # More info
-Macros is a QMK feature and more detailed information can be found with the [offical QMK documenation](hhttps://docs.qmk.fm/#/feature_macros).
+Macros is a QMK feature and more detailed information can be found with the [offical QMK documenation](https://docs.qmk.fm/#/feature_macros).
