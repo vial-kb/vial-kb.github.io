@@ -2,7 +2,7 @@
 layout: default
 title: MIDI support
 parent: Porting guide
-nav_order: 6
+nav_order: 7
 ---
 
 # MIDI
