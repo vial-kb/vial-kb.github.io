@@ -13,23 +13,18 @@ redirect_from:
 
 > Important
 > {: .label .label-red }
-> No, Vial and VIA are NOT the same. They both aim to do roughly the same, and they both originated from QMK in the beginning, but they are in fact two separate entities, with separate functions. 
-The fact that your VIA keyboard shows up in VIAL, does NOT infact mean you are 'running Vial firmware'.
+> No, Vial and VIA are NOT the same. They both aim to do roughly the same, and they both work sort of the same for the end user.
+And yes, they both originated from QMK in the beginning, and is sort of working as a layer on top of QMK. But they are in fact two separate entities with separate functions, being developed by different sets of people. 
+The fact that your VIA keyboard shows up in VIAL (in some instances) and you can remap basic keys, does NOT infact mean you are 'running Vial firmware'. 
+There is a vast difference between the app or web-app on your computer, and the firmware on your keyboard.
 
-## 1. But my keyboard manufacturer/seller/(?) said its VIA and VIAL compatible!
+## But my keyboard manufacturer/seller/(?) said its VIA and VIAL compatible!
 
-Well, VIAL uses some of the same protocol as VIA does, and infact many VIA compatible keyboards will show up in Vial and work to some extent, ie you can remap keys. 
-This is called VIA compatibility mode, and means you have *limited* functionality.
+Well, VIAL uses some of the same protocol as VIA does, and infact many VIA compatible keyboards (up until VIA protocol 9) will show up in Vial and work to some extent, ie you can remap basic keys. 
+This is called VIA compatibility mode, and means you have *limited* functionality. To find out if your keyboard is infact in compatability mode, check the VIAL app, open the 'About' menu, and select 
+your keyboard to show the information about it. 
 
-However, when either VIA or Vial is updated and new features are added, these may or may not be carried over to the other. 
-
-The fact that your keyboard is VIA compatible or works in VIA does not magically mean it's Vial compatible. And it especially does NOT mean that it supports specific Vial functions.
-To support VIAL and take advantage of all of Vial's features, your keyboard needs to run a native VIAL firmware, specifically compiled for Vial, and flashed to the keyboard.
-
-
-## 2. How do I know for sure if my keyboard is running native VIAL or in VIA compatability mode?
-
-If the VIAL app, open the 'About' meny, and open the information about your keyboard. If it says 'VIA protocol: 9' ONLY, the keyboard is infact running a VIA firmware in compatability mode, and with limited functions.
+If it says 'VIA protocol: 9' ONLY, the keyboard is infact running a VIA firmware in compatability mode, and with limited functions.
 
 ```VIA protocol: 9```
  
@@ -38,7 +33,6 @@ If the VIAL app, open the 'About' meny, and open the information about your keyb
 ```VIA protocol: 9
 Vial protocol: 5
 Vial keyboard ID: 59B215D1919C0574```
-
 
 ### Side loading a .JSON file
 
