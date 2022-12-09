@@ -28,13 +28,11 @@ In order to compile keyboard firmware, `vial-qmk` needs to be copied to the comp
 3. Continue to run `make path/to/your/keyboard:keymap` for Vial builds from this directory. Make sure the `default` keymap for your keyboard compiles successfully. For example, if your keyboard is located in the `keyboards/xyz/xyz60` folder, to compile it using the `default` keymap, type `make xyz/xyz60:default`.
 
 ### If that made absolutely no sense:
-1. Download the zip from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) that is found here:
-![](../img/download_repository.png)
-2. Unzip the zip and place the new `vial-qmk` folder in a place that is findable
-3. Navigate to the new `vial-qmk` directory in CLI
-4. Run `make git-submodule` from the `vial-qmk` directory
-
-
+1. If not already installed, install homebrew by running `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` in your CLI of choice
+2. If not already installed, install github CLI by running `brew install gh`
+3. Run `gh repo clone vial-kb/vial-qmk` to clone vial-qmk
+4. Navigate to the new `vial-qmk` directory using cd
+5. Run `make git-submodule` from the `vial-qmk` directory
 
 
 ## 2. Create a new `vial` keymap
@@ -56,7 +54,7 @@ Place your keyboard definition JSON (either one made in step 1 of this tutorial 
 
 ## 5. Generate and add unique keyboard ID
 
-From the root of vial-qmk, run `python3 util/vial_generate_keyboard_uid.py` in order to generate a unique Vial keyboard ID:
+From vial-qmk, run `python3 util/vial_generate_keyboard_uid.py` in order to generate a unique Vial keyboard ID:
 
 `python3 util/vial_generate_keyboard_uid.py`
 
@@ -93,7 +91,7 @@ For keyboards that do not define `VIAL_INSECURE = yes`, proceed to configure `VI
   * `#define VIAL_UNLOCK_COMBO_COLS { 0, 13 }`
 * Note that this feature works with multi-layout keyboards, however you should make sure that the keys you pick appear in every possible layout:
 ![](../img/security-user-prompt.png)
-
+ 
 After you flash the firmware, check that the function works correctly by activating the "Security->Unlock" menu.
 
 ## 7. Compile Vial firmware
