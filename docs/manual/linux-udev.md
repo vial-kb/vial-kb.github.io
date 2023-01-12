@@ -12,7 +12,7 @@ redirect_from:
 
 In order for your keyboard to be detected by the VIA and Vial apps on Linux, you need to set up a custom `udev` rule. Both use the `hidraw` linux driver to directly communicate configurations to your keyboard. In most situations it should be safe to use a generalized `udev` rule for all `hidraw` devices, but in other cases where you prefer or are required to restrict access on a device basis, it is possible to create a `udev` rule [specifically for your keyboard](#device-specific-udev-rules).
 
-Vial has a magic number that is inserted into the serial USB attribute, so you will only need one rule for all Vial keyboards that will be safe to use in conjunction with other `hidraw` device rules.
+Vial has a magic number that is inserted into the USB serial attribute, so you will only need one rule for all Vial keyboards that will be safe to use in conjunction with other `hidraw` device rules.
 
 The following guides will show you how to implement these `udev` rules. You will require root access to create the files that are necessary.
 
