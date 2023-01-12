@@ -26,7 +26,9 @@ export USER_GID=`id -g`; sudo --preserve-env=USER_GID sh -c 'echo "KERNEL==\"hid
 
 This command will automatically create a `udev` rule and reload the `udev` system.
 
-**OR manually** write this text to `/etc/udev/rules.d/99-vial.rules` in a text editor:
+### Manually
+
+Write this text to `/etc/udev/rules.d/99-vial.rules` in a text editor:
 
 ```
 KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
@@ -48,7 +50,9 @@ export USER_GID=`id -g`; sudo --preserve-env=USER_GID sh -c 'echo "KERNEL==\"hid
 
 This command will automatically create a `udev` rule and reload the `udev` system.
 
-**OR manually** write this text to `/etc/udev/rules.d/92-viia.rules` in a text editor:
+### Manually
+
+Write this text to `/etc/udev/rules.d/92-viia.rules` in a text editor:
 
 ```
 KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
