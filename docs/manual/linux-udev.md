@@ -18,7 +18,15 @@ The following guides will show you how to implement these `udev` rules. You will
 
 ## Universal Vial `udev` rule
 
-For a universal access rule for any device with Vial firmware, write this text to `/etc/udev/rules.d/99-vial.rules` in a text editor:
+For a universal access rule for any device with Vial firmware, run this in your shell while logged in as your user (this will only work with `sudo` installed):
+
+```
+export USER_GID=`id -g`; sudo --preserve-env=USER_GID sh -c 'echo "KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", ATTRS{serial}==\"*vial:f64c2b3c*\", MODE=\"0660\", GROUP=\"$USER_GID\", TAG+=\"uaccess\", TAG+=\"udev-acl\"" > /etc/udev/rules.d/99-vial.rules && udevadm control --reload && udevadm trigger'
+```
+
+This command will automatically create a `udev` rule and reload the `udev` system.
+
+**OR manually** write this text to `/etc/udev/rules.d/99-vial.rules` in a text editor:
 
 ```
 KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
@@ -26,31 +34,27 @@ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="
 
 You can replace the group with any that you require on your operating system, but the `users` group should work on most distributions of Linux.
 
-**OR** run this in your shell while logged in as your user (this will only work with `sudo` installed):
-
-```
-export USER_GID=`id -g`; sudo --preserve-env=USER_GID sh -c 'echo "KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", ATTRS{serial}==\"*vial:f64c2b3c*\", MODE=\"0660\", GROUP=\"$USER_GID\", TAG+=\"uaccess\", TAG+=\"udev-acl\"" > /etc/udev/rules.d/99-vial.rules'
-```
-
 In order for the rule to take effect, you must [reload `udev`](#reloading-udev).
 
 ## Generalized VIA `udev` rule
 
 On a kernel level, there is no way to detect if a keyboard is compatible with VIA, so you have to allow access to all `hidraw` devices. If you require more device security, you are able to configure access on a [device-specific basis](#device-specific-udev-rules).
 
-For a rule that allows users to access all `hidraw` devices, write this text to `/etc/udev/rules.d/92-viia.rules` in a text editor:
+For a rule that allows users to access all `hidraw` devices, run this in your shell while logged in as your user (this will only work with `sudo` installed):
+
+```
+export USER_GID=`id -g`; sudo --preserve-env=USER_GID sh -c 'echo "KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", MODE=\"0660\", GROUP=\"$USER_GID\", TAG+=\"uaccess\", TAG+=\"udev-acl\"" > /etc/udev/rules.d/92-viia.rules && udevadm control --reload && udevadm trigger' 
+```
+
+This command will automatically create a `udev` rule and reload the `udev` system.
+
+**OR manually** write this text to `/etc/udev/rules.d/92-viia.rules` in a text editor:
 
 ```
 KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
 ```
 
 You can replace the group with any that you require on your operating system, but the `users` group should work on most distributions of Linux.
-
-**OR** run this in your shell while logged in as your user (this will only work with `sudo` installed):
-
-```
-export USER_GID=`id -g`; sudo --preserve-env=USER_GID sh -c 'echo "KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", MODE=\"0660\", GROUP=\"$USER_GID\", TAG+=\"uaccess\", TAG+=\"udev-acl\"" > /etc/udev/rules.d/92-viia.rules'
-```
 
 In order for the rule to take effect, you must [reload `udev`](#reloading-udev).
 
@@ -81,7 +85,7 @@ To create a rule for your specific keyboard, use this template:
 KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="XXXX", ATTRS{idProduct}=="XXXX", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
 ```
 
-Replace the vendor and product ID with the ones you found for your keyboard using [lsusb](#finding-the-vendor-and-product-ids). You may also specify a different group if required. Write this rule to `/etc/udev/rules.d/99-vial.rules` as root.
+Replace the vendor and product ID with the ones you found for your keyboard using [lsusb](#finding-the-vendor-and-product-ids). You may also specify a different group if required. Write this rule to `/etc/udev/rules.d/99-vial.rules` as root. In order for the rule to take effect, you must [reload `udev`](#reloading-udev).
 
 The following is an example `udev` rule for the Keychron Q2:
 
