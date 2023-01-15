@@ -27,20 +27,47 @@ Follow [QMK documentation](https://docs.qmk.fm/#/feature_encoders?id=encoder-map
 
 ## 3. Add Vial encoders as part of KLE keymap
 
-Set up encoders as 1u switches:
-- the center legend should be "e"
-- the top left legend is "encoder_index,encoder_rotation", for example "0,0" for rotating encoder at index 0 counterclockwise, and "0,1" for rotating encoder at index 0 clockwise. You do not need to make these values unique from your other key coordinates as these keys will be compiled differently due to the "e" present on the legends.<sup>[(example)](http://www.keyboard-layout-editor.com/#/gists/604ca4b3942891950597cbaceac8bced)</sup>
-- for push button treated it as a regular switch and use the corresponding row and col index from the matrix
-- Exporting the json from KLE will introduce the following lines to your file, these relate to the encoder:
-```
-  ["0,0\n\n\n\n\n\n\n\n\ne",
-  "0,1\n\n\n\n\n\n\n\n\ne"],
-```
-- enclose any x w h with double quote, KLE json and vial json has sight differences.
+In Vial JSON an encoder is defined as either **two or three** 1u switches, representing the possible actions it can have. 
+**Not having both rotary switches defined makes the JSON invalid.**
+
+
+**An encoder with no clickable button:**
 
 ![](../img/encoders-kle.png)
 
+**An encoder with a clickable button:**
+
 ![](../img/encoders-kle2.png)
+
+**Dual encoders with buttons:**
+
+![](../img/dual-encoders-kle.png)
+
+
+### Encoder Legends
+**Center legend**
+- The two switches for the CW and CCW rotary actions both have a center legend of `e`.
+ 
+**Top Legend**
+- The top legend denotes the rotary index and action. **NOT the matrix position, or switch index.** This is separate from the matrix, and should not be confused with each other. `Encoder Index, Rotary action (0 = CCW, 1 = CW)`
+
+**Clickable button**
+- The bottom 1u switch represents the actual clickable button, and is usually part of the normal matrix, **having a normal index** not related to the actual encoder, but likely which key the encoder replaces, or where it is placed.
+
+
+### KLE import
+Exporting the json from KLE will introduce the following lines to your file, these relate to the encoders (Example of two encoders):
+```
+  ["0,0\n\n\n\n\n\n\n\n\ne",
+  "0,1\n\n\n\n\n\n\n\n\ne"],
+  
+  ["2,0\n\n\n\n\n\n\n\n\ne",
+  "2,1\n\n\n\n\n\n\n\n\ne"],
+```
+Enclose any associated x w h with double quotes `"`, as KLE json and vial json has slight differences in notation.
+
+
+## Complete examples
 
 ### **9 Key macro pad example**
 Building a basic 9 key macro pad and a rotary encoder (without button) will produce the following. <sup>[(example KLE file)](http://www.keyboard-layout-editor.com/#/gists/f6c1df29df0d44744d9a4dafe26178ef)</sup>
