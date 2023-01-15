@@ -43,6 +43,11 @@ In Vial JSON an encoder is defined as either **two or three** 1u switches, repre
 
 ![](../img/dual-encoders-kle.png)
 
+**Multiple encoders combined with matrix:**
+
+Notice that in this example, the top row of switches marked red, are intended to be replaced by the encoders button action.
+
+![](../img/multiple-encoders-kle.png)
 
 ### Encoder Legends
 **Center legend**
@@ -117,11 +122,34 @@ Building a basic 9 key macro pad and a rotary encoder (without button) will prod
     },
     "layouts": {
         "keymap": [
-			["0,0","0,1","0,2","0,3",{"x":0.25},"1,0\n\n\n\n\n\n\n\n\ne","1,1\n\n\n\n\n\n\n\n\ne",{"x":0.25},"0,0\n\n\n\n\n\n\n\n\ne","0,1\n\n\n\n\n\n\n\n\ne"],
-			["1,0","1,1","1,2","1,3",{"x":0.75},"0,4",{"x":1.25},"1,4"],
-			["2,0","2,1","2,2","2,3"],
-			[{"y":-0.75,"x":4.5},"2,0\n\n\n\n\n\n\n\n\ne",{"w":1.75,"h":1.75},"2,4","2,1\n\n\n\n\n\n\n\n\ne"],
-			[{"y":-0.25},"3,0","3,1","3,2","3,3"]
+			[
+				"0,0","0,1","0,2","0,3",
+				
+				{"x":0.25},
+				"1,0\n\n\n\n\n\n\n\n\ne",
+				"1,1\n\n\n\n\n\n\n\n\ne",
+			
+				{"x":0.25},
+				"0,0\n\n\n\n\n\n\n\n\ne",
+				"0,1\n\n\n\n\n\n\n\n\ne"
+			],
+			
+			[
+				"1,0","1,1","1,2","1,3",
+				{"x":0.75},"0,4",
+				{"x":1.25},"1,4"
+			],
+			[
+				"2,0","2,1","2,2","2,3"
+			],
+			[
+				{"y":-0.75,"x":4.5},
+				"2,0\n\n\n\n\n\n\n\n\ne",
+				{"w":1.75,"h":1.75},"2,4",
+				"2,1\n\n\n\n\n\n\n\n\ne"],
+			[
+				{"y":-0.25},"3,0","3,1","3,2","3,3"
+			]
         ]
     }
 }
