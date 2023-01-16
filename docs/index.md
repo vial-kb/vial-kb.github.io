@@ -22,7 +22,7 @@ Vial is decentralized: with Vial you do not have to submit your keyboard as a pu
 
 ## Is my keyboard compatible with Vial?
 
-In order for a keyboard to work with Vial, it needs to have either via firmware or vial firmware flashed onto the microcontroller. This can be done easily if the keyboard has already been added to the [qmk keyboard repository](https://github.com/qmk/qmk_firmware/tree/master/keyboards) by either downloading the firmware from [https://keyboard.gay/](https://keyboard.gay) or [building a compatible firmware](https://get.vial.today/docs/porting-to-via.html).
+In order for a keyboard to work with Vial, it needs to have vial firmware flashed onto the microcontroller (VIA firmware will no longer work). This can be done easily if the keyboard has already been added to the [qmk keyboard repository](https://github.com/qmk/qmk_firmware/tree/master/keyboards) by either downloading the firmware from [https://keyboard.gay/](https://keyboard.gay) or [building a compatible firmware](https://get.vial.today/docs/porting-to-via.html).
 
 ### How can I flash firmware onto my keyboard?
 
