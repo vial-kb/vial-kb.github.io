@@ -66,8 +66,8 @@ Exporting the json from KLE will introduce the following lines to your file, the
   ["0,0\n\n\n\n\n\n\n\n\ne",
   "0,1\n\n\n\n\n\n\n\n\ne"],
   
-  ["2,0\n\n\n\n\n\n\n\n\ne",
-  "2,1\n\n\n\n\n\n\n\n\ne"],
+  ["1,0\n\n\n\n\n\n\n\n\ne",
+  "1,1\n\n\n\n\n\n\n\n\ne"],
 ```
 Enclose any associated x w h with double quotes `"`, as KLE json and vial json has slight differences in notation.
 
