@@ -94,7 +94,7 @@ Make finished with errors
 
 **If you have already done all of the above, and you still see this message trying to compile your firmware on an AVR such as the popular Atmega32u4 (used on Pro Micro), it might be time to break out of the mould a little.** 
 
-Almost all of these controllers are delivered with the Caterina bootloader, and while this bootloader is very stable and plain **just works!** in all situtations, it's also fairly old code and quite large, using ~3500kB of your codespace. Most of it for features you will never really use.
+Almost all of these controllers are delivered with the Caterina bootloader, and while this bootloader is very stable and plain **just works!** in all situtations, it's also fairly old code and quite large, using ~3500 bytes of your codespace. Most of it for features you will never really use.
 
 Changing your bootloader to a more modern, more slim-lined one that does exactly what is needed and nothing else, can save you a whole lot of codespace for your keymap and functions.
 
@@ -108,7 +108,7 @@ Codespace, glorious codespace!
 There are several that should work and reduce the size to various amounts, some adding functions you might like, some being slimmed down. 
 * [LUFA-DFU](https://github.com/abcminiuser/lufa) is a popular one that is slightly smaller than Caterina, and adds features (size depends on what features you enable).
 * [QMK-DFU](https://github.com/qmk/lufa) is a fork maintained by the QMK team and also adds features.
-* [nanoBoot](https://github.com/osamuaoki/nanoBoot) is a _tiny_ 512kB HID bootloader, that does exactly _one_ thing, allowing you to hold reset on plug-in, and enter the bootloader/flashing, in the exact same way as Caterina does. 
+* [nanoBoot](https://github.com/osamuaoki/nanoBoot) is a _tiny_ 512 bytes HID bootloader, that does exactly _one_ thing, allowing you to hold reset on plug-in, and enter the bootloader/flashing, in the exact same way as Caterina does. 
 
 
 
