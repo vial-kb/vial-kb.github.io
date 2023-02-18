@@ -14,37 +14,73 @@ redirect_from:
 
 # Porting to Vial
 
-The second part of this tutorial will guide you through porting your keyboard to Vial.
+The second part of this tutorial will guide you through porting your keyboard to Vial if no available firmware already exist.
 
+**This requires setting up and using a programming environment in commandline to compile the base firmware.** As such you will need some basic knowledge in navigating the commandline. If you have never encountered this before, [here](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line#basic_built-in_terminal_commands) is a very basic primer on how to do this.
 
-## 1. Clone the Vial QMK fork
+## 1. Prepare Your Build Environment
 
-Vial is currently not included into the main QMK repository. As such, you will need to check out Vial's QMK fork `vial-kb/vial-qmk` and port your keyboard there before getting started with the rest of this tutorial.
+> Windows users
+> {: .label .label-blue }
+> To use commandline functions in Vial-QMK as well as main QMK, it is recommended to use QMK MSYS. If you have already setup QMK MSYS, you can re-use the existing installation, and simply move to the correct folder when using QMK or Vial-QMK. If not, you need to first install QMK MSYS following QMK's guide [here](https://docs.qmk.fm/#/newbs_getting_started).
 
-### High level guide:
-1. Clone the latest version of the repository from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) into a new directory; this can be different from your main QMK directory if you have that setup elsewhere. If you get stuck, please refer to the main QMK install guide [here](https://docs.qmk.fm/#/newbs_getting_started).
-2. Run `make git-submodule` in your new `vial-qmk` directory to clone the git submodules.
-3. Continue to run `make path/to/your/keyboard:keymap` for Vial builds from this directory. Make sure the `default` keymap for your keyboard compiles successfully. For example, if your keyboard is located in the `keyboards/xyz/xyz60` folder, to compile it using the `default` keymap, type `make xyz/xyz60:default`.
+### Step by step guide:
+1. Clone the latest version of the repository from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) into a new folder. This folder should be located outside of any existing QMK repository folders. **Nesting `vial-qmk` inside `qmk_firmware` will cause issues, avoid this!**
+   - **Advanced Users:** Run `git clone https://github.com/vial-kb/vial-qmk`
+   - **Beginners:** Install the [GitHub Desktop](https://desktop.github.com) version for your OS. Go to [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) and select "Open in Github Desktop". Follow the guided download/cloning.
+
+![](../img/open_to_github_desktop.png)
+
+2. Install the needed pre-requisites to compile.
+   - **Advanced Users:** Run `make git-submodule` in your new `vial-qmk` directory to clone the git submodules.
+   - **Beginners:** Open QMK MSYS and navigate to your new `vial-qmk` folder to run the above command. Refer to [this guide](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line#basic_built-in_terminal_commands) on how-to. In the image below, notice how it says 'vial-qmk' at the end of the prompt (vial-qmk]$)? This is your confirmation you have found the correct directory.
+
+![](../img/beginner_prompt.png)
+
+3. Verify that your installation is complete.
+   - **Advanced Users:** Run `qmk doctor`.
+   - **Beginners:** See Step 2, you got this!
+4. Test your Vial-QMK installation by compiling a ***known working*** firmware, for example the QMK version of the firmware you are porting.
+   - **Advanced Users:** Run `make path/to/your/keyboard:default`. 
+   - **Beginners:** The path does *not* include the folder `vial-qmk/keyboards/` nor does it have a leading slash. It should start with the main name (or designer/group name) of the keyboard.
+
+**The command `make` differs from the QMK recommended command `compile`, please use `make` with Vial-QMK to avoid confusion!**
+
+> You cannot port what doesn't exist!
+> {: .label .label-blue }
+> If no such QMK firmware exists in the main QMK repository, it will not exist in Vial-QMK either!
+> And *porting* which means to *translate* requires a firmware to start from. If you are attempting to create a Vial firmware from scratch, without an existing QMK firmware to start from, you really should have no need of this guide to learn how to do that, as you are far advanced beyond it, go forth and spead your wings!
+> If you however do genuinely want to *port* a firmware, you will in fact need one to start from. Either backtrace your steps and find one, or start with making one in QMK before continuing this guide.
 
 
 ## 2. Create a new `vial` keymap
 
-Copy the existing `keymaps/default` keymap to `keymaps/vial`.
+Copy the existing folder `keymaps/default` keymap to `keymaps/vial` with the content intact. Leave the `keymaps/default` in place, for backwards compatability with main QMK.
 
 ## 3. Enable Vial in your rules file
 
-Create a new file under `[keyboard_name]/keymaps/vial/rules.mk` with the following contents:<sup>[(example)](https://github.com/vial-kb/vial-qmk/blob/90f3b0e2e188eccb23ed8a2a690df278a0f1057b/keyboards/vial_example/vial_atmega32u4/keymaps/vial/rules.mk#L2)</sup>
+Create a new file (or edit an existing one) under `[keyboard_name]/keymaps/vial/rules.mk` with the following contents:<sup>[(example)](https://github.com/vial-kb/vial-qmk/blob/90f3b0e2e188eccb23ed8a2a690df278a0f1057b/keyboards/vial_example/vial_atmega32u4/keymaps/vial/rules.mk#L2)</sup>
 
 ```
 VIA_ENABLE = yes
 VIAL_ENABLE = yes
 ```
+**Notice! Both commands are explicitly required and cannot be left out!**
+
+
+Including these in a keyboard level `rules.mk` is not adviced.
 
 ## 4. Move JSON so Vial can find it
 
 Place your keyboard definition JSON (either one made in step 1 of this tutorial or downloaded from the [VIA keyboards repository](https://github.com/the-via/keyboards/tree/master/src)) under `[keyboard_name]/keymaps/vial/vial.json` so that Vial build process can find it. <sup>[(example)](https://github.com/vial-kb/vial-qmk/blob/90f3b0e2e188eccb23ed8a2a690df278a0f1057b/keyboards/vial_example/vial_atmega32u4/keymaps/vial/vial.json)</sup>
 
+**Notice! This file is named explicitly `vial.JSON` and cannot have any other name!**
+
+
+It is also completely different from the `info.JSON` in the keyboards main folder that contains the settings for the QMK base firmware. Don't confuse the two!
+
 ## 5. Generate and add unique keyboard ID
+The ID generated is unique for the firmware for the keyboard type and model, and it does not need to be unique for each individual keyboard.
 
 From the root of vial-qmk, run `python3 util/vial_generate_keyboard_uid.py` in order to generate a unique Vial keyboard ID:
 
@@ -75,7 +111,9 @@ For keyboards that do not define `VIAL_INSECURE`, proceed to configure `VIAL_UNL
 
 * You should configure a combo of at least 2 keys
 * Suppose this is your KLE and you want to configure a combo of Escape+Enter:
+
 ![](../img/security-kle.png)
+
 * The Escape key is located at [0, 0] and the Enter key is at [2, 13]
 * So you should set in your `keymaps/vial/config.h` right below the `VIAL_KEYBOARD_UID` line <sup>[(example)](https://github.com/vial-kb/vial-qmk/blob/90f3b0e2e188eccb23ed8a2a690df278a0f1057b/keyboards/vial_example/vial_atmega32u4/keymaps/vial/config.h#L6-L7)</sup>:
   * `#define VIAL_UNLOCK_COMBO_ROWS { 0, 2 }`
@@ -85,7 +123,7 @@ For keyboards that do not define `VIAL_INSECURE`, proceed to configure `VIAL_UNL
 
 After you flash the firmware, check that the function works correctly by activating the "Security->Unlock" menu.
 
-## 7. Compile Vial firmware
+## 7. Compile Vial firmware for your keyboard
 
 Compiling and flashing can be done in the same way as QMK. For example, to compile a `vial` keymap for a keyboard located under `keyboards/xyz/xyz60`, run `make xyz/xyz60:vial` from the root `vial-qmk` directory. If at this point you're having issues making the firmware fit (running out of flash, RAM or EEPROM), see [this guide](firmware-size.md) for how to reduce Vial firmware size.
 
