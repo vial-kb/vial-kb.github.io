@@ -161,6 +161,7 @@ Once the layout is complete, go to the "Raw data" tab in KLE and click on the "D
     "0,6",
     "0,7",
 ```
+Copy this, and make sure to maintain the correct number of braces before and after the code.
 
 ## 2. Create a JSON containing the full keyboard definition
 
@@ -176,6 +177,7 @@ Start with the following JSON template:
     "layouts": {
         "labels":
         "keymap":
+        [ Paste your data here!]
     }
 }
 ```
