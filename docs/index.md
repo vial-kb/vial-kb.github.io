@@ -20,7 +20,7 @@ Vial is a completely open source project, with sources for all components public
 
 Vial is decentralized: with Vial you do ***not*** have to submit your keyboard as a pull-request to any third-party repositories before it can be used in the GUI; instead, the keymap JSON definition is stored within the keyboard firmware and is retrieved at runtime. 
 
-In order for a keyboard to work with Vial, Vial-compatible firmware must be flashed onto the microcontroller. 
+**In order for a keyboard to work with Vial, Vial-compatible firmware must be flashed onto the microcontroller.**
 
 Please ask the vendor of your keyboard for binaries and/or source code for the keyboard firmware.
 
