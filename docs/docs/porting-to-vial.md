@@ -77,10 +77,11 @@ Including these in a keyboard level `rules.mk` is not adviced.
 
 Place your keyboard definition JSON (either one made in step 1 of this tutorial or downloaded from the [VIA keyboards repository](https://github.com/the-via/keyboards/tree/master/src)) under `[keyboard_name]/keymaps/vial/vial.json` so that Vial build process can find it. <sup>[(example)](https://github.com/vial-kb/vial-qmk/blob/90f3b0e2e188eccb23ed8a2a690df278a0f1057b/keyboards/vial_example/vial_atmega32u4/keymaps/vial/vial.json)</sup>
 
-**Notice! This file is named explicitly `vial.JSON` and cannot have any other name!**
-
-
-It is also completely different from the `info.JSON` in the keyboards main folder that contains the settings for the QMK base firmware. Don't confuse the two!
+> Important
+> {: .label .label-red }
+> This file must be named `vial.json`. It cannot have any other name.
+>
+> The Vial keyboard definition (`vial.json`) is not the same as an `info.json` file. You cannot copy an `info.json` file to use as the `vial.json`.
 
 ## 5. Generate and add unique keyboard ID
 The ID generated is unique for the firmware for the keyboard type and model; it does not need to be unique for each individual keyboard.
