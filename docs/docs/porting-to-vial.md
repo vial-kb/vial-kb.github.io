@@ -57,7 +57,7 @@ The second part of this tutorial will guide you through porting your keyboard to
 
 ## 2. Create a new `vial` keymap
 
-Copy the existing folder `keymaps/default` keymap to `keymaps/vial` with the content intact. Leave the `keymaps/default` in place, for backwards compatability with main QMK.
+Copy the existing `keymaps/default` folder to `keymaps/vial` with the content intact. Leave the `keymaps/default` folder in place; do not modify or remove it.
 
 ## 3. Enable Vial in your rules file
 
