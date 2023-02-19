@@ -37,7 +37,7 @@ The second part of this tutorial will guide you through porting your keyboard to
 ![](../img/open_to_github_desktop.png)
 
 2. Install the prerequisites for compilation.
-  - Open QMK MSYS and navigate to your new `vial-qmk` folder to run the above command. Refer to [this guide](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line#basic_built-in_terminal_commands) on how-to. In the image below, notice how it says 'vial-qmk' at the end of the prompt. This is your confirmation you have found the correct directory.
+  - Open the QMK command line environment and navigate to your new `vial-qmk` folder to run the above command. Refer to [this guide](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line#basic_built-in_terminal_commands) on how-to. In the image below, notice how it says 'vial-qmk' at the end of the prompt. This is your confirmation you have found the correct directory.
    - **Reference Guide:** Run `make git-submodule` in your new `vial-qmk` directory to clone the git submodules.
 
 ![](../img/beginner_prompt.png)
