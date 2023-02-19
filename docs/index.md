@@ -22,14 +22,14 @@ Vial is decentralized: with Vial you do ***not*** have to submit your keyboard a
 
 In order for a keyboard to work with Vial, Vial-compatible firmware must be flashed onto the microcontroller. 
 
-> Note
-> {: .label .label-blue }
-> Firmware built for VIA is not the same as firmware built for Vial. While older versions of VIA firmware were partially-compatible with the Vial GUI, recent versions are not.
-
 Please ask the vendor of your keyboard for binaries and/or source code for the keyboard firmware.
 
 Have a feature suggestion for Vial? Feel free to submit it at the dedicated [feedback website](https://feedback.vial.today/).
 
 ![](img/vial-win-1.png)
+
+> Note
+> {: .label .label-blue }
+> Firmware built for VIA is not the same as firmware built for Vial. While older versions of VIA firmware were partially-compatible with the Vial GUI, recent versions are not.
 
 Remember, Vial is coded and documented by end users volunteering their time and efforts, so while we all very much appriciate your feedback and input, please respect that the first and foremost important priority of the project is to maintain a stable and updated tool that is compatible with the main QMK repository. Adding new features always comes second to this.
