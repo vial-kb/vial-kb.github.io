@@ -18,7 +18,9 @@ The second part of this tutorial will guide you through porting your keyboard to
 
 **If you only have precompiled firmware, you will need to obtain the source code for it before proceeding.** [You have the right to ask the maker of your keyboard for this](https://www.gnu.org/licenses/gpl-faq.en.html#ModifiedJustBinary). Reverse-engineering hardware or software is beyond the scope of this guide.
 
-**This requires setting up and using a programming environment in commandline to compile the base firmware.** As such you will need some basic knowledge in navigating the commandline. If you have never encountered this before, [here](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line#basic_built-in_terminal_commands) is a very basic primer on how to do this.
+> Information
+> {: .label .label-green }
+> Compiling Vial firmwware requires some basic knowledge of how to use a command line environment—a bit more than just `qmk compile`. If you are unfamiliar with commands such as `cd` and `pwd`, please read through [this basic primer](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line#basic_built-in_terminal_commands) to learn the commands you'll need to know.
 
 ## 1. Prepare Your Build Environment
 
