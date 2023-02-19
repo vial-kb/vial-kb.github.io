@@ -22,9 +22,10 @@ The second part of this tutorial will guide you through porting your keyboard to
 
 ## 1. Prepare Your Build Environment
 
-> Windows users
-> {: .label .label-blue }
-> To use commandline functions in Vial-QMK as well as main QMK, it is recommended to use QMK MSYS. If you have already setup QMK MSYS, you can re-use the existing installation, and simply move to the correct folder when using QMK or Vial-QMK. If not, you need to first install QMK MSYS following QMK's guide [here](https://docs.qmk.fm/#/newbs_getting_started).
+> Important
+> {: .label .label-red }
+> You will need a QMK environment in order to build firmware for Vial. This is not the same thing as QMK Toolbox. If you do not have this, you must first follow QMK's guide [here](https://docs.qmk.fm/#/newbs_getting_started).
+> Existing QMK environments may need to be updated, but there is no need to uninstall or remove anything. You can simply move to the appropriate folder when compiling firmware for QMK or Vial-QMK.
 
 ### Step by step guide:
 1. Clone the latest version of the repository from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) into a new folder. This folder should be located outside of any existing QMK repository folders. **Nesting `vial-qmk` inside `qmk_firmware` will cause issues, avoid this!**
