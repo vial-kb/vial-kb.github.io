@@ -29,8 +29,8 @@ The second part of this tutorial will guide you through porting your keyboard to
 
 ### Step by step guide:
 1. Clone the latest version of the repository from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) into a new folder. This folder should be located outside of any existing QMK repository folders. **Nesting `vial-qmk` inside `qmk_firmware` will cause issues, avoid this!**
-   - **Advanced Users:** Run `git clone https://github.com/vial-kb/vial-qmk`
-   - **Beginners:** Install the [GitHub Desktop](https://desktop.github.com) version for your OS. Go to [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) and select "Open in Github Desktop". Follow the guided download/cloning.
+   - Install the [GitHub Desktop](https://desktop.github.com) version for your OS. Go to [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) and select "Open in Github Desktop". Follow the guided download/cloning.
+   - **Advanced Users:** Run `git clone https://github.com/vial-kb/vial-qmk`.
 
 ![](../img/open_to_github_desktop.png)
 
