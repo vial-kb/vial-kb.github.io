@@ -32,13 +32,13 @@ The second part of this tutorial will guide you through porting your keyboard to
 ### Step by step guide:
 1. Clone the latest version of the repository from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) into a new folder. This folder should be located outside of any existing QMK repository folders. **Nesting `vial-qmk` inside `qmk_firmware` will cause issues, avoid this!**
    - Install the [GitHub Desktop](https://desktop.github.com) version for your OS. Go to [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) and select "Open in Github Desktop". Follow the guided download/cloning.
-   - **Advanced Users:** Run `git clone https://github.com/vial-kb/vial-qmk`.
+   - **Reference Guide:** Run `git clone https://github.com/vial-kb/vial-qmk`.
 
 ![](../img/open_to_github_desktop.png)
 
 2. Install the prerequisites for compilation.
-   - **Advanced Users:** Run `make git-submodule` in your new `vial-qmk` directory to clone the git submodules.
-   - **Beginners:** Open QMK MSYS and navigate to your new `vial-qmk` folder to run the above command. Refer to [this guide](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line#basic_built-in_terminal_commands) on how-to. In the image below, notice how it says 'vial-qmk' at the end of the prompt (vial-qmk]$)? This is your confirmation you have found the correct directory.
+  - Open QMK MSYS and navigate to your new `vial-qmk` folder to run the above command. Refer to [this guide](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line#basic_built-in_terminal_commands) on how-to. In the image below, notice how it says 'vial-qmk' at the end of the prompt. This is your confirmation you have found the correct directory.
+   - **Reference Guide:** Run `make git-submodule` in your new `vial-qmk` directory to clone the git submodules.
 
 ![](../img/beginner_prompt.png)
 
@@ -56,6 +56,8 @@ The second part of this tutorial will guide you through porting your keyboard to
 ## 2. Create a new `vial` keymap
 
 Copy the existing `keymaps/default` folder to `keymaps/vial` with the content intact. Leave the `keymaps/default` folder in place; do not modify or remove it.
+
+**When porting to Vial, the resulting keymap should ALWAYS be named `vial` and nothing else!** This avoids the confusion about if the keyboard has been ported or not, and avoids having to seach inside keymaps.
 
 ## 3. Enable Vial in your rules file
 
