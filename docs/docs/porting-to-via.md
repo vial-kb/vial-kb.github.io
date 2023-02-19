@@ -177,7 +177,7 @@ Start with the following JSON template:
     "layouts": {
         "labels":
         "keymap":
-        [ Paste your data here!]
+        Paste your data here!
     }
 }
 ```
