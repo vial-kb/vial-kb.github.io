@@ -52,12 +52,6 @@ The second part of this tutorial will guide you through porting your keyboard to
 > {: .label .label-green }
 > Running `make` is not quite the same as running `qmk compile`. Running `qmk compile` in the wrong directory will default to compiling QMK firmware, not Vial firmware. To avoid any potential confusion, use `make`.
 
-> You cannot port what doesn't exist!
-> {: .label .label-blue }
-> If no such QMK firmware exists in the main QMK repository, it will not exist in Vial-QMK either!
-> And *porting* which means to *translate* requires a firmware to start from. If you are attempting to create a Vial firmware from scratch, without an existing QMK firmware to start from, you really should have no need of this guide to learn how to do that, as you are far advanced beyond it, go forth and spead your wings!
-> If you however do genuinely want to *port* a firmware, you will in fact need one to start from. Either backtrace your steps and find one, or start with making one in QMK before continuing this guide.
-
 
 ## 2. Create a new `vial` keymap
 
