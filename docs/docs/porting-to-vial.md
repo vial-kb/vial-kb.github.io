@@ -57,7 +57,8 @@ The second part of this tutorial will guide you through porting your keyboard to
 
 Copy the existing `keymaps/default` folder to `keymaps/vial` with the content intact. Leave the `keymaps/default` folder in place; do not modify or remove it.
 
-**When porting to Vial, the resulting keymap should ALWAYS be named `vial` and nothing else!** This avoids the confusion about if the keyboard has been ported or not, and avoids having to seach inside keymaps.
+> Important
+> {: .label .label-red }When porting to Vial, the resulting keymap should ALWAYS be named `vial` and nothing else! This avoids any confusion about if the keyboard has already been ported or not.
 
 ## 3. Enable Vial in your rules file
 
