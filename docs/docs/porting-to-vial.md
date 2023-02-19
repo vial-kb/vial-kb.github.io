@@ -14,7 +14,9 @@ redirect_from:
 
 # Porting to Vial
 
-The second part of this tutorial will guide you through porting your keyboard to Vial if no available firmware already exist.
+The second part of this tutorial will guide you through porting your keyboard to Vial. **It assumes you will be adapting source code that was written for and known to work with a recent version of [QMK](https://qmk.fm/).** Keyboard designers are strongly suggested to create a `default` QMK keymap first to familiarize themselves with the firmware creation process and correct any errors.
+
+**If you only have precompiled firmware, you will need to obtain the source code for it before proceeding.** [You have the right to ask the maker of your keyboard for this](https://www.gnu.org/licenses/gpl-faq.en.html#ModifiedJustBinary). Reverse-engineering hardware or software is beyond the scope of this guide.
 
 **This requires setting up and using a programming environment in commandline to compile the base firmware.** As such you will need some basic knowledge in navigating the commandline. If you have never encountered this before, [here](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line#basic_built-in_terminal_commands) is a very basic primer on how to do this.
 
