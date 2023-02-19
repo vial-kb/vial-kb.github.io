@@ -42,11 +42,13 @@ The second part of this tutorial will guide you through porting your keyboard to
 
 3. Verify that your installation is complete by running `qmk doctor`.
    - If you have added a new keyboard folder as part of your port, you will see `Git has unstashed/uncommitted changes.` Other than that, the only warning should be `The official repository does not seem to be configured as git remote "upstream".` (This is fine because Vial-QMK is not the official QMK repository.)
-4. Test your Vial-QMK installation by compiling a ***known working*** firmware, for example the QMK version of the firmware you are porting.
-   - **Advanced Users:** Run `make path/to/your/keyboard:default`. 
-   - **Beginners:** The path does *not* include the folder `vial-qmk/keyboards/` nor does it have a leading slash. It should start with the main name (or designer/group name) of the keyboard.
+4. Test your Vial-QMK installation by compiling the `default` keymap for your keyboard.
+   - Run `make path/to/your/keyboard:default`. Note that the path does *not* include the folder `vial-qmk/keyboards/` nor does it have a leading slash. It should start with the name of the keyboard or designer, e.g. `make vial_example/vial_atmega32u4/default`
+     If the `default` keyboard doesn't build, nothing based on it will either! Code copy-and-pasted in from other repositories may need to be modified [based on the version of QMK it was created for](https://docs.qmk.fm/#/breaking_changes?id=what-has-been-included-in-past-breaking-changes).
 
-**The command `make` differs from the QMK recommended command `compile`, please use `make` with Vial-QMK to avoid confusion!**
+> Note
+> {: .label .label-green }
+> Running `make` is not quite the same as running `qmk compile`. Running `qmk compile` in the wrong directory will default to compiling QMK firmware, not Vial firmware. To avoid any potential confusion, use `make`.
 
 > You cannot port what doesn't exist!
 > {: .label .label-blue }
