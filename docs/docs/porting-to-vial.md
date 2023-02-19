@@ -67,8 +67,9 @@ Create a new file (or edit an existing one) under `[keyboard_name]/keymaps/vial/
 VIA_ENABLE = yes
 VIAL_ENABLE = yes
 ```
-**Notice! Both commands are explicitly required and cannot be left out!**
-
+> Important
+> {: .label .label-red }
+> Both of these rules are required. Do not remove `VIA_ENABLE`.
 
 Including these in a keyboard level `rules.mk` is not adviced.
 
