@@ -40,9 +40,8 @@ The second part of this tutorial will guide you through porting your keyboard to
 
 ![](../img/beginner_prompt.png)
 
-3. Verify that your installation is complete.
-   - **Advanced Users:** Run `qmk doctor`.
-   - **Beginners:** See Step 2, you got this!
+3. Verify that your installation is complete by running `qmk doctor`.
+   - If you have added a new keyboard folder as part of your port, you will see `Git has unstashed/uncommitted changes.` Other than that, the only warning should be `The official repository does not seem to be configured as git remote "upstream".` (This is fine because Vial-QMK is not the official QMK repository.)
 4. Test your Vial-QMK installation by compiling a ***known working*** firmware, for example the QMK version of the firmware you are porting.
    - **Advanced Users:** Run `make path/to/your/keyboard:default`. 
    - **Beginners:** The path does *not* include the folder `vial-qmk/keyboards/` nor does it have a leading slash. It should start with the main name (or designer/group name) of the keyboard.
