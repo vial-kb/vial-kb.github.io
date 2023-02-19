@@ -82,7 +82,7 @@ Place your keyboard definition JSON (either one made in step 1 of this tutorial 
 It is also completely different from the `info.JSON` in the keyboards main folder that contains the settings for the QMK base firmware. Don't confuse the two!
 
 ## 5. Generate and add unique keyboard ID
-The ID generated is unique for the firmware for the keyboard type and model, and it does not need to be unique for each individual keyboard.
+The ID generated is unique for the firmware for the keyboard type and model; it does not need to be unique for each individual keyboard.
 
 From the root of vial-qmk, run `python3 util/vial_generate_keyboard_uid.py` in order to generate a unique Vial keyboard ID:
 
