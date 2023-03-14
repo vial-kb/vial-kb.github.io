@@ -192,6 +192,22 @@ Fill in all the fields:
 
 See [here](https://github.com/vial-kb/vial-qmk/blob/12950db4d8ec1f294b1285e9b554a8fdc0a4bc6d/keyboards/idb/idb_60/keymaps/vial/vial.json) for an example of a keyboard definition JSON with multiple layout options.
 
+## 3. Test and verify your layout
+
+Before compiling a firmware using your newly created `vial.JSON` file, it is highly encouraged to test that the file displays and behaves as expected first, since a *technically correct* file with a complete but perhaps _visually incorrect_ layout will not be handled by the compiler.
+
+**To do this open up the Vial application and click `File` -> `Load dummy JSON` and select your file.**
+
+A representation of your keyboard should now be shown on the screen, with the correct keys, in a resonably similar layout to as it was displayed in [http://www.keyboard-layout-editor.com/](http://www.keyboard-layout-editor.com/) or in real life. 
+
+All layout options should be present and selectable as well as encoders shown as two round buttons with arrows (CW/CCW) and a normal button representing the click. 
+
+If the layout is showing incorrectly, or loading the file results in an error message, this needs to be corrected before compiling. 
+
+> Information 
+> {: .label .label-green } 
+> Error messages are as near verbose as possible. Simply reading the error message gives a good clue as to what you need to correct!
+
 ## Done!
 
 This should be enough to get you a basic keyboard definition JSON file. Next, move onto [building Vial support](/porting-to-vial.md).
