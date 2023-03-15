@@ -16,6 +16,10 @@ redirect_from:
 
 The first step for creating a Vial port is to prepare a keyboard definition which is a JSON file describing the layout of the keyboard. If your keyboard already has a VIA port, you can download its keyboard definition from the [VIA repository](https://github.com/the-via/keyboards/tree/master/src) and proceed directly to the [second step](/porting-to-vial.md): adding Vial support. Otherwise, follow the steps as described below.
 
+> Notice!
+> {: .label .label-red }
+> The file structure and content of `info.json` and `vial.json` is wastly different. Copying/renaming one to the other does NOT work.
+
 ## 1. Prepare keyboard layout
 
 ### Create a physical layout
