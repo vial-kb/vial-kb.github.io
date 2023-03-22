@@ -31,7 +31,7 @@ The second part of this tutorial will guide you through porting your keyboard to
 
 ### Step by step guide:
 1. Clone the latest version of the repository from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) into a new folder. This folder should be located outside of any existing QMK repository folders. **Nesting `vial-qmk` inside `qmk_firmware` will cause issues, avoid this!**
-   - Install the [GitHub Desktop](https://desktop.github.com) version for your OS. Go to [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) and select "Open in Github Desktop". Follow the guided download/cloning.
+   - If you are unfamiliar with git, and want a GUI version, install the [GitHub Desktop](https://desktop.github.com) version for your OS. Go to [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) and select "Open in Github Desktop". Follow the guided download/cloning.
    - **Reference Guide:** Run `git clone https://github.com/vial-kb/vial-qmk`.
 
 ![](../img/open_to_github_desktop.png)
@@ -70,9 +70,11 @@ VIAL_ENABLE = yes
 ```
 > Important
 > {: .label .label-red }
-> Both of these rules are required. Do not remove `VIA_ENABLE`.
+> Both of these rules are required to be in the keymap `rules.mk`. Do not remove `VIA_ENABLE`. 
 
-Including these in a keyboard level `rules.mk` is not adviced.
+> Important
+> {: .label .label-red }
+> Do NOT include either `VIA_ENABLE` or `VIAL_ENABLE` on a keyboard level `rules.mk`, the structure in layers allows the code in the `keyboards` folder to be backwards compatible with QMK.
 
 ## 4. Move JSON so Vial can find it
 
@@ -85,7 +87,7 @@ Place your keyboard definition JSON (either one made in step 1 of this tutorial 
 > The Vial keyboard definition (`vial.json`) is not the same as an `info.json` file. You cannot copy an `info.json` file to use as the `vial.json`.
 
 ## 5. Generate and add unique keyboard ID
-The ID generated is unique for the firmware for the keyboard type and model; it does not need to be unique for each individual keyboard.
+The ID generated is unique for the firmware to a keyboard type and model; it does not need to be unique for each individual keyboard or firmware compiled.
 
 From the root of vial-qmk, run `python3 util/vial_generate_keyboard_uid.py` in order to generate a unique Vial keyboard ID:
 
