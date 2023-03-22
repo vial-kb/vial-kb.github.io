@@ -198,7 +198,7 @@ See [here](https://github.com/vial-kb/vial-qmk/blob/12950db4d8ec1f294b1285e9b554
 
 ## 3. Test and verify your layout
 
-Before compiling a firmware using your newly created `vial.JSON` file, it is highly encouraged to test that the file displays and behaves as expected first, since a *technically correct* file with a complete but perhaps _visually incorrect_ layout will not be handled by the compiler.
+Before compiling a firmware using your newly created `vial.json` file, it is highly encouraged to test that the file displays and behaves as expected first, since a *technically correct* file with a complete but perhaps _visually incorrect_ layout will not be handled by the compiler.
 
 **To do this open up the Vial application and click `File` -> `Load dummy JSON` and select your file.**
 
