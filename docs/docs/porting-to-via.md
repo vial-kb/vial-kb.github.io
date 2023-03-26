@@ -18,7 +18,7 @@ The first step for creating a Vial port is to prepare a keyboard definition whic
 
 > Notice!
 > {: .label .label-red }
-> The file structure and content of `info.json` and `vial.json` is wastly different. Copying/renaming one to the other does NOT work.
+> The file structure and content of `info.json` and `vial.json` is vastly different. Copying/renaming one to the other does NOT work.
 
 ## 1. Prepare keyboard layout
 
