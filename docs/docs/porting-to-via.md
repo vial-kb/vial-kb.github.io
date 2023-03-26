@@ -16,6 +16,10 @@ redirect_from:
 
 The first step for creating a Vial port is to prepare a keyboard definition which is a JSON file describing the layout of the keyboard. If your keyboard already has a VIA port, you can download its keyboard definition from the [VIA repository](https://github.com/the-via/keyboards/tree/master/src) and proceed directly to the [second step](/porting-to-vial.md): adding Vial support. Otherwise, follow the steps as described below.
 
+> Notice!
+> {: .label .label-red }
+> The file structure and content of `info.json` and `vial.json` is wastly different. Copying/renaming one to the other does NOT work.
+
 ## 1. Prepare keyboard layout
 
 ### Create a physical layout
@@ -191,6 +195,22 @@ Fill in all the fields:
 * `name`, `vendorId`, `productId`: while these options are required by VIA, Vial does not need them. You do not have to add them, and even if you do, their contents will not be used
 
 See [here](https://github.com/vial-kb/vial-qmk/blob/12950db4d8ec1f294b1285e9b554a8fdc0a4bc6d/keyboards/idb/idb_60/keymaps/vial/vial.json) for an example of a keyboard definition JSON with multiple layout options.
+
+## 3. Test and verify your layout
+
+Before compiling a firmware using your newly created `vial.json` file, it is highly encouraged to test that the file displays and behaves as expected first, since a *technically correct* file with a complete but perhaps _visually incorrect_ layout will not be handled by the compiler.
+
+**To do this open up the Vial application and click `File` -> `Load dummy JSON` and select your file.**
+
+A representation of your keyboard should now be shown on the screen, with the correct keys, in a resonably similar layout to as it was displayed in [http://www.keyboard-layout-editor.com/](http://www.keyboard-layout-editor.com/) or in real life. 
+
+All layout options should be present and selectable as well as encoders shown as two round buttons with arrows (CW/CCW) and a normal button representing the click. 
+
+If the layout is showing incorrectly, or loading the file results in an error message, this needs to be corrected before compiling. 
+
+> Information 
+> {: .label .label-green } 
+> Error messages are as near verbose as possible. Simply reading the error message gives a good clue as to what you need to correct!
 
 ## Done!
 
