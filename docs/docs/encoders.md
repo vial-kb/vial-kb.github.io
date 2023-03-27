@@ -140,7 +140,7 @@ Exporting the JSON from KLE will introduce the following lines to your file, the
   ["1,0\n\n\n\n\n\n\n\n\ne",
   "1,1\n\n\n\n\n\n\n\n\ne"],
 ```
-Enclose any associated x w h with double quotes `"`, as the KLE JSON and VIAL JSON has slight differences in notation.
+Enclose any associated x w h with double quotes `"`, as the KLE JSON and vial JSON has slight differences in notation.
 
 
 ## Complete examples
