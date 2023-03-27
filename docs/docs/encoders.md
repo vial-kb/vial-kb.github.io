@@ -123,7 +123,8 @@ Notice that in this example, the top row of switches marked red, are intended to
  
 **Top Legend**
 - The top legend denotes the rotary index and action. **NOT the matrix position, or switch index.** This is separate from the matrix, and should not be confused with each other. `Encoder Index (0 ->), Rotary action (0 = CCW, 1 = CW)`
-> If your board uses multiple encoders, the Encoder Index has to scale up by 1 for each encoder the board has so as to not conflict with other encoders. 
+> If your board uses multiple encoders, the Encoder Index has to scale up by 1 for each encoder the board has so as to not conflict with other encoders, like so below:
+
 ![](../img/multi-encoders-kle.png)
 
 **Clickable button**
@@ -139,7 +140,7 @@ Exporting the JSON from KLE will introduce the following lines to your file, the
   ["1,0\n\n\n\n\n\n\n\n\ne",
   "1,1\n\n\n\n\n\n\n\n\ne"],
 ```
-Enclose any associated x w h with double quotes `"`, as the KLE JSON and vial JSON has slight differences in notation.
+Enclose any associated x w h with double quotes `"`, as the KLE JSON and VIAL JSON has slight differences in notation.
 
 
 ## Complete examples
