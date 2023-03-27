@@ -123,7 +123,8 @@ Notice that in this example, the top row of switches marked red, are intended to
  
 **Top Legend**
 - The top legend denotes the rotary index and action. **NOT the matrix position, or switch index.** This is separate from the matrix, and should not be confused with each other. `Encoder Index (0 ->), Rotary action (0 = CCW, 1 = CW)`
-> If your board uses multiple encoders, the Encoder Index has to scale up by 1 for each encoder the board has so as to not conflict with other encoders. 
+> If your board uses multiple encoders, the Encoder Index has to scale up by 1 for each encoder the board has so as to not conflict with other encoders, like so below:
+
 ![](../img/multi-encoders-kle.png)
 
 **Clickable button**
