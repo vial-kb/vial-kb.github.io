@@ -53,7 +53,13 @@ To increase or decrease the amount of macros you need to define it in your `keym
 ```
 #define DYNAMIC_KEYMAP_MACRO_COUNT xx
 ```
-Up to 109 is possible, the amount of macros will not change how much space is reserved for macros but every every blank entry will consume one byte in your EEPROM.
+The amount of macros will not change how much space is initially reserved for macros but every blank entry will consume one byte in your EEPROM.
+
+The current limit of macro's is 32 in stable releases, and 109 in nightly builds, but subject to changes in further updates.
+
+![](../img/macro-error.png)
+
+And error message similar to this on entering the GUI, indicates that the actual limit in your current combination of firmware/GUI is in this case 32. You can then update to a newer version of GUI and firmware if available, or revert to use the specified amount in your firmware. 
 
 # More info
-Macros is a QMK feature and more detailed information can be found with the [offical QMK documenation](https://docs.qmk.fm/#/feature_macros).
+Macros is a QMK feature and more detailed information can be found with the [offical QMK documenation]
