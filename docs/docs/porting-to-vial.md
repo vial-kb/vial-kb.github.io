@@ -13,10 +13,15 @@ redirect_from:
 > `vial-qmk` provides several examples of most common microcontroller configurations set up for Vial usage. You can check them out at [`vial-qmk/keyboards/vial_example`](https://github.com/vial-kb/vial-qmk/tree/vial/keyboards/vial_example).
 
 # Porting to Vial
+> Information
+> {: .label .label-green }
+> If an already ported firmware exists, there is no need to redo the porting process. Just use the existing one! If your keyboard has a keymap folder named 'vial' it is already ported!
+> [`vial-qmk/keyboards/`](https://github.com/vial-kb/vial-qmk/tree/vial/keyboards/)
 
 The second part of this tutorial will guide you through porting your keyboard to Vial. **It assumes you will be adapting source code that was written for and known to work with a recent version of [QMK](https://qmk.fm/).** Keyboard designers are strongly suggested to create a `default` QMK keymap first to familiarize themselves with the firmware creation process and correct any errors.
 
 **If you only have precompiled firmware, you will need to obtain the source code for it before proceeding.** [You have the right to ask the maker of your keyboard for this](https://www.gnu.org/licenses/gpl-faq.en.html#ModifiedJustBinary). Reverse-engineering hardware or software is beyond the scope of this guide.
+
 
 > Information
 > {: .label .label-green }
@@ -58,7 +63,8 @@ The second part of this tutorial will guide you through porting your keyboard to
 Copy the existing `keymaps/default` folder to `keymaps/vial` with the content intact. Leave the `keymaps/default` folder in place; do not modify or remove it.
 
 > Important
-> {: .label .label-red }When porting to Vial, the resulting keymap should ALWAYS be named `vial` and nothing else! This avoids any confusion about if the keyboard has already been ported or not.
+> {: .label .label-red }
+> When porting to Vial, the resulting keymap should ALWAYS be named `vial` and nothing else! This avoids any confusion about if the keyboard has already been ported or not.
 
 ## 3. Enable Vial in your rules file
 
