@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Build support 2 - Port to Vial
+title: Build Vial Firmware - Port QMK code to Vial
 parent: Porting guide
 nav_order: 3
 redirect_from:
