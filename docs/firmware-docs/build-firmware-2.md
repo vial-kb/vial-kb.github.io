@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Build support 2 - Port to Vial
+title: Build Vial Firmware - 2 - Port QMK firmware to Vial
 parent: Porting guide
 nav_order: 3
 redirect_from:
-  - /gettingStarted/porting-to-vial.html
-  - /getting-started/porting-to-vial.html
+  - /gettingStarted/build-firmware-2.html
+  - /getting-started/build-firmware-2.html
 ---
 
 > Information
@@ -54,7 +54,7 @@ The second part of this tutorial will guide you through porting your keyboard to
      If the `default` keyboard doesn't build, nothing based on it will either! Code copy-and-pasted in from other repositories may need to be modified [based on the version of QMK it was created for](https://docs.qmk.fm/#/breaking_changes?id=what-has-been-included-in-past-breaking-changes).
 
 > Note
-> {: .label .label-green }
+> {: .label .label-yellow }
 > Running `make` is not quite the same as running `qmk compile`. Running `qmk compile` in the wrong directory will default to compiling QMK firmware, not Vial firmware. To avoid any potential confusion, use `make`.
 
 
@@ -79,7 +79,7 @@ VIAL_ENABLE = yes
 > Both of these rules are required to be in the keymap `rules.mk`. Do not remove `VIA_ENABLE`. 
 
 > Important
-> {: .label .label-red }
+> {: .label .label-yellow }
 > Do NOT include either `VIA_ENABLE` or `VIAL_ENABLE` on a keyboard level `rules.mk`, the structure in layers allows the code in the `keyboards` folder to be backwards compatible with QMK.
 
 ## 4. Move JSON so Vial can find it

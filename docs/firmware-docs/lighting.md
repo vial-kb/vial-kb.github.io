@@ -7,32 +7,21 @@ nav_order: 5
 
 # Backlight and RGB lighting
 
-Vial support several QMK lighting modes including single-color backlight, RGB lighting and RGB matrix.
+Vial support several QMK lighting modes including single-color backlight, RGB lighting and RGB matrix. The first line of the keyboard defenition file `vial.json` determines what controls to show in Vial GUI.
 
-### RGB Matrix / VialRGB
+`"lighting": "none",` - No lighting controls included
 
-RGB matrix is a QMK lighting mode suitable for implementing per-key RGB lighting as well as a combination of per-key RGB and underglow. It is the recommended lighting mode for most purposes. In addition, Vial builds up on QMK RGB Matrix to provide direct RGB control with a script running on the computer.
+`"lighting": "qmk_backlight",` - Include monocrome (single color) lighting controls
 
-In order to use RGB Matrix with Vial, first, follow [QMK documentation](https://docs.qmk.fm/#/feature_rgb_matrix) to enable and configure the feature. Then, add `VIALRGB_ENABLE = yes` to your `keymaps/vial/rules.mk` and `"lighting": "vialrgb",` to your `keymaps/vial/vial.json`.
+`"lighting": "qmk_rgblight",` - Include basic RGB lighting controls
 
-To enable all available RGB Matrix effects, ensure that you define in your `config.h`:
-
-```
-#define RGB_MATRIX_FRAMEBUFFER_EFFECTS
-#define RGB_MATRIX_KEYPRESSES
-```
-
-If you are having issues with VialRGB direct control mode (e.g. running out of memory), you can disable it by adding `#define VIALRGB_NO_DIRECT`.
-
-![](/img/lighting-rgb-matrix.png)
-
-Vial GUI allows configuring RGB Matrix effect (the list of effects will be automatically constructed based on RGB effects you have enabled), color, brightness and speed. Additionally, a raw HID API is provided for third-party applications to directly control the lights. An example script is available [here](https://gist.github.com/xyzz/c91ae462197d4ef30d034bb6ff4c945e).
+`"lighting": "vialrgb",` - Include full RGB Matrix controls
 
 ## Backlight
 
 Backlight here refers to the single-color key backlighting, typically achieved by soldering 2-pin LEDs to every switch position. Vial's backlighting feature lets users control backlight brightness and enable or disable breathing backlight animation.
 
-![](/img/lighting-backlight.png)
+![](../img/lighting-backlight.png)
 
 In order to use this feature, ensure that [QMK's Backlight](https://docs.qmk.fm/#/feature_backlight) is enabled (`BACKLIGHT_ENABLE = yes`). Make sure there's `#define BACKLIGHT_BREATHING` in your `config.h` so that the user can switch the breathing feature on and off in Vial GUI.
 
@@ -47,3 +36,22 @@ To use this feature, first follow [QMK documentation](https://docs.qmk.fm/#/feat
 ## Combining Backlight and RGB Lighting
 
 You can also have a keyboard that implements both Backlight and RGB Lighting features. First, follow the sections above in order to configure QMK firmware enabling both features. Then, in your `vial.json`, use `"lighting": "qmk_backlight_rgblight",`.<sup>[(example)](https://github.com/vial-kb/vial-qmk/blob/2b2ff48c5d8d9b8995ca49eead031ae3691192e1/keyboards/yd60mq/keymaps/vial/vial.json#L5)</sup>
+
+## RGB Matrix / VialRGB
+
+RGB matrix is a QMK lighting mode suitable for implementing per-key RGB lighting as well as a combination of per-key RGB and underglow. It is the recommended lighting mode for most purposes. In addition, Vial builds up on QMK RGB Matrix to provide direct RGB control with a script running on the computer.
+
+In order to use RGB Matrix with Vial, first, follow [QMK documentation](https://docs.qmk.fm/#/feature_rgb_matrix) to enable and configure the feature. Then, add `VIALRGB_ENABLE = yes` to your `keymaps/vial/rules.mk` and `"lighting": "vialrgb",` to your `keymaps/vial/vial.json`.
+
+To enable all available RGB Matrix effects, ensure that you define in your `config.h`:
+
+```
+#define RGB_MATRIX_FRAMEBUFFER_EFFECTS
+#define RGB_MATRIX_KEYPRESSES
+```
+
+If you are having issues with VialRGB direct control mode (e.g. running out of memory), you can disable it by adding `#define VIALRGB_NO_DIRECT`.
+
+![](../img/lighting-rgb-matrix.png)
+
+Vial GUI allows configuring RGB Matrix effect (the list of effects will be automatically constructed based on RGB effects you have enabled), color, brightness and speed. Additionally, a raw HID API is provided for third-party applications to directly control the lights. An example script is available [here](https://gist.github.com/xyzz/c91ae462197d4ef30d034bb6ff4c945e).

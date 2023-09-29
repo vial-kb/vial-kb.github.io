@@ -47,13 +47,5 @@ After the macro has been configured, it can be used. Just click on a key you wou
 
 ![](../img/macro-overview.png)
 
-## 3. Changing the amount of Macros
-
-To increase or decrease the amount of macros you need to define it in your `keymaps/vial/config.h`, where 'xx' is the amount macros you want.
-```
-#define DYNAMIC_KEYMAP_MACRO_COUNT xx
-```
-Up to 109 is possible, the amount of macros will not change how much space is reserved for macros but every every blank entry will consume one byte in your EEPROM.
-
 # More info
 Macros is a QMK feature and more detailed information can be found with the [offical QMK documenation](https://docs.qmk.fm/#/feature_macros).

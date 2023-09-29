@@ -2,7 +2,7 @@
 layout: default
 title: Reducing firmware size
 parent: Porting guide
-nav_order: 6
+nav_order: 9
 ---
 
 # Reducing firmware size
@@ -45,7 +45,11 @@ QMK_SETTINGS = no
 
 ### Dynamic Tap Dance
 
-To reduce RAM and EEPROM usage, you can define the following in your `config.h`: `#define VIAL_TAP_DANCE_ENTRIES 4`.
+To reduce RAM and EEPROM usage, you can define the following in your `config.h`: 
+
+```
+#define VIAL_TAP_DANCE_ENTRIES 4
+```
 
 To turn off this feature, add the following line to your `keymaps/vial/rules.mk`:
 
@@ -55,7 +59,10 @@ TAP_DANCE_ENABLE = no
 
 ### Dynamic Combos
 
-To reduce RAM and EEPROM usage, you can define the following in your `config.h`: `#define VIAL_COMBO_ENTRIES 4`.
+To reduce RAM and EEPROM usage, you can define the following in your `config.h`: 
+```
+#define VIAL_COMBO_ENTRIES 4
+```
 
 To turn off this feature, add the following line to your `keymaps/vial/rules.mk`:
 
@@ -65,7 +72,10 @@ COMBO_ENABLE = no
 
 ### Dynamic Key Overrides
 
-To reduce RAM and EEPROM usage, you can define the following in your `config.h`: `#define VIAL_KEY_OVERRIDE_ENTRIES 4`.
+To reduce RAM and EEPROM usage, you can define the following in your `config.h`: 
+```
+#define VIAL_KEY_OVERRIDE_ENTRIES 4
+```
 
 To turn off this feature, add the following line to your `keymaps/vial/rules.mk`:
 
