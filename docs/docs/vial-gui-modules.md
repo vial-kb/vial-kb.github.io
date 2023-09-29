@@ -38,11 +38,20 @@ COMBO_ENABLE = yes
 ## Available GUI sections
 ### Default sections
 * The `Keymap` section is always included, and is the main part where you map keys.
+  * add `#define DYNAMIC_KEYMAP_LAYER_COUNT xx` to `keymaps/vial/config.h` to adjust the number of layers.
+  * Defaults is 4.
 * The `Layout` section allows you to select optional layout's for your keyboard, such as different bottom row configurations.
 * The `Matrix tester` section allows you to check that your keys are working properly.
 
 ### Additional sections
 * `Macros` section, allows configuring macros that can be used to perform a pre-programmed sequence of actions or steps.
-* `QMK_SETTINGS = yes` allows setting various settings like Tap-Hold timing, Auto Shift timing, etc.
-* `TAP_DANCE_ENABLE = yes` allows a single key to do multiple things.
-* `COMBO_ENABLE = yes` allows you to combine 2-4 simultaneous key-presses into a different output.
+  * Add `#define DYNAMIC_KEYMAP_MACRO_COUNT xx` to `keymaps/vial/config.h` to adjust the available amount.
+  * Default is 16.
+* `QMK_SETTINGS = yes`, allows various settings for functions like Tap-Hold, Auto Shift etc.
+  * QMK Documentation : [Magic/Command](https://docs.qmk.fm/#/feature_command?id=command), [Auto Shift](https://docs.qmk.fm/#/feature_auto_shift?id=auto-shift-why-do-we-need-a-shift-key), [Tap Hold](https://docs.qmk.fm/#/tap_hold?id=tap-hold-configuration-options), 
+* `TAP_DANCE_ENABLE = yes`, allows a single key to do multiple things.`
+  * Add `#define DYNAMIC_KEYMAP_MACRO_COUNT xx` to `keymaps/vial/config.h` to adjust the available amount.
+  * Default is 32.
+  * QMK Documentation : [Tap Dance](https://docs.qmk.fm/#/feature_tap_dance?id=tap-dance-a-single-key-can-do-3-5-or-100-different-things)
+* `COMBO_ENABLE = yes`, allows you to combine 2-4 simultaneous key-presses (chording) into a different output.
+  * QMK Documentation : [Combos](https://docs.qmk.fm/#/feature_combo?id=combos)
