@@ -72,11 +72,11 @@ For those three keycodes you'd have something like this in your `vial.json`. Wat
 ....
 ```
 
-In the keymap.c file, replace `SAFE_RANGE` with `USER00`
+In the keymap.c file, replace `SAFE_RANGE` with `QK_KB`
 
 ```c
 enum blender_keycode {
-    B_VPAN = USER00, 
+    B_VPAN = QK_KB, 
     B_DOLLY, 
     B_UNDO, 
 }
