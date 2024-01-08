@@ -1,9 +1,109 @@
 ---
 layout: default
-title: Reducing firmware size
+title: Select Vial GUI features (for size)
 parent: Porting guide
 nav_order: 6
 ---
+
+# Select Vial GUI features
+
+**By default Vial enables all GUI features when you create/compile a firmware for a keyboard.** This takes up a fair bit of resources, and depending on your controller/MCU, it can be a good idea to be a bit more selective in which functionality is the most important to the particular keyboard you are compiling for. 
+
+Depending on the type of keyboard (full-size/split/macropad etc), some options simply aren't that useful, and others may be entirely neccesary for it to function as intended.
+
+This also means that some older designs with less powerful MCU's like the classic AVR line in the popular Pro Micro controllers may need to disable or reduce the amount of slots configured in some features to make the firmware fit.
+
+# Available GUI features
+
+## QMK Settings
+
+QMK Settings allows you to configure settings for all the other GUI features, like Tapping term/Permissive hold/Tapping delay for Tap Dance, and Mouse key timing, Auto shift behaviour etc. 
+
+Without it, you are missing out on a lot of Vial's actual functionality.
+
+### Configure memory usage
+
+To turn off this feature and reduce compiled firmware size, add the following line to your `keymaps/vial/rules.mk`:
+
+```
+QMK_SETTINGS = no
+```
+
+## Dynamic Tap Dance
+
+Dynamic Tap Dance is the GUI equivalent to [QMK's Tap Dance](https://docs.qmk.fm/#/feature_tap_dance) and can do pretty much what it does, with minor differences as you assign it in GUI rather than code.
+
+Tap the comma key, and you get a comma. Tap it twice and you get a semicolon. Tap it thrice, and you can select entirely what to output.
+
+### Configure memory usage
+
+By default, Tap dance is configured to have 8 slots. To reduce RAM and EEPROM usage, you can define the following in your `config.h`: 
+
+```
+#define VIAL_TAP_DANCE_ENTRIES 4
+```
+
+To turn off this feature completely, and also reducing compiled firmware size, add the following line to your `keymaps/vial/rules.mk`:
+
+```
+TAP_DANCE_ENABLE = no
+```
+
+## Dynamic Combos
+Dynamic Combos are the GUI equivalent to [QMK's Combos](https://docs.qmk.fm/#/feature_combo?id=combos) and is a chording solution for adding custom actions. It lets you hit multiple keys at once and produce a different effect. For instance, hitting A and B within the combo term would hit ESC instead, or have it perform even more complex tasks, all configurable in the GUI.
+
+### Configure memory usage
+
+By default, Combos is configured to have 8 slots. To reduce RAM and EEPROM usage, you can define the following in your `config.h`: 
+
+```
+#define VIAL_COMBO_ENTRIES 4
+```
+
+To turn off this feature completely, and also reducing compiled firmware size, add the following line to your `keymaps/vial/rules.mk`:
+
+```
+COMBO_ENABLE = no
+```
+
+## Dynamic Key Overrides
+Dynamic Key overrides is the GUI equivalent to [QMK's Key Overrides](https://docs.qmk.fm/#/feature_key_overrides) and allows you to override modifier-key combinations to send a different modifier-key combination or perform completely custom actions. 
+
+Don’t want shift + 1 to type ! on your computer? Use a key override to make your keyboard type something different when you press shift + 1. The general behavior is like this: If modifiers w + key x are pressed, replace these keys with modifiers y + key z in the keyboard report.
+
+### Configure memory usage
+
+By default, Key override is configured to have 8 slots. To reduce RAM and EEPROM usage, you can define the following in your `config.h`: 
+
+```
+#define VIAL_KEY_OVERRIDE_ENTRIES 4
+```
+
+To turn off this feature completely, and also reducing compiled firmware size, add the following line to your `keymaps/vial/rules.mk`:
+
+```
+KEY_OVERRIDE_ENABLE = no
+```
+
+## Dynamic Macros 
+
+Dynamic Macro's is Vials answer to both [QMK Macros](https://docs.qmk.fm/#/feature_macros) and [Dynamic Macro's](https://docs.qmk.fm/#/feature_dynamic_macros) as it allows both functionality to be configured in GUI.
+
+Macro's are basically the most powerful tool, and when all else fails, use one to bend your keyboard to your will.
+
+### Configure memory usage
+
+By default, 16 macros can be configured in Vial. To reduce RAM and EEPROM usage, you can define the following in your `config.h`: 
+
+```
+#define DYNAMIC_KEYMAP_MACRO_COUNT 4
+```
+
+To turn off this feature completely, and also reducing compiled firmware size, add the following line to your `keymaps/vial/rules.mk`:
+
+```
+KEY_OVERRIDE_ENABLE = no
+```
 
 # Reducing firmware size
 
@@ -33,55 +133,23 @@ To enable LTO, add the following line to your `keymaps/vial/rules.mk`:
 LTO_ENABLE = yes
 ```
 
-LTO makes the compiler work harder when optimizing your code, resulting in a smaller firmware size; it rarely exposes buggy code in a way which could break certain firmware functionality. Make sure to test your keyboard firmware after enabling this option.
+LTO makes the compiler work harder when optimizing your code, resulting in a smaller firmware size.
 
-### QMK Settings
+> Information
+> {: .label .label-green }
+> Using LTO can in rare situations expose buggy code in a way which could break certain firmware functionality. Make sure to test your keyboard firmware throughly after enabling this option.
 
-To turn off this feature, add the following line to your `keymaps/vial/rules.mk`:
+### Reducing dynamic keymap layers
 
-```
-QMK_SETTINGS = no
-```
-
-### Dynamic Tap Dance
-
-To reduce RAM and EEPROM usage, you can define the following in your `config.h`: `#define VIAL_TAP_DANCE_ENTRIES 4`.
-
-To turn off this feature, add the following line to your `keymaps/vial/rules.mk`:
-
-```
-TAP_DANCE_ENABLE = no
-```
-
-### Dynamic Combos
-
-To reduce RAM and EEPROM usage, you can define the following in your `config.h`: `#define VIAL_COMBO_ENTRIES 4`.
-
-To turn off this feature, add the following line to your `keymaps/vial/rules.mk`:
-
-```
-COMBO_ENABLE = no
-```
-
-### Dynamic Key Overrides
-
-To reduce RAM and EEPROM usage, you can define the following in your `config.h`: `#define VIAL_KEY_OVERRIDE_ENTRIES 4`.
-
-To turn off this feature, add the following line to your `keymaps/vial/rules.mk`:
-
-```
-KEY_OVERRIDE_ENABLE = no
-```
-
-### Reducing number of dynamic keymap layers
-
-If you are running out of EEPROM, you can reduce the number of dynamic keymap layers. The default layer count is 4. To reduce it, define in your `config.h` file:
+By default Vial is configed to have 4 keymap layers, To reduce EEPROM usage, you can define the following in your `config.h` file:
 
 ```
 #define DYNAMIC_KEYMAP_LAYER_COUNT 2
 ```
 
-# Using a different bootloader
+
+
+## Using a different bootloader
 
 ```
  * The firmware is too large! 30768/28672 (2096 bytes over)
