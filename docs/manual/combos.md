@@ -10,7 +10,7 @@ nav_order: 5
 Combos allow you to add custom actions when a certain combination of keys is pressed. for example, hitting `A` and `S` within the combo term would hit `ESC` instead, or have it perform even more complex tasks.
 
 ## 1. Combos
-Click the **Combos** tab at the top and one of the available numbers below it. By default, 8 combos can be configured but that number could be smaller to reduce firmware size.
+Click the **Combos** tab at the top and one of the available numbers below it. By default, 8 combos can be configured. This number can be adjusted in firmware at compile (Not GUI) see [here](https://get.vial.today/docs/firmware-size.html) for more info.
 
 ![](../img/combos-tab.png)
 

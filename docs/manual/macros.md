@@ -9,9 +9,9 @@ nav_order: 3
 
 Macros can be used to perform a pre-programmed sequence of actions or steps. 
 
-By default, 16 macros can be configured. This number can be lower as some firmwares do not have enough space for this many macros. 
+By default, 16 macros can be configured. This number can be adjusted in firmware at compile (Not GUI) see [here](https://get.vial.today/docs/firmware-size.html) for more info.
 
-Some great example uses for macros could be typing out and address, opening a program with a hotkey-shortcut or filling out a form.
+Some great example uses for macros could be typing out an address, opening a program with a hotkey-shortcut or filling out a form.
 
 ## 1. Configure Macros
 Click the **Macros** tab. All the macros that can be configured will be displayed as seperate tabs. Select a Macro you would like to configure. In the picture below **M0** is selected
@@ -46,14 +46,6 @@ When you are satisfied with the configuration of all macros, click **save** to s
 After the macro has been configured, it can be used. Just click on a key you would like to use for a macro in the top palette then select your macro in the bottom palette. (under the macro tab)
 
 ![](../img/macro-overview.png)
-
-## 3. Changing the amount of Macros
-
-To increase or decrease the amount of macros you need to define it in your `keymaps/vial/config.h`, where 'xx' is the amount macros you want.
-```
-#define DYNAMIC_KEYMAP_MACRO_COUNT xx
-```
-Up to 109 is possible, the amount of macros will not change how much space is reserved for macros but every every blank entry will consume one byte in your EEPROM.
 
 # More info
 Macros is a QMK feature and more detailed information can be found with the [offical QMK documenation](https://docs.qmk.fm/#/feature_macros).
