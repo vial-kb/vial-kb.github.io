@@ -10,7 +10,7 @@ nav_order: 4
 Tap Dance allows you to configure different actions depending on how a button is used. For example, the same button could be configured to active a macro when the button is tapped or activate something else when the button is held.
 
 ## 1. Configuring Tap Dance
-Click the **Tap Dance** tab at the top and one of the available numbers below it. By default, 8 Tap Dance configurations can be used  but this number could be smaller to help reduce firmware size.
+Click the **Tap Dance** tab at the top and one of the available numbers below it. By default, 8 Tap dances can be configured. This number can be adjusted in firmware at compile (Not GUI) see [here](https://get.vial.today/docs/firmware-size.html) for more info.
 
 ![](../img/tap-tabs.png)
 

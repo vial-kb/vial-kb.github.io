@@ -6,7 +6,9 @@ nav_order: 2
 ---
 
 # Layers
-Layers allow the ability to change the functionality of the entire keyboard based on what "layer" it's currently on. It's best to visualize layers stacked on top of each other. Most Vial devices have 4 layers but the firmware can be compiled to have less. Keys can be configured to switch between layers as needed similar to function keys on a laptop.
+Layers allow the ability to change the functionality of the entire keyboard based on what "layer" it's currently on. It's best to visualize layers stacked on top of each other. Keys can be configured to switch between layers as needed similar to function keys on a laptop. 
+
+Most Vial devices have 4 layers but this number can be adjusted in firmware at compile (Not GUI) see [here](https://get.vial.today/docs/firmware-size.html) for more info.
 
 You can view each layer available by clicking the coresponding number at the top of the interface. You can see we already have layer 0 selected.
 
