@@ -15,13 +15,6 @@ RGB matrix is a QMK lighting mode suitable for implementing per-key RGB lighting
 
 In order to use RGB Matrix with Vial, first, follow [QMK documentation](https://docs.qmk.fm/#/feature_rgb_matrix) to enable and configure the feature. Then, add `VIALRGB_ENABLE = yes` to your `keymaps/vial/rules.mk` and `"lighting": "vialrgb",` to your `keymaps/vial/vial.json`.
 
-To enable all available RGB Matrix effects, ensure that you define in your `config.h`:
-
-```
-#define RGB_MATRIX_FRAMEBUFFER_EFFECTS
-#define RGB_MATRIX_KEYPRESSES
-```
-
 If you are having issues with VialRGB direct control mode (e.g. running out of memory), you can disable it by adding `#define VIALRGB_NO_DIRECT`.
 
 ![](/img/lighting-rgb-matrix.png)
