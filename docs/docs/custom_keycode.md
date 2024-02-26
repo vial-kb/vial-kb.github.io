@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Custom Keycode
-parent: User manual
+parent: Porting guide
 nav_order: 8
 redirect_from:
   - /manual/custom_keycode.html
