@@ -2,7 +2,7 @@
 layout: default
 title: Configuring udev on Linux
 parent: User manual
-nav_order: 6
+nav_order: 8
 has_toc: true
 redirect_from:
   - /getting-started/linux-udev.html
