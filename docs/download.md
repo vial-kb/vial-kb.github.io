@@ -3,11 +3,11 @@ layout: page
 title: Download
 permalink: /download/
 nav_order: 5
-version: v0.7.2
-dl_win_installer: https://github.com/vial-kb/vial-gui/releases/download/v0.7.2/Vial-v0.7.2-setup.exe
-dl_win_portable: https://github.com/vial-kb/vial-gui/releases/download/v0.7.2/Vial-v0.7.2-portable.zip
-dl_mac: https://github.com/vial-kb/vial-gui/releases/download/v0.7.2/Vial-v0.7.2.dmg
-dl_linux: https://github.com/vial-kb/vial-gui/releases/download/v0.7.2/Vial-v0.7.2-x86_64.AppImage
+version: v0.7.3
+dl_win_installer: https://github.com/vial-kb/vial-gui/releases/download/v0.7.3/Vial-v0.7.3-setup.exe
+dl_win_portable: https://github.com/vial-kb/vial-gui/releases/download/v0.7.3/Vial-v0.7.3-portable.zip
+dl_mac: https://github.com/vial-kb/vial-gui/releases/download/v0.7.3/Vial-v0.7.3.dmg
+dl_linux: https://github.com/vial-kb/vial-gui/releases/download/v0.7.3/Vial-v0.7.3-x86_64.AppImage
 ---
 
 # Download Vial
