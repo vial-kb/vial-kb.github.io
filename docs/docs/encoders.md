@@ -11,7 +11,7 @@ redirect_from:
 
 # Rotary encoders
 
-Vial implements optional GUI configuration for rotary encoders. This allows users to set up separate keycode actions for clockwise and counterclockwise encoder rotations. Encoders fully support QMK layers, so different keycodes can be used for different layers.
+**Vial implements optional GUI configuration for rotary encoders.** This allows users to set up separate keycode actions for clockwise and counterclockwise encoder rotations. Encoders fully support QMK layers, so different keycodes can be used for different layers.
 
 You will need to port your keyboard over to Vial before encoders are supported. Follow [Step 1](/porting-to-via.md) and [Step 2](/porting-to-vial.md) to get started.
 
@@ -19,12 +19,12 @@ In order to enable encoder support in your firmware, follow these steps:
 
 ## 1. Add basic QMK support for encoders
 
-Add this to your main `rules.mk`:
+> Information
+> {: .label .label-green }
+> If you are working from an existing QMK firmware with working encoders, this step can likely be skipped
 
-```make
-ENCODER_ENABLE = yes
-```
-or in `info.json`:
+Add this to your main `keyboard.json`:
+
 ```json
 {
   "features": {
@@ -32,17 +32,18 @@ or in `info.json`:
   }
 }
 ```
-Configure the encoder pins in `config.h`:
+or to your main `rules.mk`:
 
-```c
-//1 Encoder
-#define ENCODERS_PAD { encoderA, encoderB }
-
-//2 or more encoders
-#define ENCODERS_PAD_A { encoder1a, encoder2a }
-#define ENCODERS_PAD_B { encoder1b, encoder2b }
+```make
+ENCODER_ENABLE = yes
 ```
-or more preferably with `info.json`:
+
+> Notice!
+> {: .label .label-yellow }
+> keyboard.json are not allowed inside the keymap folder by the compiler, so if you are adding encoders to a keyboard that doesn't have this in QMK, use `rules.mk` to keep all edits inside the keymap folder.
+
+Configure the encoder pins in `keyboard.json`:
+
 ```json
 {
   "encoder": {
@@ -53,44 +54,60 @@ or more preferably with `info.json`:
   }
 }
 ```
-Further advanced options follows QMK's rules for encoders, refer to [QMK documentation](https://docs.qmk.fm/#/feature_encoders?id=encoders) in order to configure encoders fully.
 
-##### If working from an existing QMK firmware with working encoders, this step can likely be skipped.
+or in `config.h`: 
+
+```c
+//1 Encoder
+#define ENCODERS_PAD { encoderA, encoderB }
+
+//2 or more encoders
+#define ENCODERS_PAD_A { encoder1a, encoder2a }
+#define ENCODERS_PAD_B { encoder1b, encoder2b }
+```
+> Notice!
+> {: .label .label-yellow }
+> making edits in keyboard.json are generally depreciated, but again, keyboard.json are not allowed inside the keymap folder, so this applies only if editing without previous support in QMK.
+
+Further advanced options follows QMK's rules for encoders, refer to [QMK documentation](https://docs.qmk.fm/#/feature_encoders?id=encoders) in order to configure encoders fully.
 
 ## 2. Enable QMK Encoder Map
 
 Add this to the `rules.mk` file in the Vial keymap folder:
-## Warning! 
-This rule should only be done at the keymap level, not at the keyboard level
+
 ```make
 ENCODER_MAP_ENABLE = yes
 ```
+
+> Warning!
+> {: .label .label-red }
+> This rule should only be done at the keymap level, not at the keyboard level! Do NOT add this option to `keyboard.json`!
+
 Add this to the `keymap.c` in the Vial keymap folder (example of two encoders, four layers):
+
 ```c
 #if defined(ENCODER_MAP_ENABLE)
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [0] =   { ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  },
     [1] =   { ENCODER_CCW_CW(RGB_HUD, RGB_HUI),           ENCODER_CCW_CW(RGB_SAD, RGB_SAI)  },
     [2] =   { ENCODER_CCW_CW(RGB_VAD, RGB_VAI),           ENCODER_CCW_CW(RGB_SPD, RGB_SPI)  },
     [3] =   { ENCODER_CCW_CW(RGB_RMOD, RGB_MOD),          ENCODER_CCW_CW(KC_RIGHT, KC_LEFT) },
-    //                  Encoder 1                                     Encoder 2
+// layer                Encoder 1                                     Encoder 2
 };
 #endif
 ```
-**Important!** The encoder map needs to have the same number of layers as your main keymap.
+> Information
+> {: .label .label-green }
+> The encoder map needs to have the same number of layers as your main keymap.
+
+> Notice!
+> {: .label .label-yellow }
+> In Vial, the layers are denoted by numbers only and cannot be named. If you are working from an existing QMK keymap with named layers, they need to be changed to reflect this. 
 
 Refer to [QMK documentation](https://docs.qmk.fm/#/feature_encoders?id=encoder-map) for more details about the `ENCODER_MAP` feature.
 
 ### Notable differences in Vial from QMK
-- In Vial, the layers are denoted by numbers only and cannot be named. If you are working from an existing QMK keymap, these need to be changed to reflect this. 
-- Encoder mapping ***replaces*** the older QMK style with encoder callbacks, which needs to be removed from the Vial `keymap.c` for your firmware to compile and work properly. They should, however, be left intact in the default keymap for backwards compatability with QMK.
-
-### WARNING! 
-Do ***NOT*** edit the number '2' in this line:
-```c
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
-```
-It has ***nothing*** to do with the number of encoders, but denotes the two actions of the encoders, clockwise and counter clockwise rotation, and editing this makes the compilation fail.
+Encoder mapping ***replaces*** the older QMK style with encoder callbacks, which needs to be removed from the Vial `keymap.c` for your firmware to compile and work properly if it exists. They should, however, be left intact in the default keymap for backwards compatability with QMK. This code is legacy code and should over time be removed from QMK's and Vial's code base.
 
 ## 3. Add Vial encoders as part of KLE keymap
 
