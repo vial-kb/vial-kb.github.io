@@ -2,7 +2,7 @@
 layout: default
 title: Mod Tap or Quantum vs Tap Dance
 parent: User manual
-nav_order: 8
+nav_order: 7
 ---
 
 # Tap Dance is a very powerful tool
