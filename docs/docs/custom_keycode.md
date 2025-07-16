@@ -18,7 +18,7 @@ enum blender_keycode {
     B_VPAN = SAFE_RANGE,
     B_DOLLY,
     B_UNDO,
-}
+};
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
@@ -78,7 +78,7 @@ enum blender_keycode {
     B_VPAN = QK_KB_0,
     B_DOLLY,
     B_UNDO,
-}
+};
 ```
 
 Custom keycodes in the json file __must__ match what's inside the enum block, both in order and number of keycodes.
