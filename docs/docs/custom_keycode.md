@@ -21,8 +21,8 @@ enum blender_keycode {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-	switch (keycode) {
-		case B_VPAN:
+    switch (keycode) {
+        case B_VPAN:
             if (record->event.pressed) { ... }
             return 0;
         case B_DOLLY:
@@ -31,7 +31,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case B_UNDO:
             if (record->event.pressed) { ... }
             return 0;
-	}
+    }
 }
 ```
 
