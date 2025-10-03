@@ -21,14 +21,19 @@ The following guides will show you how to implement these `udev` rules. You will
 For a universal access rule for any device with Vial firmware, run this in your shell while logged in as your user (this will only work with `sudo` installed):
 
 ```
-export USER_GID=`id -g`; sudo --preserve-env=USER_GID sh -c 'echo "KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", ATTRS{serial}==\"*vial:f64c2b3c*\", MODE=\"0660\", GROUP=\"$USER_GID\", TAG+=\"uaccess\", TAG+=\"udev-acl\"" > /etc/udev/rules.d/99-vial.rules && udevadm control --reload && udevadm trigger'
+export USER_GID=`id -g`; sudo --preserve-env=USER_GID sh -c 'echo "KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", ATTRS{serial}==\"*vial:f64c2b3c*\", MODE=\"0660\", GROUP=\"$USER_GID\", TAG+=\"uaccess\", TAG+=\"udev-acl\"" > /etc/udev/rules.d/59-vial.rules && udevadm control --reload && udevadm trigger'
 ```
 
 This command will automatically create a `udev` rule and reload the `udev` system.
 
+> Notice!
+> {: .label .label-yellow }
+> To account for changes in the linux kernel https://github.com/systemd/systemd/issues/39056, the order of operation for the `udev` rules has been changed from `99-vial.rules` too `59-vial.rules` as this manual previously instructed. If you have implemented this rule before, and recently have started to have problems, change this accordingly.
+
+
 ### Manually
 
-Write this text to `/etc/udev/rules.d/99-vial.rules` in a text editor:
+Write this text to `/etc/udev/rules.d/59-vial.rules` in a text editor:
 
 ```
 KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
