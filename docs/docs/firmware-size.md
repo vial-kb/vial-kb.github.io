@@ -103,6 +103,28 @@ To turn off this feature completely, and also reduce compiled firmware size, EEP
 KEY_OVERRIDE_ENABLE = no
 ```
 
+## Alt Repeat Key
+
+Alt Repeat Key is the GUI equivalent to [QMK's Alt Repeat Key](https://docs.qmk.fm/#/feature_repeat_key), and allows you to perform the alternate action of the last key you pressed, if an alternate is defined.
+
+For example, after pressing `Ctrl + Shift + →` to select the next word, the Alternate Repeat Key can be defined to do `Ctrl + Shift + ←` to select the previous word. 
+
+### Configure memory usage
+
+By default, the number of available Alt Repeat keys are calculated from the amount of EEPROM your controller have. To reduce EEPROM usage or to select one feature over another, you can define the following in your `config.h`:
+
+```
+#define VIAL_ALT_REPEAT_KEY_ENTRIES x
+```
+
+Where `x` is the number of slots you desire.
+
+To turn off this feature completely, and also reduce compiled firmware size, EEPROM and RAM usage, add the following line to your `keymaps/vial/rules.mk`:
+
+```
+REPEAT_KEY_ENABLE  = no
+```
+
 ## Reducing dynamic keymap layers
 
 By default Vial is configured to have 4 keymap layers, To reduce EEPROM usage, you can define the following in your `config.h` file:
