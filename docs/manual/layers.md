@@ -10,7 +10,7 @@ Layers allow the ability to change the functionality of the entire keyboard base
 
 Most Vial devices have 4 layers but this number can be adjusted in firmware at compile (Not GUI) see [here](https://get.vial.today/docs/firmware-size.html) for more info.
 
-You can view each layer available by clicking the coresponding number at the top of the interface. You can see we already have layer 0 selected.
+You can view each layer available by clicking the corresponding number at the top of the interface. You can see we already have layer 0 selected.
 
 ![](../img/layers-cycle.png)
 
