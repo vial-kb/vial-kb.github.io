@@ -22,7 +22,7 @@ A typical layer setup would include a "base" layer and a "Function" layer.
 #### Function Layer
 ![](../img/layers-layer-2.png)
 
-You can see additional key functionality is located on the "Function" layer. This is just convention, in realality you can do whatever you want with the layers.
+You can see additional key functionality is located on the "Function" layer. This is just convention, in reality you can do whatever you want with the layers.
 
 # Moving Between Layers
 Switching between what layer is active can be done in a few ways. In the lower palette, select the **layer** tab to view all the different options. 
