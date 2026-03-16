@@ -14,24 +14,41 @@ redirect_from:
 
 # Create keyboard definition JSON
 
-The first step for creating a Vial port is to prepare a keyboard definition which is a JSON file describing the physical layout of the keyboard, allowing the Vial app/web to show a visual representation of the keyboard as you assign keys. 
+**The first step for creating a Vial port is to prepare a keyboard definition** which is a JSON file describing the physical layout of the keyboard, allowing the Vial app/web to show a visual representation of the keyboard as you assign keys.
 
-> Notice!
+> Warning!
 > {: .label .label-red }
 > This file is a fixed format and cannot contain anything other than the predefined code to describe the keyboard. All other settings/options are defined elsewhere!
 
 
-If your keyboard already is ported too and works with VIA, that shares a lot of the same properties, and you can download your keyboard definition from the [VIA repository](https://github.com/the-via/keyboards/tree/master/src) and use that as a starting point for the files needed in Vial.
+This is a blank example of the file contents, as a template. If the file contains **any other data than these predefined fields it will fail!**
+```json
+{
+    "lighting": "none",
+    "matrix": {
+        "rows": 0,
+        "cols": 0
+    },
+    "layouts": {
+        "labels":
+        "keymap":
+        [
+            insert matrix from KLE here
+        ]
+    }
+}
+```
 
-However as VIA have added more and more functionality in newer versions, and that data is stored in their version of this file, you will need to strip out VIA specific code that Vial cannot interpret.
+Keep in mind that the file structure and content of either `info.json` or `keyboard.json` is vastly different to `vial.json`. Copying/renaming one to the other does NOT at all work.
 
+**If your keyboard already is ported too and works with VIA**, that shares a lot of the same properties, and you can download your keyboard definition from the [VIA gitHub repository](https://github.com/the-via/keyboards) and use that as a starting point for the files needed in Vial. **Keep in mind that you then must without exception edit this file before using it!**
+
+However as VIA have added more and more functionality in newer versions, and that data is stored in their version of this file, you will need to strip out VIA specific code that Vial cannot interpret. This includes removing the fields `name, vendorID, productId` as well as the section `"menus"` entirely. Keep in mind to add/remove/repair any missing `[{( )}]` and `,` to make the file complete. *It helps a **lot** if you use a code editor rather than a trext editor.*
 > Information
 > {: .label .label-green }
 > Please open and edit the downloaded file, and test it by 'dummy loading' the file in Vial app before proceeding.
 
-> Notice!
-> {: .label .label-red }
-> The file structure and content of `info.json` and `vial.json` is vastly different. Copying/renaming one to the other does NOT work.
+Simply compiling the firmware with a `vial.json` file in the keymap folder does **NOT** verify that this file is in-fact working! The compiler is based mainly on QMK code, and checks entirely different things than this very Vial specific file. Therefore an option to check the file is built into the Vial application instead. Failing to first use 'dummy loading' will almost certainly result in an error when trying to use Vial web or application to edit your keyboard even if the compile/flash worked as normal.
 
 ## 1. Prepare keyboard layout
 
@@ -116,9 +133,14 @@ For example, here the Tab key is identified as K_15. In the schematic, it is con
 
 ### Finish preparing your layout
 
+> Notice!
+> {: .label .label-yellow }
+> Adding colors, comments or other text to your KLE data for your convenience when editing/viewing the KLE will most likely cause errors in Vial, as it simply cannot interpret unintended data! Please strip away any and all extra, non-neccesary data before exporting it to Vial, or you will get errors!
+
 Complete the layout by filling the data for every key:
 
 ![](../img/kle-complete.png)
+
 
 ### Create layout options
 
@@ -166,6 +188,11 @@ For keyboards with multiple layout options, such as supporting ISO Enter or diff
 
 Once the layout is complete, go to the "Raw data" tab in KLE and click on the "Download JSON" button located bottom right. In my case, the output starts like this:
 
+> Warning!
+> {: .label .label-red }
+> Attempting to simply copy the raw data will result in an improper formatting of the data, and will cause errors! Please use the above mentioned steps to import the data into the `vial.json` file!
+
+
 ```
 [
   [
@@ -193,9 +220,16 @@ Start with the following JSON template:
     "layouts": {
         "labels":
         "keymap":
+        [
+            insert matrix from KLE here 
+        ]
     }
 }
 ```
+
+> Notice!
+> {: .label .label-yellow }
+> When instering the data, make sure to remove/add/repair the `[({ })]`and `,` as needed, as missing or extra characters breaks the file. 
 
 Fill in all the fields:
 
