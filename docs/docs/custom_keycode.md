@@ -7,9 +7,11 @@ redirect_from:
   - /manual/custom_keycode.html
 ---
 
+# Custom keycodes
+
 ## Custom keycodes in QMK
 
-QMK provides [a way](https://github.com/qmk/qmk_firmware/blob/master/docs/custom_quantum_functions.md) for user to redefine behavior for existing key or create new keycode.
+QMK provides [a way](https://github.com/qmk/qmk_firmware/blob/master/docs/custom_quantum_functions.md) for users to redefine behavior for existing keys or create new keycodes.
 
 For example, here 3 custom keycodes are defined within `keymap.c`. An `enum` block is used to assign each keycode a unique integer code, and then the behavior of each keycode is defined inside `process_record_user()`. The keycodes are then assigned inside the keymap as usual.
 
@@ -18,7 +20,7 @@ enum blender_keycode {
     B_VPAN = SAFE_RANGE,
     B_DOLLY,
     B_UNDO,
-}
+};
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 	switch (keycode) {
@@ -37,7 +39,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 When you load a board with custom keycodes, they will appear as unique hexcode. You can use the "any key" button and type in values starting with `0x7E40` to assign them but this isn't very user friendly.
 
-![](/img/vial_before.png)
+![Custom keycodes showing as hex values before aliasing](../img/vial_before.png)
 
 ## Custom keycodes in Vial
 
@@ -78,13 +80,14 @@ enum blender_keycode {
     B_VPAN = QK_KB_0,
     B_DOLLY,
     B_UNDO,
-}
+};
 ```
 
 Custom keycodes in the json file __must__ match what's inside the enum block, both in order and number of keycodes.
 
 If everything goes smoothly the hexcode will be replaced with name of the keycode. You can access all your custom keycode inside the User tab. Do note that the firmware size will increase slightly (this example is ~100bytes).
 
-![](/img/vial_after.png)
+![Custom keycodes showing named aliases after configuration](../img/vial_after.png)
 
-![](/img/user_tab.png)
+![User tab in Vial showing custom keycodes](../img/user_tab.png)
+

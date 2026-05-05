@@ -2,24 +2,25 @@
 layout: default
 title: Combos
 parent: User manual
-nav_order: 5
+nav_order: 8
 ---
 
 # Combos
 
-Combos allow you to add custom actions when a certain combination of keys is pressed. for example, hitting `A` and `S` within the combo term would hit `ESC` instead, or have it perform even more complex tasks.
+Combos allow you to add custom actions when a certain combination of keys is pressed. For example, hitting `A` and `S` within the combo term would hit `ESC` instead, or have it perform even more complex tasks.
 
 ## 1. Combos
-Click the **Combos** tab at the top and one of the available numbers below it. By default, 8 combos can be configured. This number can be adjusted in firmware at compile (Not GUI) see [here](https://get.vial.today/docs/firmware-size.html) for more info.
+Click the **Combos** tab at the top and one of the available numbers below it. By default, the number of configurable combos is calculated from the EEPROM size on your keyboard's microcontroller. This limit can be adjusted at compile time by making a [custom build]({% link manual/custom-build.md %}) of the firmware.
 
-![](../img/combos-tab.png)
+![Combos tab with numbered combo entries](../img/combos-tab.png)
 
 The settings for that particular combo will be shown. Up to 4 combination of keys can be configured to activate 1 action. Each key must be pressed within the combo term to be considered a combo. In the case below, pressing the `+/=` key and the `backspace` key will instead trigger the delete key.
 
-![](../img/combos-overview.png)
+![Combo configured to trigger Delete when pressing +/= and Backspace together](../img/combos-overview.png)
 
 ## 2. Using a Combo
 After the combo has been configured and saved, it can be used. There is no need to assign it to a specific key. 
 
-# More info
-Combos is a QMK feature and more detailed information can be found with the [offical QMK documenation](https://docs.qmk.fm/#/feature_combo?id=combos).
+## More info
+Combos is a QMK feature and more detailed information can be found with the [official QMK documentation](https://docs.qmk.fm/#/feature_combo?id=combos).
+

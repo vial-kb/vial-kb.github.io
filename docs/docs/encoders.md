@@ -13,7 +13,7 @@ redirect_from:
 
 Vial implements optional GUI configuration for rotary encoders. This allows users to set up separate keycode actions for clockwise and counterclockwise encoder rotations. Encoders fully support QMK layers, so different keycodes can be used for different layers.
 
-You will need to port your keyboard over to Vial before encoders are supported. Follow [Step 1](/porting-to-via.md) and [Step 2](/porting-to-vial.md) to get started.
+You will need to port your keyboard over to Vial before encoders are supported. Follow [Step 1]({% link docs/porting-to-via.md %}) and [Step 2]({% link docs/porting-to-vial.md %}) to get started.
 
 In order to enable encoder support in your firmware, follow these steps:
 
@@ -83,7 +83,7 @@ Refer to [QMK documentation](https://docs.qmk.fm/#/feature_encoders?id=encoder-m
 
 ### Notable differences in Vial from QMK
 - In Vial, the layers are denoted by numbers only and cannot be named. If you are working from an existing QMK keymap, these need to be changed to reflect this. 
-- Encoder mapping ***replaces*** the older QMK style with encoder callbacks, which needs to be removed from the Vial `keymap.c` for your firmware to compile and work properly. They should, however, be left intact in the default keymap for backwards compatability with QMK.
+- Encoder mapping ***replaces*** the older QMK style with encoder callbacks, which needs to be removed from the Vial `keymap.c` for your firmware to compile and work properly. They should, however, be left intact in the default keymap for backwards compatibility with QMK.
 
 ### WARNING! 
 Do ***NOT*** edit the number '2' in this line:
@@ -94,7 +94,7 @@ It has ***nothing*** to do with the number of encoders, but denotes the two acti
 
 ## 3. Add Vial encoders as part of KLE keymap
 
-In the Vial JSON, an encoder is defined as either ***two or three*** 1u switches, with the labels representing the possible actions it can have (Clockwise/Counter Clockwise rotation). These lables are completely unique to the encoders, and are ***NOT*** part of the matrix.
+In the Vial JSON, an encoder is defined as either ***two or three*** 1u switches, with the labels representing the possible actions it can have (Clockwise/Counter Clockwise rotation). These labels are completely unique to the encoders, and are ***NOT*** part of the matrix.
 
 **Not having both rotary switches defined makes the JSON invalid.**
 

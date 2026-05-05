@@ -20,7 +20,6 @@ The first step for creating a Vial port is to prepare a keyboard definition whic
 > {: .label .label-red }
 > This file is a fixed format and cannot contain anything other than the predefined code to describe the keyboard. All other settings/options are defined elsewhere!
 
-
 If your keyboard already is ported too and works with VIA, that shares a lot of the same properties, and you can download your keyboard definition from the [VIA repository](https://github.com/the-via/keyboards/tree/master/src) and use that as a starting point for the files needed in Vial.
 
 However as VIA have added more and more functionality in newer versions, and that data is stored in their version of this file, you will need to strip out VIA specific code that Vial cannot interpret.
@@ -110,7 +109,7 @@ Alternatively, you can follow the PCB schematic for the keyboard in order to det
 
 ![](../img/kicad1.png) ![](../img/kicad2.png)
 
-For example, here the Tab key is identified as K_15. In the schematic, it is connected to row1 and col0. Therefore, the top-left legend for it should be set to `1,0`. Note that row comes first and that the indexes are zero-based: if in your schematic the first row and the first col are labeled as row1/col1, you will need to subtract 1 from every number you enter.
+For example, here the Tab key is identified as `K_15`. In the schematic, it is connected to row1 and col0. Therefore, the top-left legend for it should be set to `1,0`. Note that row comes first and that the indexes are zero-based: if in your schematic the first row and the first col are labeled as row1/col1, you will need to subtract 1 from every number you enter.
 
 ![](../img/kle-some.png)
 
@@ -213,9 +212,9 @@ See [here](https://github.com/vial-kb/vial-qmk/blob/12950db4d8ec1f294b1285e9b554
 
 Before compiling a firmware using your newly created `vial.json` file, it is highly encouraged to test that the file displays and behaves as expected first, since a *technically correct* file with a complete but perhaps _visually incorrect_ layout will not be handled by the compiler.
 
-**To do this open up the Vial application and click `File` -> `Load dummy JSON` and select your file.**
+**To do this open up the Vial application and click `File` &rarr; `Load dummy JSON` and select your file.**
 
-A representation of your keyboard should now be shown on the screen, with the correct keys, in a resonably similar layout to as it was displayed in [http://www.keyboard-layout-editor.com/](http://www.keyboard-layout-editor.com/) or in real life. 
+A representation of your keyboard should now be shown on the screen, with the correct keys, in a reasonably similar layout to as it was displayed in [http://www.keyboard-layout-editor.com/](http://www.keyboard-layout-editor.com/) or in real life. 
 
 All layout options should be present and selectable as well as encoders shown as two round buttons with arrows (CW/CCW) and a normal button representing the click. 
 
@@ -227,6 +226,6 @@ If the layout is showing incorrectly, or loading the file results in an error me
 
 ## Done!
 
-This should be enough to get you a basic keyboard definition JSON file. Next, move onto [building Vial support](/porting-to-vial.md).
+This should be enough to get you a basic keyboard definition JSON file. Next, move onto [building Vial support]({% link docs/porting-to-vial.md %}).
 
 Did you run into a problem? You can get porting support by joining [Vial discord](https://discord.gg/zNKEUXTKwF).
