@@ -6,7 +6,7 @@ nav_order: 2
 ---
 
 # Layers
-Layers allow the ability to change the functionality of the entire keyboard based on what "layer" it's currently on. It's best to visualize layers stacked on top of each other. Keys can be configured to switch between layers as needed similar to function keys on a laptop. 
+Layers provide the ability to change the functionality of the entire keyboard based on what "layer" it's currently on. It's best to visualize layers stacked on top of each other. Keys can be configured to switch between layers as needed similar to function keys on a laptop. 
 
 Most Vial devices have 4 layers but this number can be adjusted in firmware at compile (Not GUI) see [here](https://get.vial.today/docs/firmware-size.html) for more info.
 
@@ -24,7 +24,7 @@ A typical layer setup would include a "base" layer and a "Function" layer.
 
 You can see additional key functionality is located on the "Function" layer. This is just convention, in reality you can do whatever you want with the layers.
 
-# Moving Between Layers
+## Moving Between Layers
 Switching between what layer is active can be done in a few ways. In the lower palette, select the **layer** tab to view all the different options. 
 
 - MO(layer)  - momentarily activates the layer. As soon as you let go of the key, the layer is deactivated.

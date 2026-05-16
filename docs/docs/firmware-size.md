@@ -23,11 +23,11 @@ make: *** [Makefile:530: yd60mq:vial] Error 1
 Make finished with errors
 ```
 
-If that happens to your keyboard, you can try utilizing of the options below to make the firmware fit. Depending on the type of keyboard (full-size/split/macropad etc), some options simply aren't useful, and others may be entirely neccesary for it to function as intended.
+If that happens to your keyboard, you can try utilizing of the options below to make the firmware fit. Depending on the type of keyboard (full-size/split/macropad etc), some options simply aren't useful, and others may be entirely necessary for it to function as intended.
 
 This also means that some older designs with less powerful MCU's like the classic AVR line in the popular Pro Micro controllers, may need to disable features or reduce the amount of slots configured in some features to make the firmware fit into compiled memory and not run out of EEPROM or RAM.
 
-Besides compiled size, all features share the available EEPROM, and if you desire more than the standard amount of slots for one, you may need to disable one feature entirely or reduce the alloted memory to it for balance.
+Besides compiled size, all features share the available EEPROM, and if you desire more than the standard amount of slots for one, you may need to disable one feature entirely or reduce the allotted memory to it for balance.
 
 ## QMK Settings
 
@@ -47,7 +47,7 @@ Tap Dance is the GUI equivalent to [QMK's Tap Dance](https://docs.qmk.fm/#/featu
 
 ### Configure memory usage
 
-By default, the number of available Tap Dances are calculated from the amount of EEPROM your controller have. To reduce EEPROM usage or to select one feature over another, you can define the following in your `config.h`:
+By default, the number of available Tap Dances is calculated from the amount of EEPROM your controller has. To reduce EEPROM usage or to select one feature over another, you can define the following in your `config.h`
 
 ```
 #define VIAL_TAP_DANCE_ENTRIES x
@@ -67,7 +67,7 @@ Combos are the GUI equivalent to [QMK's Combos](https://docs.qmk.fm/#/feature_co
 
 ### Configure memory usage
 
-By default, the number of available Combos are calculated from the amount of EEPROM your controller have. To reduce EEPROM usage or to select one feature over another, you can define the following in your `config.h`:
+By default, the number of available Combos is calculated from the amount of EEPROM your controller has. To reduce EEPROM usage or to select one feature over another, you can define the following in your `config.h`:
 
 ```
 #define VIAL_COMBO_ENTRIES x
@@ -89,7 +89,7 @@ Don’t want shift + 1 to type ! on your computer? Use a key override to make yo
 
 ### Configure memory usage
 
-By default, the number of available Key Overrides are calculated from the amount of EEPROM your controller have. To reduce EEPROM usage or to select one feature over another, you can define the following in your `config.h`:
+By default, the number of available Key Overrides is calculated from the amount of EEPROM your controller has. To reduce EEPROM usage or to select one feature over another, you can define the following in your `config.h`:
 
 ```
 #define VIAL_KEY_OVERRIDE_ENTRIES x
@@ -111,7 +111,7 @@ For example, after pressing `Ctrl + Shift + →` to select the next word, the Al
 
 ### Configure memory usage
 
-By default, the number of available Alt Repeat keys are calculated from the amount of EEPROM your controller have. To reduce EEPROM usage or to select one feature over another, you can define the following in your `config.h`:
+By default, the number of available Alt Repeat keys is calculated from the amount of EEPROM your controller has. To reduce EEPROM usage or to select one feature over another, you can define the following in your `config.h`:
 
 ```
 #define VIAL_ALT_REPEAT_KEY_ENTRIES x
@@ -145,19 +145,19 @@ LTO makes the compiler work harder when optimizing your code, resulting in a sma
 
 > Information
 > {: .label .label-green }
-> Using LTO can in rare situations expose buggy code in a way which could break certain firmware functionality. Make sure to test your keyboard firmware throughly after enabling this option.
+> Using LTO can in rare situations expose buggy code in a way which could break certain firmware functionality. Make sure to test your keyboard firmware thoroughly after enabling this option.
 
 ## Using a different bootloader
 
 **If you have already done all of the above, and you still see this message trying to compile your firmware on an AVR such as the popular Atmega32u4 (used on Pro Micro), it might be time to break out of the mould a little.**
 
-Almost all of these controllers are delivered with the Caterina bootloader, and while this bootloader is very stable and plain **just works!** in all situtations, it's also fairly old code and quite large, using ~3500 bytes of your codespace. Most of it for features you will never really use.
+Almost all of these controllers are delivered with the Caterina bootloader, and while this bootloader is very stable and plain **just works!** in all situations, it's also fairly old code and quite large, using ~3500 bytes of your codespace. Most of it for features you will never really use.
 
 Changing your bootloader to a more modern, more slim-lined one that does exactly what is needed and nothing else, can save you a whole lot of codespace for your keymap and functions.
 
 ### Potential drawbacks
 
-**Changing the bootloader makes your firmware somewhat 'non-standard'**, so sharing them means the other user also have to swap to your preffered bootloader. It also requires you to use an ISP programmer (or another arduino) to flash the controller with the bootloader once, before it can be used as normal flashing the code over USB. (This is very similar to recovering the bootloader in the event of a bricked Pro Micro).
+**Changing the bootloader makes your firmware somewhat 'non-standard'**, so sharing them means the other user also has to swap to your preferred bootloader. It also requires you to use an ISP programmer (or another Arduino) to flash the controller with the bootloader once, before it can be used as normal flashing the code over USB. (This is very similar to recovering the bootloader in the event of a bricked Pro Micro).
 
 ### What bootloader is recommended?
 
