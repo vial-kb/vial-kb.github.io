@@ -2,7 +2,7 @@
 layout: default
 title: Quantum
 parent: User manual
-nav_order: 4
+nav_order: 2
 ---
 
 # Quantum
@@ -37,14 +37,14 @@ Use the following keys for a combination with multiple mods (to read these abbre
 
 These keys are assigned in two steps: First, select the outer part of the key from the Quantum tab. When placed, the key will display a nested placeholder, representing the inner "`kc`" part of the key. Select this nested area and choose a key from the Basic tab to complete the definition.
 
-The "`kc`" key is limited to keys in the Basic tab. This is [a QMK limitation](https://docs.qmk.fm/mod_tap#caveats). Some mod combinations are not exposed in the GUI, but can be assigned through [Any key]({% link manual/any-key.md %}) entry, in which multiple mods can be composed with syntax like "`RALT(RSFT(KC_A))`" for Right Alt + Right Shift + `A`.
+The "`kc`" key is limited to keys in the Basic tab. This is [a QMK limitation](https://docs.qmk.fm/mod_tap#caveats). Some mod combinations are not exposed in the GUI, but can be assigned through Any key entry, in which multiple mods can be composed with syntax like "`RALT(RSFT(KC_A))`" for Right Alt + Right Shift + `A`.
 
 
 ## Mod-tap keys
 
 Keys `LSft_T(kc)`, `LCtl_T(kc)`, etc. are mod-tap keys, named like the Modifier keys but with a "`_T`" suffix. These keys produce `kc` when tapped and act as a modifier when held ([QMK docs](https://docs.qmk.fm/mod_tap)).
 
-Like Modifier keys, the "`kc`" key is limited to keys in the Basic tab. This is [a QMK limitation](https://docs.qmk.fm/mod_tap#caveats). Some mod combinations are not exposed in the GUI, but can be assigned through [Any key]({% link manual/any-key.md %}) entry like "`MT(MOD_RALT | MOD_RSFT, KC_A)`."
+Like Modifier keys, the "`kc`" key is limited to keys in the Basic tab. This is [a QMK limitation](https://docs.qmk.fm/mod_tap#caveats). Some mod combinations are not exposed in the GUI, but can be assigned through Any key entry like "`MT(MOD_RALT | MOD_RSFT, KC_A)`."
 
 ### Tap-hold configuration
 
@@ -85,7 +85,7 @@ A suggested starting point for home row mods in Vial:
 
 The `OSM mod` keys are one-shot modifiers, aka sticky keys. One-shot modifiers remain active until the next key is pressed, and are then released ([QMK docs](https://docs.qmk.fm/one_shot_keys)).
 
-Some mod combinations are not exposed in the GUI, but can be assigned through [Any key]({% link manual/any-key.md %}) entry with syntax like "`OSM(MOD_RALT | MOD_RSFT)`" for one-shot Right Alt + Right Shift.
+Some mod combinations are not exposed in the GUI, but can be assigned through Any key entry with syntax like "`OSM(MOD_RALT | MOD_RSFT)`" for one-shot Right Alt + Right Shift.
 
 
 ## Repeat Key
