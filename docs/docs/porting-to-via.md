@@ -37,7 +37,7 @@ However as VIA have added more and more functionality in newer versions, and tha
 
 ### Create a physical layout
 
-Keyboard definition layouts are based on KLE data with additional information encoded within keys' legends. Go to [http://www.keyboard-layout-editor.com/](http://www.keyboard-layout-editor.com/) and create a layout that physically represents your keyboard. Use the "Tools -> Remove Legends" action in order to clean up any existing legends:
+Keyboard definition layouts are based on KLE data with additional information encoded within keys' legends. Go to [http://www.keyboard-layout-editor.com/](http://www.keyboard-layout-editor.com/) and create a layout that physically represents your keyboard. Use the "Tools &rarr; Remove Legends" action in order to clean up any existing legends:
 
 ![](../img/kle-empty.png)
 

@@ -134,7 +134,7 @@ For keyboards that do not define `VIAL_INSECURE`, proceed to configure `VIAL_UNL
 * Note that this feature works with multi-layout keyboards, however you should make sure that the keys you pick appear in every possible layout:
 ![](../img/security-user-prompt.png)
 
-After you flash the firmware, check that the function works correctly by activating the "Security->Unlock" menu.
+After you flash the firmware, check that the function works correctly by activating the "Security&rarr;Unlock" menu.
 
 ## 7. Compile Vial firmware for your keyboard
 
