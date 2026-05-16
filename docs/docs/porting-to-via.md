@@ -37,7 +37,7 @@ However as VIA have added more and more functionality in newer versions, and tha
 
 ### Create a physical layout
 
-Keyboard definition layouts are based on KLE data with additional information encoded within keys' legends. Go to [http://www.keyboard-layout-editor.com/](http://www.keyboard-layout-editor.com/) and create a layout that physically represents your keyboard. Use the "Tools -> Remove Legends" action in order to clean up any existing legends:
+Keyboard definition layouts are based on KLE data with additional information encoded within keys' legends. Go to [http://www.keyboard-layout-editor.com/](http://www.keyboard-layout-editor.com/) and create a layout that physically represents your keyboard. Use the "Tools &rarr; Remove Legends" action in order to clean up any existing legends:
 
 ![](../img/kle-empty.png)
 
@@ -213,9 +213,9 @@ See [here](https://github.com/vial-kb/vial-qmk/blob/12950db4d8ec1f294b1285e9b554
 
 Before compiling a firmware using your newly created `vial.json` file, it is highly encouraged to test that the file displays and behaves as expected first, since a *technically correct* file with a complete but perhaps _visually incorrect_ layout will not be handled by the compiler.
 
-**To do this open up the Vial application and click `File` -> `Load dummy JSON` and select your file.**
+**To do this open up the Vial application and click `File` &rarr; `Load dummy JSON` and select your file.**
 
-A representation of your keyboard should now be shown on the screen, with the correct keys, in a resonably similar layout to as it was displayed in [http://www.keyboard-layout-editor.com/](http://www.keyboard-layout-editor.com/) or in real life. 
+A representation of your keyboard should now be shown on the screen, with the correct keys, in a reasonably similar layout to as it was displayed in [http://www.keyboard-layout-editor.com/](http://www.keyboard-layout-editor.com/) or in real life. 
 
 All layout options should be present and selectable as well as encoders shown as two round buttons with arrows (CW/CCW) and a normal button representing the click. 
 

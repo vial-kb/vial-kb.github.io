@@ -25,7 +25,7 @@ The second part of this tutorial will guide you through porting your keyboard to
 
 > Information
 > {: .label .label-green }
-> Compiling Vial firmwware requires some basic knowledge of how to use a command line environment—a bit more than just `qmk compile`. If you are unfamiliar with commands such as `cd` and `pwd`, please read through [this basic primer](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line#basic_built-in_terminal_commands) to learn the commands you'll need to know.
+> Compiling Vial firmware requires some basic knowledge of how to use a command line environment—a bit more than just `qmk compile`. If you are unfamiliar with commands such as `cd` and `pwd`, please read through [this basic primer](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line#basic_built-in_terminal_commands) to learn the commands you'll need to know.
 
 ## 1. Prepare Your Build Environment
 
@@ -134,7 +134,7 @@ For keyboards that do not define `VIAL_INSECURE`, proceed to configure `VIAL_UNL
 * Note that this feature works with multi-layout keyboards, however you should make sure that the keys you pick appear in every possible layout:
 ![](../img/security-user-prompt.png)
 
-After you flash the firmware, check that the function works correctly by activating the "Security->Unlock" menu.
+After you flash the firmware, check that the function works correctly by activating the "Security&rarr;Unlock" menu.
 
 ## 7. Compile Vial firmware for your keyboard
 

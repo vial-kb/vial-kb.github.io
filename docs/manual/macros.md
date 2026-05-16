@@ -14,7 +14,7 @@ By default, 16 macros can be configured. This number can be adjusted in firmware
 Some great example uses for macros could be typing out an address, opening a program with a hotkey-shortcut or filling out a form.
 
 ## 1. Configure Macros
-Click the **Macros** tab. All the macros that can be configured will be displayed as seperate tabs. Select a Macro you would like to configure. In the picture below **M0** is selected
+Click the **Macros** tab. All the macros that can be configured will be displayed as separate tabs. Select a Macro you would like to configure. In the picture below **M0** is selected
 
 ![](../img/macros-header1.png)
 
@@ -23,7 +23,7 @@ The next step is to add actions. In the bottom right corner, you can
 * **Tap Enter** - Lots of macros end with an "Enter" key so this button makes it easier to add that.
 * **Record macro** - Lets you record the macro directly from your keyboard. It's not the most reliable but it's a great place to start.
 
-Use these buttons to add actions to the list. These will be perfomed in order when the macro is activated.
+Use these buttons to add actions to the list. These will be performed in order when the macro is activated.
 
 Actions can be reordered using the arrows on the left. 
 
@@ -47,5 +47,5 @@ After the macro has been configured, it can be used. Just click on a key you wou
 
 ![](../img/macro-overview.png)
 
-# More info
-Macros is a QMK feature and more detailed information can be found with the [offical QMK documenation](https://docs.qmk.fm/#/feature_macros).
+## More info
+Macros is a QMK feature and more detailed information can be found with the [official QMK documentation](https://docs.qmk.fm/#/feature_macros).

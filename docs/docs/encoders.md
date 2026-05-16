@@ -83,7 +83,7 @@ Refer to [QMK documentation](https://docs.qmk.fm/#/feature_encoders?id=encoder-m
 
 ### Notable differences in Vial from QMK
 - In Vial, the layers are denoted by numbers only and cannot be named. If you are working from an existing QMK keymap, these need to be changed to reflect this. 
-- Encoder mapping ***replaces*** the older QMK style with encoder callbacks, which needs to be removed from the Vial `keymap.c` for your firmware to compile and work properly. They should, however, be left intact in the default keymap for backwards compatability with QMK.
+- Encoder mapping ***replaces*** the older QMK style with encoder callbacks, which needs to be removed from the Vial `keymap.c` for your firmware to compile and work properly. They should, however, be left intact in the default keymap for backwards compatibility with QMK.
 
 ### WARNING! 
 Do ***NOT*** edit the number '2' in this line:
@@ -94,7 +94,7 @@ It has ***nothing*** to do with the number of encoders, but denotes the two acti
 
 ## 3. Add Vial encoders as part of KLE keymap
 
-In the Vial JSON, an encoder is defined as either ***two or three*** 1u switches, with the labels representing the possible actions it can have (Clockwise/Counter Clockwise rotation). These lables are completely unique to the encoders, and are ***NOT*** part of the matrix.
+In the Vial JSON, an encoder is defined as either ***two or three*** 1u switches, with the labels representing the possible actions it can have (Clockwise/Counter Clockwise rotation). These labels are completely unique to the encoders, and are ***NOT*** part of the matrix.
 
 **Not having both rotary switches defined makes the JSON invalid.**
 

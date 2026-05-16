@@ -9,7 +9,7 @@ redirect_from:
 
 ## Custom keycodes in QMK
 
-QMK provides [a way](https://github.com/qmk/qmk_firmware/blob/master/docs/custom_quantum_functions.md) for user to redefine behavior for existing key or create new keycode.
+QMK provides [a way](https://github.com/qmk/qmk_firmware/blob/master/docs/custom_quantum_functions.md) for users to redefine behavior for existing keys or create new keycodes.
 
 For example, here 3 custom keycodes are defined within `keymap.c`. An `enum` block is used to assign each keycode a unique integer code, and then the behavior of each keycode is defined inside `process_record_user()`. The keycodes are then assigned inside the keymap as usual.
 
@@ -18,7 +18,7 @@ enum blender_keycode {
     B_VPAN = SAFE_RANGE,
     B_DOLLY,
     B_UNDO,
-}
+};
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 	switch (keycode) {
@@ -78,7 +78,7 @@ enum blender_keycode {
     B_VPAN = QK_KB_0,
     B_DOLLY,
     B_UNDO,
-}
+};
 ```
 
 Custom keycodes in the json file __must__ match what's inside the enum block, both in order and number of keycodes.
