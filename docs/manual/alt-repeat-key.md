@@ -16,7 +16,7 @@ The Alt Repeat Key can be configured. It can be used as a "magic" or "adaptive" 
 
 ## Configuring Alt Repeat Key
 
-Click the **Alt Repeat Key** tab at the top of the window and one of the available numbers below it to edit a configuration rule. 
+Click the **Alt Repeat Key** tab at the top of the window and one of the available numbers below it to edit a configuration rule. By default, the number of configurable Alt Repeat Key entries is calculated from the EEPROM size on your keyboard's microcontroller. This limit [can be adjusted]({% link docs/firmware-size.md %}#alt-repeat-key) at compile time (not the GUI) when building firmware.
 
 ![](../img/alt-repeat-key.png)
 

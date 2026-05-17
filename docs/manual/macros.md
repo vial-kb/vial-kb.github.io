@@ -9,7 +9,7 @@ nav_order: 3
 
 Macros can be used to perform a pre-programmed sequence of actions or steps. 
 
-By default, 16 macros can be configured. This number can be adjusted in firmware at compile (Not GUI) see [here]({% link docs/firmware-size.md %}) for more info.
+By default, the number of configurable macros is calculated from the EEPROM size on your keyboard's microcontroller. This limit [can be adjusted]({% link docs/firmware-size.md %}#macros) at compile time (not the GUI) when building firmware.
 
 Some great example uses for macros could be typing out an address, opening a program with a hotkey-shortcut or filling out a form.
 
@@ -19,7 +19,7 @@ Click the **Macros** tab. All the macros that can be configured will be displaye
 ![](../img/macros-header1.png)
 
 The next step is to add actions. In the bottom right corner, you can 
-* **Add action** - Manually adds an action to the list. Configure it to do exactly what you want. select from different options - hold, tap, release, and delay.
+* **Add action** - Manually adds an action to the list. Configure it to do exactly what you want. Select from different options - hold, tap, release, and delay.
 * **Tap Enter** - Lots of macros end with an "Enter" key so this button makes it easier to add that.
 * **Record macro** - Lets you record the macro directly from your keyboard. It's not the most reliable but it's a great place to start.
 
