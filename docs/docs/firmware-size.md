@@ -58,7 +58,7 @@ Macros is the GUI equivalent of [QMK's Macros](https://docs.qmk.fm/feature_macro
 
 ### Configure memory usage
 
-By default, the number of available Macros is calculated from the EEPROM size on your controller. To reduce EEPROM usage or to select one feature over another, you can define the following in your `config.h`:
+By default, 16 macros can be configured. To reduce EEPROM usage or to select one feature over another, you can define the following in your `config.h`:
 
 ```c
 #define DYNAMIC_KEYMAP_MACRO_COUNT x
