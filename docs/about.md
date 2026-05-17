@@ -7,7 +7,7 @@ nav_order: 6
 
 ## Contributing to these docs
 
-Contribution guide to be written, in the meantime see structure examples [here](https://pmarsceill.github.io/just-the-docs/docs/navigation-structure/).
+Contribution guide to be written, in the meantime see structure examples [here](https://v0-3-3-docs.just-the-docs.com/docs/navigation-structure/).
 
 ## Licenses
 
