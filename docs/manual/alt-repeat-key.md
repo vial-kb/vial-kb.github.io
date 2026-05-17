@@ -88,6 +88,5 @@ In the second rule, the last key has no effect and can be set to anything.
 
 
 ## More info
-
 Alt Repeat Key is a QMK feature and more detailed information can be found with the [official QMK documentation](https://docs.qmk.fm/features/repeat_key).
 

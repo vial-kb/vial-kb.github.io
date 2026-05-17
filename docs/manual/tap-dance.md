@@ -29,4 +29,3 @@ After the tap dance has been configured and saved, it can be used. Just click on
 
 ## More info
 Tap Dance is a QMK feature and more detailed information can be found with the [official QMK documentation](https://docs.qmk.fm/#/feature_tap_dance).
-

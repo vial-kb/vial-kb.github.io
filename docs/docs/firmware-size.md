@@ -70,7 +70,7 @@ Tap Dance is the GUI equivalent to [QMK's Tap Dance](https://docs.qmk.fm/#/featu
 
 ### Configure memory usage
 
-By default, the number of available Tap Dances is calculated from the amount of EEPROM your controller has. To reduce EEPROM usage or to select one feature over another, you can define the following in your `config.h`:
+By default, the number of available Tap Dances is calculated from the amount of EEPROM your controller has. To reduce EEPROM usage or to select one feature over another, you can define the following in your `config.h`
 
 ```c
 #define VIAL_TAP_DANCE_ENTRIES x

@@ -23,4 +23,3 @@ After the combo has been configured and saved, it can be used. There is no need 
 
 ## More info
 Combos is a QMK feature and more detailed information can be found with the [official QMK documentation](https://docs.qmk.fm/#/feature_combo?id=combos).
-
