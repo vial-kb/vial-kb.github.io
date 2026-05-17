@@ -18,7 +18,7 @@ The Alt Repeat Key can be configured. It can be used as a "magic" or "adaptive" 
 
 Click the **Alt Repeat Key** tab at the top of the window and one of the available numbers below it to edit a configuration rule. 
 
-![](../img/alt-repeat-key.png)
+![Alt Repeat Key tab showing configurable entries](../img/alt-repeat-key.png)
 
 Each rule specifies:
 
