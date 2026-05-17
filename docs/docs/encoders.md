@@ -13,7 +13,7 @@ redirect_from:
 
 Vial implements optional GUI configuration for rotary encoders. This allows users to set up separate keycode actions for clockwise and counterclockwise encoder rotations. Encoders fully support QMK layers, so different keycodes can be used for different layers.
 
-You will need to port your keyboard over to Vial before encoders are supported. Follow [Step 1](/porting-to-via.md) and [Step 2](/porting-to-vial.md) to get started.
+You will need to port your keyboard over to Vial before encoders are supported. Follow [Step 1]({% link docs/porting-to-via.md %}) and [Step 2]({% link docs/porting-to-vial.md %}) to get started.
 
 In order to enable encoder support in your firmware, follow these steps:
 

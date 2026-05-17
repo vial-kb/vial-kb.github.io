@@ -12,7 +12,7 @@ nav_order: 1
 
 [Start Vial Web](https://vial.rocks/){: .btn .gettingStarted .blue target="_blank"}
 [Download Vial](/download){: .btn .gettingStarted .blue}
-[Read user manual](/manual/){: .btn .gettingStarted}
+[Read user manual]({% link manual/index.md %}){: .btn .gettingStarted}
 [Join our Discord server](https://discord.gg/zNKEUXTKwF){: .btn .gettingStarted}
 
 To get started using Vial, install a Vial-compatible firmware on your keyboard (if it did not come preloaded with one) and it will be automatically detected by the Vial GUI.
