@@ -7,10 +7,10 @@ nav_order: 5
 
 # Combos
 
-Combos allow you to add custom actions when a certain combination of keys is pressed. for example, hitting `A` and `S` within the combo term would hit `ESC` instead, or have it perform even more complex tasks.
+Combos allow you to add custom actions when a certain combination of keys is pressed. For example, hitting `A` and `S` within the combo term would hit `ESC` instead, or have it perform even more complex tasks.
 
 ## 1. Combos
-Click the **Combos** tab at the top and one of the available numbers below it. By default, 8 combos can be configured. This number can be adjusted in firmware at compile (Not GUI) see [here](https://get.vial.today/docs/firmware-size.html) for more info.
+Click the **Combos** tab at the top and one of the available numbers below it. By default, the number of configurable combos is calculated from the EEPROM size on your keyboard's microcontroller. This limit [can be adjusted]({% link docs/firmware-size.md %}#combos) at compile time (not the GUI) when building firmware.
 
 ![Combos tab showing configurable entries](../img/combos-tab.png)
 
