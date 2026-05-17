@@ -25,6 +25,8 @@ One way to enter a keycode is by its name or syntax as would be used when editin
 | `OSM(MOD_LSFT | MOD_LGUI)`      | One-shot Left Shift + Left GUI             |
 | `MT(MOD_RSFT | MOD_RALT, KC_A)` | Right Shift + Right Alt on hold, A on tap  |
 
+Refer to the [QMK documentation](https://docs.qmk.fm) for full explanation of keycode syntax.
+
 
 ## Numeric entry
 
@@ -60,5 +62,4 @@ Determining the keycode for `SH_T(kc)` is more complicated. Being a preprocessor
 ```
 
 in which `QK_SWAP_HANDS` is `0x5600` (based on referring back to `quantum/keycodes.h`). For the key's "`kc`" placeholder, we can numerically substitute the keycode for any Basic key. For instance with `KC_A = 0x0004`, the full keycode for `SH_T(KC_A)` is `0x5604`.
-
 
