@@ -68,4 +68,4 @@ To compile and flash Vial firmware yourself using the command line tools:
 4. Use QMK to flash your keyboard with the `vial` keymap. (This will not work if your keyboard has not been ported to Vial.) This looks like `qmk flash -kb <insert_keyboard> -km vial`.
 
 If your keyboard doesn't show up after flashing Vial firmware, and you're on Linux, 
-[you may need to add udev rules.](https://get.vial.today/manual/linux-udev.html)
+[you may need to add udev rules.]({% link manual/linux-udev.md %})

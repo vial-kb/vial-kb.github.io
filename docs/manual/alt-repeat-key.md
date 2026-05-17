@@ -52,7 +52,7 @@ Note: LCtl can be found under the Quantum tab.
 
 Define Alt Repeat after the `K` key to type "`eyboard`", producing "`keyboard`".
 
-First, [define a macro](macro.md), say `M3`, to type the text "`eyboard`". Then add an Alt Repeat rule with
+First, [define a macro]({% link manual/macros.md %}), say `M3`, to type the text "`eyboard`". Then add an Alt Repeat rule with
 
 * Last key: `K`
 * Alt key: `M3`

@@ -9,7 +9,7 @@ nav_order: 3
 
 Macros can be used to perform a pre-programmed sequence of actions or steps. 
 
-By default, 16 macros can be configured. This number can be adjusted in firmware at compile (Not GUI) see [here](https://get.vial.today/docs/firmware-size.html) for more info.
+By default, 16 macros can be configured. This number can be adjusted in firmware at compile (Not GUI) see [here]({% link docs/firmware-size.md %}) for more info.
 
 Some great example uses for macros could be typing out an address, opening a program with a hotkey-shortcut or filling out a form.
 

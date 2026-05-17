@@ -227,6 +227,6 @@ If the layout is showing incorrectly, or loading the file results in an error me
 
 ## Done!
 
-This should be enough to get you a basic keyboard definition JSON file. Next, move onto [building Vial support](/porting-to-vial.md).
+This should be enough to get you a basic keyboard definition JSON file. Next, move onto [building Vial support]({% link docs/porting-to-vial.md %}).
 
 Did you run into a problem? You can get porting support by joining [Vial discord](https://discord.gg/zNKEUXTKwF).
