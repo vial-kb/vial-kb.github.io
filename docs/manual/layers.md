@@ -12,15 +12,15 @@ Most Vial devices have 4 layers but this number can be adjusted in firmware at c
 
 You can view each layer available by clicking the corresponding number at the top of the interface. You can see we already have layer 0 selected.
 
-![](../img/layers-cycle.png)
+![Layer selector showing layers 0 through 3](../img/layers-cycle.png)
 
 A typical layer setup would include a "base" layer and a "Function" layer. 
 
 #### Base Layer
-![](../img/layers-layer-1.png)
+![Base layer keymap with standard key assignments](../img/layers-layer-1.png)
 
 #### Function Layer
-![](../img/layers-layer-2.png)
+![Function layer keymap with additional key assignments](../img/layers-layer-2.png)
 
 You can see additional key functionality is located on the "Function" layer. This is just convention, in reality you can do whatever you want with the layers.
 

@@ -32,20 +32,20 @@ When you are satisfied with the configuration of all macros, click **save** to s
 ### Examples
 1. Opens Task Manager on Windows by pressing Ctrl+Shift and then tapping Esc
 
-    ![](../img/macro-task-manager.png)
+    ![Macro configured to open Task Manager with Ctrl+Shift+Esc](../img/macro-task-manager.png)
 
 2. Launch a program on Windows by opening the Start Menu, typing out the program name, and pressing Enter.
 
-    ![](../img/macro-launch-vs-code.png)
+    ![Macro configured to launch VS Code from the Start Menu](../img/macro-launch-vs-code.png)
 
 3. Type out a street address
 
-    ![](../img/macro-street-address.png)
+    ![Macro configured to type a street address](../img/macro-street-address.png)
 
 ## 2. Using Macros
 After the macro has been configured, it can be used. Just click on a key you would like to use for a macro in the top palette then select your macro in the bottom palette. (under the macro tab)
 
-![](../img/macro-overview.png)
+![Selecting a macro key in the keymap](../img/macro-overview.png)
 
 ## More info
 Macros is a QMK feature and more detailed information can be found with the [official QMK documentation](https://docs.qmk.fm/#/feature_macros).
