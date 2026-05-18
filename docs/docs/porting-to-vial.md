@@ -39,13 +39,13 @@ The second part of this tutorial will guide you through porting your keyboard to
    - If you are unfamiliar with git, and want a GUI version, install the [GitHub Desktop](https://desktop.github.com) version for your OS. Go to [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) and select "Open in Github Desktop". Follow the guided download/cloning.
    - **Reference Guide:** Run `git clone https://github.com/vial-kb/vial-qmk`.
 
-![](../img/open_to_github_desktop.png)
+![Opening vial-qmk in GitHub Desktop](../img/open_to_github_desktop.png)
 
 2. Install the prerequisites for compilation.
   - Open the QMK command line environment and navigate to your new `vial-qmk` folder to run the above command. Refer to [this guide](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line#basic_built-in_terminal_commands) on how-to. In the image below, notice how it says 'vial-qmk' at the end of the prompt. This is your confirmation you have found the correct directory.
    - **Reference Guide:** Run `make git-submodule` in your new `vial-qmk` directory to clone the git submodules.
 
-![](../img/beginner_prompt.png)
+![Terminal prompt showing the vial-qmk directory](../img/beginner_prompt.png)
 
 3. Verify that your installation is complete by running `qmk doctor`.
    - If you have added a new keyboard folder as part of your port, you will see `Git has unstashed/uncommitted changes.` Other than that, the only warning should be `The official repository does not seem to be configured as git remote "upstream".` (This is fine because Vial-QMK is not the official QMK repository.)

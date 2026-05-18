@@ -8,19 +8,19 @@ nav_order: 2
 # Layers
 Layers provide the ability to change the functionality of the entire keyboard based on what "layer" it's currently on. It's best to visualize layers stacked on top of each other. Keys can be configured to switch between layers as needed similar to function keys on a laptop. 
 
-Most Vial devices have 4 layers but this number can be adjusted in firmware at compile (Not GUI) see [here]({% link docs/firmware-size.md %}) for more info.
+By default, Vial supports up to 4 keymap layers. This limit [can be adjusted]({% link docs/firmware-size.md %}#dynamic-keymap-layers) at compile time (not the GUI) when building firmware.
 
 You can view each layer available by clicking the corresponding number at the top of the interface. You can see we already have layer 0 selected.
 
-![](../img/layers-cycle.png)
+![Layer selector showing layers 0 through 3](../img/layers-cycle.png)
 
 A typical layer setup would include a "base" layer and a "Function" layer. 
 
 #### Base Layer
-![](../img/layers-layer-1.png)
+![Base layer keymap with standard key assignments](../img/layers-layer-1.png)
 
 #### Function Layer
-![](../img/layers-layer-2.png)
+![Function layer keymap with additional key assignments](../img/layers-layer-2.png)
 
 You can see additional key functionality is located on the "Function" layer. This is just convention, in reality you can do whatever you want with the layers.
 

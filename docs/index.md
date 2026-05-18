@@ -21,4 +21,4 @@ Vial is a completely open project with sources for all components publicly avail
 
 Have a feature suggestion for Vial? Feel free to submit it at the dedicated [feedback website](https://feedback.vial.today/).
 
-![](img/vial-win-1.png)
+![Screenshot of the Vial configurator GUI](img/vial-win-1.png)

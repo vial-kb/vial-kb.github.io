@@ -41,6 +41,31 @@ To turn off this feature and reduce compiled firmware size, RAM and EEPROM usage
 QMK_SETTINGS = no
 ```
 
+## Dynamic keymap layers
+
+By default Vial is configured to have 4 keymap layers. If the keyboard's microcontroller has sufficient free space, you can edit `config.h` to increase these limits. Or conversely, limits may be decreased to recover memory. To reduce EEPROM usage, you can define the following in your `config.h` file:
+
+```c
+#define DYNAMIC_KEYMAP_LAYER_COUNT 2
+```
+
+The max possible layers supported is 32 (QMK's limit).
+
+
+## Macros
+
+Macros is the GUI equivalent of [QMK's Macros](https://docs.qmk.fm/feature_macros) with the difference that Vial's macros are dynamically configurable in the GUI. A macro defines a sequence of key events to be sent to the computer when the macro is triggered.
+
+### Configure memory usage
+
+By default, 16 macros can be configured. To reduce EEPROM usage or to select one feature over another, you can define the following in your `config.h`:
+
+```c
+#define DYNAMIC_KEYMAP_MACRO_COUNT x
+```
+
+Where `x` is the desired number of macro entries.
+
 ## Tap Dance
 
 Tap Dance is the GUI equivalent to [QMK's Tap Dance](https://docs.qmk.fm/#/feature_tap_dance) and can do pretty much what it does, with minor differences as you assign it in GUI rather than code. Tap the comma key, and you get a comma. Tap it twice and you get a semicolon.
@@ -123,14 +148,6 @@ To turn off this feature completely, and also reduce compiled firmware size, EEP
 
 ```
 REPEAT_KEY_ENABLE  = no
-```
-
-## Reducing dynamic keymap layers
-
-By default Vial is configured to have 4 keymap layers, To reduce EEPROM usage, you can define the following in your `config.h` file:
-
-```
-#define DYNAMIC_KEYMAP_LAYER_COUNT 2
 ```
 
 ## Enable LTO

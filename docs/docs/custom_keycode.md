@@ -37,7 +37,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 When you load a board with custom keycodes, they will appear as unique hexcode. You can use the "any key" button and type in values starting with `0x7E40` to assign them but this isn't very user friendly.
 
-![](/img/vial_before.png)
+![Custom keycodes showing as hex values before defining them in vial.json](/img/vial_before.png)
 
 ## Custom keycodes in Vial
 
@@ -85,6 +85,6 @@ Custom keycodes in the json file __must__ match what's inside the enum block, bo
 
 If everything goes smoothly the hexcode will be replaced with name of the keycode. You can access all your custom keycode inside the User tab. Do note that the firmware size will increase slightly (this example is ~100bytes).
 
-![](/img/vial_after.png)
+![Custom keycodes showing named aliases after configuration](/img/vial_after.png)
 
-![](/img/user_tab.png)
+![User tab in Vial showing custom keycodes](/img/user_tab.png)

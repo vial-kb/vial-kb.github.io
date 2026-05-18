@@ -45,7 +45,7 @@ Using Vial is extremely simple, just click on a key you would like to change the
 
 Your new key will be automatically saved onto the keyboard and immediately ready for use.
 
-![](../img/vial-linux.png)
+![Screenshot of the Vial configurator GUI](../img/vial-linux.png)
 
 ## 4. My keyboard isn't discovered or it doesn't work.
 

@@ -9,7 +9,7 @@ nav_order: 3
 
 Macros can be used to perform a pre-programmed sequence of actions or steps. 
 
-By default, 16 macros can be configured. This number can be adjusted in firmware at compile (Not GUI) see [here]({% link docs/firmware-size.md %}) for more info.
+By default, 16 macros can be configured. This limit [can be adjusted]({% link docs/firmware-size.md %}#macros) at compile time (not the GUI) when building firmware.
 
 Some great example uses for macros could be typing out an address, opening a program with a hotkey-shortcut or filling out a form.
 
@@ -19,7 +19,7 @@ Click the **Macros** tab. All the macros that can be configured will be displaye
 ![](../img/macros-header1.png)
 
 The next step is to add actions. In the bottom right corner, you can 
-* **Add action** - Manually adds an action to the list. Configure it to do exactly what you want. select from different options - hold, tap, release, and delay.
+* **Add action** - Manually adds an action to the list. Configure it to do exactly what you want. Select from different options - hold, tap, release, and delay.
 * **Tap Enter** - Lots of macros end with an "Enter" key so this button makes it easier to add that.
 * **Record macro** - Lets you record the macro directly from your keyboard. It's not the most reliable but it's a great place to start.
 
@@ -32,20 +32,20 @@ When you are satisfied with the configuration of all macros, click **save** to s
 ### Examples
 1. Opens Task Manager on Windows by pressing Ctrl+Shift and then tapping Esc
 
-    ![](../img/macro-task-manager.png)
+    ![Macro configured to open Task Manager with Ctrl+Shift+Esc](../img/macro-task-manager.png)
 
 2. Launch a program on Windows by opening the Start Menu, typing out the program name, and pressing Enter.
 
-    ![](../img/macro-launch-vs-code.png)
+    ![Macro configured to launch VS Code from the Start Menu](../img/macro-launch-vs-code.png)
 
 3. Type out a street address
 
-    ![](../img/macro-street-address.png)
+    ![Macro configured to type a street address](../img/macro-street-address.png)
 
 ## 2. Using Macros
 After the macro has been configured, it can be used. Just click on a key you would like to use for a macro in the top palette then select your macro in the bottom palette. (under the macro tab)
 
-![](../img/macro-overview.png)
+![Selecting a macro key in the keymap](../img/macro-overview.png)
 
 ## More info
 Macros is a QMK feature and more detailed information can be found with the [official QMK documentation](https://docs.qmk.fm/#/feature_macros).
