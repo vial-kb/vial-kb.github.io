@@ -11,7 +11,7 @@ nav_order: 1
 
 [Start Vial Web](https://vial.rocks/){: .btn .gettingStarted .blue target="_blank"}
 [Download Vial](/download){: .btn .gettingStarted .blue}
-[Read user manual](/manual/){: .btn .gettingStarted}
+[Read user manual]({% link manual/index.md %}){: .btn .gettingStarted}
 [Join our Discord server](https://discord.gg/zNKEUXTKwF){: .btn .gettingStarted}
 
 Vial is a keyboard firmware and a companion configurator GUI. Vial enables you to make dynamic, on-the-fly keymap and settings changes without the need to recompile or reflash the firmware. This includes editing keymaps, macros, combos, and other advanced features.
@@ -22,5 +22,4 @@ Vial is a completely open project with sources for all components publicly avail
 
 Have a feature suggestion for Vial? Feel free to submit it at the dedicated [feedback website](https://feedback.vial.today/).
 
-![Screenshot of the Vial configurator GUI on Windows](img/vial-win-1.png)
-
+![Screenshot of the Vial configurator GUI](img/vial-win-1.png)

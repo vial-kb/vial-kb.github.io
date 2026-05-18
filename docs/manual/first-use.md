@@ -47,7 +47,7 @@ Using Vial is extremely simple, just click on a key you would like to change the
 
 Your new key will be automatically saved onto the keyboard and immediately ready for use.
 
-![Screenshot of the Vial configurator GUI on Linux](../img/vial-linux.png)
+![Screenshot of the Vial configurator GUI](../img/vial-linux.png)
 
 Many of QMK's features are accessed under the [Quantum tab]({% link manual/quantum.md %}), including one-shot mods (`OSM mod`) and mod-tap keys (`LSft_T(kc)`, `LCtl_T(kc)`, etc.; note the "`_T`" suffix).
 
@@ -64,4 +64,3 @@ To compile and flash Vial firmware yourself, refer to the [Installing Vial]({% l
 
 If your keyboard doesn't show up after flashing Vial firmware, and you're on Linux, 
 [you may need to add udev rules.]({% link manual/linux-udev.md %})
-

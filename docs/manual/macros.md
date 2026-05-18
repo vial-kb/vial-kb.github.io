@@ -19,7 +19,7 @@ Click the **Macros** tab. All the macros that can be configured will be displaye
 ![](../img/macros-header1.png)
 
 The next step is to add actions. In the bottom right corner, you can 
-* **Add action** - Manually adds an action to the list. Configure it to do exactly what you want. select from different options - hold, tap, release, and delay.
+* **Add action** - Manually adds an action to the list. Configure it to do exactly what you want. Select from different options - hold, tap, release, and delay.
 * **Tap Enter** - Lots of macros end with an "Enter" key so this button makes it easier to add that.
 * **Record macro** - Lets you record the macro directly from your keyboard. It's not the most reliable but it's a great place to start.
 

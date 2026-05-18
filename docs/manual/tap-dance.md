@@ -12,7 +12,7 @@ Tap Dance allows you to configure different actions depending on how a button is
 ## 1. Configuring Tap Dance
 Click the **Tap Dance** tab at the top and one of the available numbers below it. By default, the number of configurable tap dances is calculated from the EEPROM size on your keyboard's microcontroller. This limit can be adjusted at compile time by making a [custom build]({% link manual/custom-build.md %}) of the firmware.
 
-![Tap Dance tab with numbered entries](../img/tap-tabs.png)
+![Tap Dance tab showing configurable entries](../img/tap-tabs.png)
 
 Each tap dance can be configured to do different actions based on how the button is pressed. In the case below, when the button is "Tapped"(**On tap**), the Left GUI is pressed but when the button is held(**On hold**), the button activates layer 1. The other two options (**On double tap**) and (**On tap + hold**) can also be configured.
 
