@@ -143,3 +143,19 @@ blockquote {
   width: 30%;
   height: 30%;
 }
+
+kbd {
+  font-family: inherit;
+  font-size: 0.85em;
+  color: #f8f9fa;
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  vertical-align: middle;
+  background-color: #353945;
+  border: 2px solid #8d939c;
+  border-radius: 0.5rem;
+}
+
+kbd i {
+  color: #a5acb9;
+}

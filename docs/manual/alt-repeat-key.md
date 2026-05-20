@@ -38,14 +38,15 @@ A few practical use cases are described next.
 
 Define Alt Repeat after Ctrl+Z to perform Ctrl+Y, and vice versa (corresponding to Undo and Redo hotkeys in many programs):
 
-* Last key: LCtl(Z)
-* Alt key: LCtl(Y)
+* Last key: <kbd>LCtl(Z)</kbd>
+* Alt key: <kbd>LCtl(Y)</kbd>
 * Allowed mods: all unchecked
 * Default to this alt key: unchecked
 * Bidirectional: checked
 * Ignore mod handedness: checked
 
-Note: LCtl can be found under the Quantum tab.
+Note: <kbd>LCtl(<i>kc</i>)</kbd> can be found under the [Quantum tab]({% link
+manual/quantum.md %}#modifier-keys).
 
 
 ### Typing shortcut
@@ -54,8 +55,8 @@ Define Alt Repeat after the `K` key to type "`eyboard`", producing "`keyboard`".
 
 First, [define a macro]({% link manual/macros.md %}), say `M3`, to type the text "`eyboard`". Then add an Alt Repeat rule with
 
-* Last key: `K`
-* Alt key: `M3`
+* Last key: <kbd>K</kbd>
+* Alt key: <kbd>M3</kbd>
 * Allowed mods: LShift and RShift checked
 * Default to this alt key: unchecked
 * Bidirectional: unchecked
@@ -68,8 +69,8 @@ Suppose we want Alt Repeat to behave as `U` when typed after `A`, and otherwise 
 
 Rule 1:
 
-* Last key: `A`
-* Alt key: `U`
+* Last key: <kbd>A</kbd>
+* Alt key: <kbd>U</kbd>
 * Allowed mods: LShift and RShift checked
 * Default to this alt key: unchecked
 * Bidirectional: unchecked
@@ -78,7 +79,7 @@ Rule 1:
 Rule 2:
 
 * Last key: (anything)
-* Alt key: `H`
+* Alt key: <kbd>H</kbd>
 * Allowed mods: all checked
 * Default to this alt key: checked
 * Bidirectional: unchecked
