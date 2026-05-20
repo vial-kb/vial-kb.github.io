@@ -37,7 +37,7 @@ QMK Settings allows you to configure settings for all the other GUI features, li
 
 To turn off this feature and reduce compiled firmware size, RAM and EEPROM usage, add the following line to your `keymaps/vial/rules.mk`:
 
-```
+```make
 QMK_SETTINGS = no
 ```
 
@@ -74,7 +74,7 @@ Tap Dance is the GUI equivalent to [QMK's Tap Dance](https://docs.qmk.fm/#/featu
 
 By default, the number of available Tap Dances is calculated from the amount of EEPROM your controller has. To reduce EEPROM usage or to select one feature over another, you can define the following in your `config.h`
 
-```
+```c
 #define VIAL_TAP_DANCE_ENTRIES x
 ```
 
@@ -82,7 +82,7 @@ Where `x` is the number of slots you desire.
 
 To turn off this feature completely, and also reduce compiled firmware size, EEPROM and RAM usage, add the following line to your `keymaps/vial/rules.mk`:
 
-```
+```make
 TAP_DANCE_ENABLE = no
 ```
 
@@ -94,7 +94,7 @@ Combos are the GUI equivalent to [QMK's Combos](https://docs.qmk.fm/#/feature_co
 
 By default, the number of available Combos is calculated from the amount of EEPROM your controller has. To reduce EEPROM usage or to select one feature over another, you can define the following in your `config.h`:
 
-```
+```c
 #define VIAL_COMBO_ENTRIES x
 ```
 
@@ -102,7 +102,7 @@ Where `x` is the number of slots you desire.
 
 To turn off this feature completely, and also reduce compiled firmware size, EEPROM and RAM usage, add the following line to your `keymaps/vial/rules.mk`:
 
-```
+```make
 COMBO_ENABLE = no
 ```
 
@@ -116,7 +116,7 @@ Don’t want shift + 1 to type ! on your computer? Use a key override to make yo
 
 By default, the number of available Key Overrides is calculated from the amount of EEPROM your controller has. To reduce EEPROM usage or to select one feature over another, you can define the following in your `config.h`:
 
-```
+```c
 #define VIAL_KEY_OVERRIDE_ENTRIES x
 ```
 
@@ -124,7 +124,7 @@ Where `x` is the number of slots you desire.
 
 To turn off this feature completely, and also reduce compiled firmware size, EEPROM and RAM usage, add the following line to your `keymaps/vial/rules.mk`:
 
-```
+```make
 KEY_OVERRIDE_ENABLE = no
 ```
 
@@ -138,7 +138,7 @@ For example, after pressing `Ctrl + Shift + →` to select the next word, the Al
 
 By default, the number of available Alt Repeat keys is calculated from the amount of EEPROM your controller has. To reduce EEPROM usage or to select one feature over another, you can define the following in your `config.h`:
 
-```
+```c
 #define VIAL_ALT_REPEAT_KEY_ENTRIES x
 ```
 
@@ -146,7 +146,7 @@ Where `x` is the number of slots you desire.
 
 To turn off this feature completely, and also reduce compiled firmware size, EEPROM and RAM usage, add the following line to your `keymaps/vial/rules.mk`:
 
-```
+```make
 REPEAT_KEY_ENABLE  = no
 ```
 
@@ -154,7 +154,7 @@ REPEAT_KEY_ENABLE  = no
 
 To enable LTO, add the following line to your `keymaps/vial/rules.mk`:
 
-```
+```make
 LTO_ENABLE = yes
 ```
 

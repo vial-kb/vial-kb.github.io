@@ -7,6 +7,8 @@ redirect_from:
   - /manual/custom_keycode.html
 ---
 
+# Custom keycodes
+
 ## Custom keycodes in QMK
 
 QMK provides [a way](https://github.com/qmk/qmk_firmware/blob/master/docs/custom_quantum_functions.md) for users to redefine behavior for existing keys or create new keycodes.
@@ -35,7 +37,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 ```
 
-When you load a board with custom keycodes, they will appear as unique hexcode. You can use the "any key" button and type in values starting with `0x7E40` to assign them but this isn't very user friendly.
+When you load a board with custom keycodes, they will appear as unique hexcode. You can use [Any key]({% link manual/any-key.md%}) entry with values starting with `0x7E40` to assign them but this isn't very user friendly.
 
 ![Custom keycodes showing as hex values before defining them in vial.json](/img/vial_before.png)
 
