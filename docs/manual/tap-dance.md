@@ -10,7 +10,7 @@ nav_order: 4
 Tap Dance allows you to configure different actions depending on how a button is used. For example, the same button could be configured to active a macro when the button is tapped or activate something else when the button is held.
 
 ## 1. Configuring Tap Dance
-Click the **Tap Dances** tab at the top and one of the available numbers below it. By default, the number of configurable Tap Dance entries is calculated from the EEPROM size on your keyboard's microcontroller. This limit [can be adjusted]({% link docs/firmware-size.md %}#tap-dance) at compile time (not the GUI) when building firmware.
+Click the **Tap Dances** tab at the top and one of the available numbers below it. By default, the number of configurable Tap Dance entries is calculated from the EEPROM size on your keyboard's microcontroller. This limit [can be adjusted]({% link manual/building/custom-build.md %}#adjusting-feature-limits) at compile time (not the GUI) when building firmware.
 
 ![Tap Dance tab showing configurable entries](../img/tap-tabs.png)
 

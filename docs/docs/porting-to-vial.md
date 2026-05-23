@@ -29,34 +29,7 @@ The second part of this tutorial will guide you through porting your keyboard to
 
 ## 1. Prepare Your Build Environment
 
-> Important
-> {: .label .label-red }
-> You will need a QMK environment in order to build firmware for Vial. This is not the same thing as QMK Toolbox. If you do not have this, you must first follow QMK's guide [here](https://docs.qmk.fm/#/newbs_getting_started).
-> Existing QMK environments may need to be updated, but there is no need to uninstall or remove anything. You can simply move to the appropriate folder when compiling firmware for QMK or Vial-QMK.
-
-### Step by step guide:
-1. Clone the latest version of the repository from [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) into a new folder. This folder should be located outside of any existing QMK repository folders. **Nesting `vial-qmk` inside `qmk_firmware` will cause issues, avoid this!**
-   - If you are unfamiliar with git, and want a GUI version, install the [GitHub Desktop](https://desktop.github.com) version for your OS. Go to [https://github.com/vial-kb/vial-qmk](https://github.com/vial-kb/vial-qmk) and select "Open in Github Desktop". Follow the guided download/cloning.
-   - **Reference Guide:** Run `git clone https://github.com/vial-kb/vial-qmk`.
-
-![Opening vial-qmk in GitHub Desktop](../img/open_to_github_desktop.png)
-
-2. Install the prerequisites for compilation.
-  - Open the QMK command line environment and navigate to your new `vial-qmk` folder to run the above command. Refer to [this guide](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line#basic_built-in_terminal_commands) on how-to. In the image below, notice how it says 'vial-qmk' at the end of the prompt. This is your confirmation you have found the correct directory.
-   - **Reference Guide:** Run `make git-submodule` in your new `vial-qmk` directory to clone the git submodules.
-
-![Terminal prompt showing the vial-qmk directory](../img/beginner_prompt.png)
-
-3. Verify that your installation is complete by running `qmk doctor`.
-   - If you have added a new keyboard folder as part of your port, you will see `Git has unstashed/uncommitted changes.` Other than that, the only warning should be `The official repository does not seem to be configured as git remote "upstream".` (This is fine because Vial-QMK is not the official QMK repository.)
-4. Test your Vial-QMK installation by compiling the `default` keymap for your keyboard.
-   - Run `make path/to/your/keyboard:default`. Note that the path does *not* include the folder `vial-qmk/keyboards/` nor does it have a leading slash. It should start with the name of the keyboard or designer, e.g. `make vial_example/vial_atmega32u4:default`
-     If the `default` keyboard doesn't build, nothing based on it will either! Code copy-and-pasted in from other repositories may need to be modified [based on the version of QMK it was created for](https://docs.qmk.fm/#/breaking_changes?id=what-has-been-included-in-past-breaking-changes).
-
-> Note
-> {: .label .label-green }
-> Running `make` is not quite the same as running `qmk compile`. Running `qmk compile` in the wrong directory will default to compiling QMK firmware, not Vial firmware. To avoid any potential confusion, use `make`.
-
+Follow the steps instructed in [Setting up your build environment]({% link manual/building/install.md %}#setting-up-your-build-environment).
 
 ## 2. Create a new `vial` keymap
 

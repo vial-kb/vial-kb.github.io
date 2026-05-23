@@ -61,11 +61,7 @@ This firmware may be supplied by your keyboards manufacturer/vendor or designer,
 
 If no folder named 'vial' exist, the keyboard is not ported yet (or the firmware is available elsewhere!) and the keyboard folder is simply inherited from QMK. [Start porting!](https://get.vial.today/docs/porting-to-via.html)
 
-To compile and flash Vial firmware yourself using the command line tools:
-1. [Install QMK](https://docs.qmk.fm/newbs_getting_started) according to their guide.
-2. Clone [the vial-qmk repository](https://github.com/vial-kb/vial-qmk) and navigate there in your terminal. 
-3. Verify that QMK is using the correct repository by running `qmk env`. It should list your `vial-qmk` folder as your `QMK_HOME` and `QMK_FIRMWARE` locations. If it lists a `qmk_firmware` directory, then it's still using the regular (non-Vial) QMK install.
-4. Use QMK to flash your keyboard with the `vial` keymap. (This will not work if your keyboard has not been ported to Vial.) This looks like `qmk flash -kb <insert_keyboard> -km vial`.
+To compile and flash Vial firmware yourself, refer to [Installing Vial from source]({% link manual/building/install.md %}).
 
 If your keyboard doesn't show up after flashing Vial firmware, and you're on Linux, 
 [you may need to add udev rules.]({% link manual/linux-udev.md %})
