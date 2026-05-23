@@ -61,7 +61,7 @@ This firmware may be supplied by your keyboards manufacturer/vendor or designer,
 
 If no folder named 'vial' exist, the keyboard is not ported yet (or the firmware is available elsewhere!) and the keyboard folder is simply inherited from QMK. [Start porting!](https://get.vial.today/docs/porting-to-via.html)
 
-To compile and flash Vial firmware yourself, refer to [Installing Vial from source]({% link manual/advanced/install.md %}).
+To compile and flash Vial firmware yourself, refer to [Installing Vial from source]({% link manual/building/install.md %}).
 
 If your keyboard doesn't show up after flashing Vial firmware, and you're on Linux, 
 [you may need to add udev rules.]({% link manual/linux-udev.md %})

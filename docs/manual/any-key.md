@@ -36,7 +36,7 @@ Another way to enter a key is numerically by its 16-bit keycode. Even when the k
 
 One way to deduce the numeric keycode values is by referring to the firmware source files that define them. The keycodes are defined in [quantum/keycodes.h](https://github.com/vial-kb/vial-qmk/blob/vial/quantum/keycodes.h), whereas preprocessor macros like `LSFT(kc)` are defined in [quantum/quantum\_keycodes.h](https://github.com/vial-kb/vial-qmk/blob/vial/quantum/quantum_keycodes.h).
 
-*Example:* Suppose we have made a [custom build]({% link manual/advanced/custom-build.md %}) of Vial in which [Swap Hands](https://docs.qmk.fm/features/swap_hands), which Vial does not natively support, has been enabled by adding "`SWAP_HANDS_ENABLE = yes`" in `vial/rules.mk`. Swap Hands defines several feature-specific keys, such as `SH_MON`, `SH_OS`, and `SH_T(kc)`, which the configurator does not know.
+*Example:* Suppose we have made a [custom build]({% link manual/building/custom-build.md %}) of Vial in which [Swap Hands](https://docs.qmk.fm/features/swap_hands), which Vial does not natively support, has been enabled by adding "`SWAP_HANDS_ENABLE = yes`" in `vial/rules.mk`. Swap Hands defines several feature-specific keys, such as `SH_MON`, `SH_OS`, and `SH_T(kc)`, which the configurator does not know.
 
 > Important
 > {: .label .label-red }

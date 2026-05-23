@@ -29,7 +29,7 @@ The second part of this tutorial will guide you through porting your keyboard to
 
 ## 1. Prepare Your Build Environment
 
-Follow the steps instructed in [Setting up your build environment]({% link manual/advanced/install.md %}#setting-up-your-build-environment).
+Follow the steps instructed in [Setting up your build environment]({% link manual/building/install.md %}#setting-up-your-build-environment).
 
 ## 2. Create a new `vial` keymap
 

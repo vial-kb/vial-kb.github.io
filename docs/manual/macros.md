@@ -9,7 +9,7 @@ nav_order: 3
 
 Macros can be used to perform a pre-programmed sequence of actions or steps. 
 
-By default, 16 macros can be configured. This limit [can be adjusted]({% link manual/advanced/custom-build.md %}#adjusting-feature-limits) at compile time (not the GUI) when building firmware.
+By default, 16 macros can be configured. This limit [can be adjusted]({% link manual/building/custom-build.md %}#adjusting-feature-limits) at compile time (not the GUI) when building firmware.
 
 Some great example uses for macros could be typing out an address, opening a program with a hotkey-shortcut or filling out a form.
 

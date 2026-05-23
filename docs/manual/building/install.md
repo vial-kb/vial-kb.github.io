@@ -2,34 +2,28 @@
 layout: default
 title: Installing Vial from source
 grand_parent: User manual
-parent: Advanced
+parent: Building from Source
 nav_order: 1
 ---
 
 > Important
 > {: .label .label-red }
-> The Vial project does not provide support for building firmware; please contact your vendor or community forums (like the [Discord](https://discord.gg/zNKEUXTKwF) or [r/olkb](https://www.reddit.com/r/olkb/)) for assistance.
+> **The Vial project strongly recommends using vendor-supplied firmware.** Building from source is an advanced, unsupported workflow. The project does not provide build assistance or troubleshoot custom firmware. For help, contact your keyboard vendor or community forums (like the [Discord](https://discord.gg/zNKEUXTKwF) or [r/olkb](https://www.reddit.com/r/olkb/)).
 
 # Installing Vial from source
 
 This section details the process of compiling Vial firmware from source and flashing it to your keyboard.
-In many cases, compiling Vial firmware yourself is unnecessary. Keyboard vendors typically preload Vial or provide precompiled binaries that can be applied directly (in which case skip ahead to [Flashing firmware](#flashing-firmware)).
-
-However, manual compilation is required if you intend to:
-
-* Install Vial on a keyboard lacking official vendor support.
-
-* Upgrade an existing installation to the latest version.
-
-* Customize a build of Vial.
+For most users, compiling Vial firmware is unnecessary. Keyboard vendors typically preload Vial or provide precompiled binaries that can be applied directly (in which case skip ahead to [Flashing firmware](#flashing-firmware)).
 
 > Note
 > {: .label .label-green }
 > If you just want to download the Vial application to configure a keyboard that already has Vial support, go to the [Download Page]({% link download.md %}). This guide is for building the firmware from source.
 
+**Who is this for?** This section is intended for keyboard designers, firmware developers, and advanced users who need to build from source for specific reasons, including porting a new keyboard, enabling features, or testing a firmware contribution.
+
 ## Setting up your build environment
 
-To compile Vial firmware sources, you must first set up a functioning build environment. Vial firmware reuses QMK's build system, so the steps here are basically to install QMK, then switch over to using Vial's sources.
+To compile Vial firmware sources, you must first set up a functioning build environment. Vial firmware reuses QMK's build system, so the steps here are to install QMK, then switch over to using Vial's sources.
 
 Compiling Vial firmware requires some basic knowledge of how to use a command line environment—a bit more than just `qmk compile`. If you are unfamiliar with commands such as `cd` and `pwd`, please read through [this basic primer](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line#basic_built-in_terminal_commands) to learn the commands you'll need to know.
 
@@ -44,7 +38,7 @@ Compiling Vial firmware requires some basic knowledge of how to use a command li
 2. **Verify installation**: Ensure that the `qmk` command is available in your terminal by running the following shell command, which should complete without errors:
 
    ```bash
-   qmk -V 
+   qmk -V
    ```
 
 3. **Clone the repository**: Vial maintains a fork of the QMK repository with enhancements for dynamic keymap editing. You must use this repository rather than the mainline QMK firmware sources.
@@ -71,14 +65,21 @@ Compiling Vial firmware requires some basic knowledge of how to use a command li
 
    ![Terminal prompt showing the vial-qmk directory](../../img/beginner_prompt.png)
 
+5. **Verify the branch**: The default branch `vial` is the correct one to use. Confirm you are on it by running:
 
-5. **Initialize submodules**: Vial depends on several git submodules. Initialize them by running:
+   ```bash
+   git checkout vial
+   ```
+
+   If you were already on the `vial` branch, this will simply confirm it.
+
+6. **Initialize submodules**: Vial depends on several git submodules. Initialize them by running:
 
    ```bash
    make git-submodule
    ```
 
-6. **Verify environment**: Run the diagnostic tool to ensure everything is configured correctly:
+7. **Verify environment**: Run the diagnostic tool to ensure everything is configured correctly:
 
    ```bash
    qmk doctor
@@ -94,12 +95,16 @@ Once your environment is set up, the next step is to locate the firmware sources
 
 Under the `vial-qmk` folder, search the `keyboards` folder to locate your specific keyboard model. The folder structure mirrors that of upstream QMK, and [QMK's Keyboard Browser](https://browse.qmk.fm/) can be used to search for a specific model. The path for a keyboard model is typically of the form "`vial-qmk/keyboards/<vendor>/<model>`." Some models include a variant or revision name as part of the path, like "`vial-qmk/keyboards/<vendor>/<model>/<variant>`." If you cannot find it, ask your keyboard vendor.
 
-**If you only have precompiled firmware, you will need to obtain the source code for it before proceeding.** [You have the right to ask the maker of your keyboard for this](https://www.gnu.org/licenses/gpl-faq.en.html#ModifiedJustBinary). Reverse-engineering hardware or software is beyond the scope of this guide.
-
 Within your keyboard's directory, verify that a folder `keymaps` with subfolder `vial` exists. If so, Vial is already supported for your keyboard. If no subfolder named `vial` exists, the keyboard is not ported yet (or the firmware is available elsewhere!) and the keyboard folder is simply inherited from QMK. Refer to the [Porting Guide]({% link docs/porting-to-via.md %}) to add support.
 
 *Example:* The `vial` keymap for the ZSA Voyager is located at
 `vial-qmk/keyboards/zsa/voyager/keymaps/vial`.
+
+If you can't find your keyboard...
+
+* **If your keyboard is in mainline QMK but not in vial-qmk**, you can often copy your keyboard's folder from your QMK installation into `vial-qmk/keyboards/`, then follow the [Porting Guide]({% link docs/porting-to-via.md %}) to add a `vial` keymap.
+
+* **If you only have precompiled firmware, you will need to obtain the source code for it before proceeding.** [You have the right to ask the maker of your keyboard for this](https://www.gnu.org/licenses/gpl-faq.en.html#ModifiedJustBinary). Reverse-engineering hardware or software is beyond the scope of this guide.
 
 
 ## Building firmware
@@ -114,7 +119,7 @@ Replace `<kb>` with the path to your keyboard relative to the `keyboards` direct
 
 > Note
 > {: .label .label-green }
-> Running `make` is not quite the same as running `qmk compile`. Running `qmk compile` in the wrong directory will default to compiling QMK firmware, not Vial firmware. To avoid any potential confusion, use `make`.
+> **Why `make` instead of `qmk compile`?** The `qmk` CLI uses whichever directory is set as `QMK_HOME` (usually `~/qmk_firmware`). Running `qmk compile` from the `vial-qmk` directory will still build against your mainstream QMK sources, not Vial. Using `make` directly in the `vial-qmk` directory avoids this pitfall entirely.
 
 *Example*: To build for the ZSA Voyager located at `keyboards/zsa/voyager`, use:
 
@@ -143,5 +148,33 @@ To use QMK's command line flashing functionality, run the following shell comman
 make <kb>:vial:flash
 ```
 
+**Split keyboards:** If your keyboard is a split design (e.g., Corne, Sofle, Svalboard), you typically need to flash firmware to *both halves*. Flash each half individually by connecting it via USB and repeating the flashing process. Some split keyboards with wired connections between halves may be able to flash both from one side—check your keyboard's documentation.
+
 Once flashing is done, you are ready [to use Vial]({% link manual/first-use.md %})!
+
+
+## Troubleshooting
+
+### Submodule errors
+
+If `make git-submodule` fails with network errors or the build complains about missing files in `lib/`, try re-initializing submodules:
+
+```bash
+git submodule sync
+git submodule update --init --recursive
+```
+
+### Missing toolchain (`avr-gcc` or `arm-none-eabi-gcc` not found)
+
+QMK's setup should install the necessary compilers, but if you see errors like `avr-gcc: command not found` or `arm-none-eabi-gcc: command not found`, the toolchain for your keyboard's microcontroller is missing. Reinstall it by running:
+
+```bash
+qmk setup
+```
+
+This will re-run QMK's dependency installer. On Linux, you may need to install packages manually. See [QMK's install guide](https://docs.qmk.fm/newbs_getting_started) for platform-specific instructions.
+
+### Firmware is too large
+
+If the build fails with "`firmware is too large!`," too many features are enabled to fit in flash memory. See the [firmware size guide]({% link docs/firmware-size.md %}) for tips on reducing firmware size.
 
