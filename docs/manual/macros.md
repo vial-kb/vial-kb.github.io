@@ -2,14 +2,14 @@
 layout: default
 title: Macros
 parent: User manual
-nav_order: 3
+nav_order: 5
 ---
 
 # Macros
 
 Macros can be used to perform a pre-programmed sequence of actions or steps. 
 
-By default, 16 macros can be configured. This limit [can be adjusted]({% link docs/firmware-size.md %}#macros) at compile time (not the GUI) when building firmware.
+By default, 16 macros can be configured. This limit can be adjusted at compile time by making a [custom build]({% link manual/custom-build.md %}) of the firmware.
 
 Some great example uses for macros could be typing out an address, opening a program with a hotkey-shortcut or filling out a form.
 
@@ -49,3 +49,4 @@ After the macro has been configured, it can be used. Just click on a key you wou
 
 ## More info
 Macros is a QMK feature and more detailed information can be found with the [official QMK documentation](https://docs.qmk.fm/#/feature_macros).
+

@@ -1,5 +1,4 @@
 ---
-
 layout: home
 title: Home
 nav_order: 1
@@ -15,9 +14,11 @@ nav_order: 1
 [Read user manual]({% link manual/index.md %}){: .btn .gettingStarted}
 [Join our Discord server](https://discord.gg/zNKEUXTKwF){: .btn .gettingStarted}
 
-To get started using Vial, install a Vial-compatible firmware on your keyboard (if it did not come preloaded with one) and it will be automatically detected by the Vial GUI.
+Vial is a keyboard firmware and a companion configurator GUI. Vial enables you to make dynamic, on-the-fly keymap and settings changes without the need to recompile or reflash the firmware. This includes editing keymaps, macros, combos, and other advanced features.
 
-Vial is a completely open project with sources for all components publicly available on [GitHub](https://github.com/vial-kb). For information about using Vial and porting a new keyboard to Vial, read through the manual entries linked in the sidebar on the left.
+To get started using Vial, [install]({% link manual/install.md %}) a Vial-compatible firmware on your keyboard (if it did not come preloaded with one) and it will be automatically detected by the Vial GUI.
+
+Vial is a completely open project with sources for all components publicly available on [GitHub](https://github.com/vial-kb). For information about using Vial and porting a new keyboard to Vial, read through the manual entries linked in the sidebar.
 
 &#x1F4A1; Have a feature suggestion for Vial? Feel free to submit it at the dedicated [feedback website](https://feedback.vial.today/).
 

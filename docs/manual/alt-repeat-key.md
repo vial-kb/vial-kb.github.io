@@ -2,7 +2,7 @@
 layout: default
 title: Alt Repeat Key
 parent: User manual
-nav_order: 4
+nav_order: 6
 ---
 
 # Alt Repeat Key
@@ -16,7 +16,7 @@ The Alt Repeat Key can be configured. It can be used as a "magic" or "adaptive" 
 
 ## Configuring Alt Repeat Key
 
-Click the **Alt Repeat Key** tab at the top of the window and one of the available numbers below it to edit a configuration rule. By default, the number of configurable Alt Repeat Key entries is calculated from the EEPROM size on your keyboard's microcontroller. This limit [can be adjusted]({% link docs/firmware-size.md %}#alt-repeat-key) at compile time (not the GUI) when building firmware.
+Click the **Alt Repeat Key** tab at the top of the window and one of the available numbers below it to edit a configuration rule. By default, the number of configurable Alt Repeat Key entries is calculated from the EEPROM size on your keyboard's microcontroller. This limit can be adjusted at compile time by making a [custom build]({% link manual/custom-build.md %}) of the firmware.
 
 ![Alt Repeat Key tab showing configurable entries](../img/alt-repeat-key.png)
 
@@ -90,3 +90,4 @@ In the second rule, the last key has no effect and can be set to anything.
 
 ## More info
 Alt Repeat Key is a QMK feature and more detailed information can be found with the [official QMK documentation](https://docs.qmk.fm/features/repeat_key).
+

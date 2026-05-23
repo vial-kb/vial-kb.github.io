@@ -147,7 +147,7 @@ Where `x` is the number of slots you desire.
 To turn off this feature completely, and also reduce compiled firmware size, EEPROM and RAM usage, add the following line to your `keymaps/vial/rules.mk`:
 
 ```make
-REPEAT_KEY_ENABLE  = no
+REPEAT_KEY_ENABLE = no
 ```
 
 ## Enable LTO
@@ -182,3 +182,4 @@ There are several that should work and reduce the size to various amounts, some 
 * [LUFA-DFU](https://github.com/abcminiuser/lufa) is a popular one that is slightly smaller than Caterina, and adds features (size depends on what features you enable).
 * [QMK-DFU](https://github.com/qmk/lufa) is a fork maintained by the QMK team and also adds features.
 * [nanoBoot](https://github.com/osamuaoki/nanoBoot) is a _tiny_ 512 bytes HID bootloader, that does exactly _one_ thing, allowing you to hold reset on plug-in, and enter the bootloader/flashing, in the exact same way as Caterina does.
+

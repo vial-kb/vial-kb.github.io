@@ -2,7 +2,7 @@
 layout: default
 title: Combos
 parent: User manual
-nav_order: 5
+nav_order: 8
 ---
 
 # Combos

@@ -2,7 +2,7 @@
 layout: default
 title: Quantum
 parent: User manual
-nav_order: 2
+nav_order: 4
 ---
 
 # Quantum
