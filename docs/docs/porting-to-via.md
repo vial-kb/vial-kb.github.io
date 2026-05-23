@@ -47,7 +47,7 @@ Next, you will need to correlate physical keyboard layout to the switch matrix. 
 If the keyboard already has a QMK port, you can follow the `LAYOUT` macro in order to assign rows and columns to the keys in the KLE. For example, let's take a look at [m0110_usb](https://github.com/vial-kb/vial-qmk/blob/12950db4d8ec1f294b1285e9b554a8fdc0a4bc6d/keyboards/converter/m0110_usb/m0110_usb.h#L69-L90):
 
 
-```
+```c
 #define LAYOUT_ansi( \
     K32, K12, K13, K14, K15, K17, K16, K1A, K1C, K19, K1D, K1B, K18, K33,  K47, K68, K6D, K62, \
     K30, K0C, K0D, K0E, K0F, K11, K10, K20, K22, K1F, K23, K21, K1E,       K59, K5B, K5C, K4E, \

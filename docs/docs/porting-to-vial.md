@@ -43,7 +43,7 @@ Copy the existing `keymaps/default` folder to `keymaps/vial` with the content in
 
 Create a new file (or edit an existing one) under `[keyboard_name]/keymaps/vial/rules.mk` with the following contents:<sup>[(example)](https://github.com/vial-kb/vial-qmk/blob/90f3b0e2e188eccb23ed8a2a690df278a0f1057b/keyboards/vial_example/vial_atmega32u4/keymaps/vial/rules.mk#L2)</sup>
 
-```
+```make
 VIA_ENABLE = yes
 VIAL_ENABLE = yes
 ```
@@ -77,7 +77,7 @@ python3 util/vial_generate_keyboard_uid.py
 
 Create a new file under `[keyboard_name]/keymaps/vial/config.h` and add the following contents to it:
 
-```
+```c
 /* SPDX-License-Identifier: GPL-2.0-or-later */
 
 #pragma once

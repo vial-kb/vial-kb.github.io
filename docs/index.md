@@ -20,6 +20,6 @@ To get started using Vial, [install]({% link manual/install.md %}) a Vial-compat
 
 Vial is a completely open project with sources for all components publicly available on [GitHub](https://github.com/vial-kb). For information about using Vial and porting a new keyboard to Vial, read through the manual entries linked in the sidebar.
 
-Have a feature suggestion for Vial? Feel free to submit it at the dedicated [feedback website](https://feedback.vial.today/).
+&#x1F4A1; Have a feature suggestion for Vial? Feel free to submit it at the dedicated [feedback website](https://feedback.vial.today/).
 
 ![Screenshot of the Vial configurator GUI](img/vial-win-1.png)

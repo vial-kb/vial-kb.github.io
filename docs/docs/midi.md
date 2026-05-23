@@ -29,7 +29,7 @@ Add `MIDI_ENABLE = yes` to your `keymaps/vial/rules.mk` file.
 
 To enable **BASIC** or **ADVANCED** **MIDI** on Vial it is necessary to add one of these lines to the `vial.json` file
 
-```
+```json
 { "vial": {
         "midi": "basic"
         ...
@@ -40,7 +40,7 @@ To enable **BASIC** or **ADVANCED** **MIDI** on Vial it is necessary to add one 
 
 or
 
-```
+```json
 { "vial": {
         "midi": "advanced"
         ...

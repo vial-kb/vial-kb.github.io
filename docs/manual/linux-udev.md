@@ -20,7 +20,7 @@ The following guides will show you how to implement these `udev` rules. You will
 
 For a universal access rule for any device with Vial firmware, run this in your shell while logged in as your user (this will only work with `sudo` installed):
 
-```
+```bash
 export USER_GID=`id -g`; sudo --preserve-env=USER_GID sh -c 'echo "KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", ATTRS{serial}==\"*vial:f64c2b3c*\", MODE=\"0660\", GROUP=\"$USER_GID\", TAG+=\"uaccess\", TAG+=\"udev-acl\"" > /etc/udev/rules.d/59-vial.rules && udevadm control --reload && udevadm trigger'
 ```
 
@@ -49,7 +49,7 @@ On a kernel level, there is no way to detect if a keyboard is compatible with VI
 
 For a rule that allows users to access all `hidraw` devices, run this in your shell while logged in as your user (this will only work with `sudo` installed):
 
-```
+```bash
 export USER_GID=`id -g`; sudo --preserve-env=USER_GID sh -c 'echo "KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", MODE=\"0660\", GROUP=\"$USER_GID\", TAG+=\"uaccess\", TAG+=\"udev-acl\"" > /etc/udev/rules.d/92-viia.rules && udevadm control --reload && udevadm trigger' 
 ```
 
@@ -107,7 +107,7 @@ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", ATTRS{
 
 In order for your new `udev` rules to take effect, you must reload the `udev` rules. The standard way to do this is to run the following command as root:
 
-```
+```bash
 udevadm control --reload-rules && udevadm trigger
 ```
 

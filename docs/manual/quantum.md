@@ -13,7 +13,7 @@ You can find many of QMK's feature under the keymap view in the **Quantum** tab.
 
 ## Caps Word
 
-The `Caps Word` key activates Caps Word, capitalizing until end of current word ([QMK docs](https://docs.qmk.fm/features/caps_word)). This key is useful to type a single word in all capitals, like abbreviations.
+The <kbd>Caps Word</kbd> key activates Caps Word, capitalizing until end of current word ([QMK docs](https://docs.qmk.fm/features/caps_word)). This key is useful to type a single word in all capitals, like abbreviations.
 
 Caps Word automatically disables once a "word breaking key" is pressed, that is, once Space or anything other than letters A&ndash;Z, digits 0&ndash;9, `-`, `_`, Delete, or Backspace is pressed.
 
@@ -22,7 +22,7 @@ While active, `-` is shifted to `_`. This makes it easier to type e.g. `PROGRAM_
 
 ## Modifier keys
 
-The keys `LSft(kc)`, `LCtl(kc)`, etc. press a modifier (or a combination of multiple modifiers) together with a key "`kc`" ([QMK docs](https://docs.qmk.fm/feature_advanced_keycodes)). This kind of key is useful to send hotkey chords and AltGr+key combinations with a single physical key press. For instance, `LCtl(C)` sends Left Ctrl + `C`, and `RAlt(A)` sends Right Alt + `A`.
+The keys <kbd>LSft(<i>kc</i>)</kbd>, <kbd>LCtl(<i>kc</i>)</kbd>, etc. press a modifier (or a combination of multiple modifiers) together with a key "`kc`" ([QMK docs](https://docs.qmk.fm/feature_advanced_keycodes)). This kind of key is useful to send hotkey chords and AltGr+key combinations with a single physical key press. For instance, <kbd>LCtl(C)</kbd> sends Left Ctrl + `C`, and <kbd>RAlt(A)</kbd> sends Right Alt + `A`.
 
 Common aliases:
 * `LGui` and `RGui` are the Windows/Command/Super keys.
@@ -30,9 +30,9 @@ Common aliases:
 
 Use the following keys for a combination with multiple mods (to read these abbreviated names, "L" = Left, "R" = Right, and letters "CSAG" represent respectively Ctrl, Shift, Alt, GUI; see the [QMK docs](https://docs.qmk.fm/feature_advanced_keycodes) for the full list of such keys):
 
-* `LCS(kc)` = Left Ctrl + Shift + `kc`
-* `LSG(kc)` = Left Shift + GUI + `kc`
-* `RCG(kc)` = Right Ctrl + GUI + `kc`
+* <kbd>LCS(<i>kc</i>)</kbd> = Left Ctrl + Shift + `kc`
+* <kbd>LSG(<i>kc</i>)</kbd> = Left Shift + GUI + `kc`
+* <kbd>RCG(<i>kc</i>)</kbd> = Right Ctrl + GUI + `kc`
 * and so on.
 
 These keys are assigned in two steps: First, select the outer part of the key from the Quantum tab. When placed, the key will display a nested placeholder, representing the inner "`kc`" part of the key. Select this nested area and choose a key from the Basic tab to complete the definition.
@@ -42,7 +42,7 @@ The "`kc`" key is limited to keys in the Basic tab. This is [a QMK limitation](h
 
 ## Mod-tap keys
 
-Keys `LSft_T(kc)`, `LCtl_T(kc)`, etc. are mod-tap keys, named like the Modifier keys but with a "`_T`" suffix. These keys produce `kc` when tapped and act as a modifier when held ([QMK docs](https://docs.qmk.fm/mod_tap)).
+Keys <kbd>LSft_T(<i>kc</i>)</kbd>, <kbd>LCtl_T(<i>kc</i>)</kbd>, etc. are mod-tap keys, named like the Modifier keys but with a "`_T`" suffix. These keys produce `kc` when tapped and act as a modifier when held ([QMK docs](https://docs.qmk.fm/mod_tap)).
 
 Like Modifier keys, the "`kc`" key is limited to keys in the Basic tab. This is [a QMK limitation](https://docs.qmk.fm/mod_tap#caveats). Some mod combinations are not exposed in the GUI, but can be assigned through [Any key]({% link manual/any-key.md %}) entry like "`MT(MOD_RALT | MOD_RSFT, KC_A)`."
 
@@ -72,7 +72,7 @@ Home row mods (HRMs) is an approach where the modifiers (Ctrl, Shift, Alt, GUI) 
 
 A suggested starting point for home row mods in Vial:
 
-* Use the `LCtl_T`, `LSft_T`, etc. mod-tap keys for your home row keys. Don't use Tap Dances for that.
+* Use the <kbd>LCtl_T(<i>kc</i>)</kbd>, <kbd>LSft_T(<i>kc</i>)</kbd>, etc. mod-tap keys for your home row keys. Don't use Tap Dances for that.
 
 * Under the Tap-Hold tab in QMK Settings, check the boxes for **Permissive Hold** and **Chordal Hold**, and ensure that **Hold On Other Key Press** is *unchecked*. 
 
@@ -83,16 +83,16 @@ A suggested starting point for home row mods in Vial:
 
 ## OSM mod
 
-The `OSM mod` keys are one-shot modifiers, aka sticky keys. One-shot modifiers remain active until the next key is pressed, and are then released ([QMK docs](https://docs.qmk.fm/one_shot_keys)).
+The <kbd>OSM <i>mod</i></kbd> keys are one-shot modifiers, aka sticky keys. One-shot modifiers remain active until the next key is pressed, and are then released ([QMK docs](https://docs.qmk.fm/one_shot_keys)).
 
 Some mod combinations are not exposed in the GUI, but can be assigned through [Any key]({% link manual/any-key.md %}) entry with syntax like "`OSM(MOD_RALT | MOD_RSFT)`" for one-shot Right Alt + Right Shift.
 
 
 ## Repeat Key
 
-The `Repeat` key remembers the mods that were active with the last key press. These mods are applied together with any additional mods held when `Repeat` is pressed. If Ctrl + Right Arrow was the last key pressed, then Shift + `Repeat` produces Ctrl + Shift + Right Arrow, useful to select by word.
+The <kbd>Repeat</kbd> key remembers the mods that were active with the last key press. These mods are applied together with any additional mods held when `Repeat` is pressed. If Ctrl + Right Arrow was the last key pressed, then Shift + `Repeat` produces Ctrl + Shift + Right Arrow, useful to select by word.
 
-`Alt Repeat`, by default, sends the opposing key when the last key
+<kbd>Alt Repeat</kbd>, by default, sends the opposing key when the last key
 was a navigation key. For instance when `PgDn` was the last key, `Alt Repeat` behaves as `PgUp`, and vice versa. Further examples (see [QMK docs](https://docs.qmk.fm/features/repeat_key) for full list):
 
 * `Home` &harr; `End`
@@ -114,26 +114,26 @@ Alt Repeat's behavior is configurable in the [Alt Repeat Key tab](alt-repeat-key
 
 Space Cadet keys work similarly to mod-tap keys, behaving differently when tapped vs. held ([QMK docs](https://docs.qmk.fm/features/space_cadet)):
 
-* `LS (` is Left Shift when held, `(` when tapped.
-* `RS )` is Right Shift when held, `)` when tapped.
-* `LC (` is Left Ctrl when held, `(` when tapped.
-* `RC )` is Right Ctrl when held, `)` when tapped.
-* `LA (` is Left Alt when held, `(` when tapped.
-* `RA )` is Right Alt when held, `)` when tapped.
-* `RS Enter` is Right Shift when held, Enter when tapped.
+* <kbd>LS (</kbd> is Left Shift when held, `(` when tapped.
+* <kbd>RS )</kbd> is Right Shift when held, `)` when tapped.
+* <kbd>LC (</kbd> is Left Ctrl when held, `(` when tapped.
+* <kbd>RC )</kbd> is Right Ctrl when held, `)` when tapped.
+* <kbd>LA (</kbd> is Left Alt when held, `(` when tapped.
+* <kbd>RA )</kbd> is Right Alt when held, `)` when tapped.
+* <kbd>RS Enter</kbd> is Right Shift when held, Enter when tapped.
 
 
 ## Other keys
 
-* `Bootloader`: Puts the keyboard into bootloader mode for flashing (`QK_BOOT`).
+* <kbd>Bootloader</kbd>: Puts the keyboard into bootloader mode for flashing (`QK_BOOT`).
 
-* `Reboot`: Resets the keyboard without going into bootloader mode.
+* <kbd>Reboot</kbd>: Resets the keyboard without going into bootloader mode.
 
-* `Clear EEPROM`: Clears persistent settings in the keyboard's EEPROM memory.
+* <kbd>Clear EEPROM</kbd>: Clears persistent settings in the keyboard's EEPROM memory.
 
-* `~ Esc`: Grave Escape, a key that sends Escape when pressed by itself or `~` when pressed with Shift ([QMK docs](https://docs.qmk.fm/features/grave_esc)).
+* <kbd>~ Esc</kbd>: Grave Escape, a key that sends Escape when pressed by itself or `~` when pressed with Shift ([QMK docs](https://docs.qmk.fm/features/grave_esc)).
 
-* `Swap Ctrl Caps`, etc.: "Magic Keys" functionality for dynamically swapping or disabling certain keys and toggling N-key rollover (NKRO) ([QMK docs](https://docs.qmk.fm/keycodes_magic)).
+* <kbd>Swap Ctrl Caps</kbd>, etc.: "Magic Keys" functionality for dynamically swapping or disabling certain keys and toggling N-key rollover (NKRO) ([QMK docs](https://docs.qmk.fm/keycodes_magic)).
 
 * Haptic feedback keys ([QMK docs](https://docs.qmk.fm/features/haptic_feedback)).
 

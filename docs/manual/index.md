@@ -9,7 +9,7 @@ redirect_from:
 
 # User manual
 
-This section is for Vial end users who want to configure their keyboard using the Vial GUI. It covers installing and running Vial, editing keymaps, and using features such as layers, macros, combos, and tap dance.
+This section is for Vial end users who want to configure their keyboard using the Vial GUI. It covers editing keymaps and using features such as layers, macros, combos, and tap dance.
 
 If you are a **keyboard designer or firmware developer** looking to add Vial support to a keyboard, see the [Porting guide]({% link docs/index.md %}) instead.
 
