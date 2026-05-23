@@ -7,7 +7,7 @@ nav_order: 8
 
 # Any key
 
-The Basic tab has a special "`Any`" key. This is an escape hatch, useful to enter arbitrary keycodes that are **known to be supported in your build on the firmware** but not otherwise accessible in the GUI. Assigning "`Any`" to a key opens a dialog box where you can entry an arbitrary keycode. Alternatively, double click a keymap key to open this dialog.
+The Basic tab has a special <kbd>Any</kbd> key. This is an escape hatch, useful to enter arbitrary keycodes that are **known to be supported in your build on the firmware** but not otherwise accessible in the GUI. Assigning "`Any`" to a key opens a dialog box where you can entry an arbitrary keycode. Alternatively, double click a keymap key to open this dialog.
 
 ## Textual entry
 
