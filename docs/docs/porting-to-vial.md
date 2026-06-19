@@ -30,7 +30,7 @@ The second part of this tutorial will guide you through porting your keyboard to
 ## 1. Prepare Your Build Environment
 
 > Important
-> {: .label .label-red }
+> {: .label .label-yellow }
 > You will need a QMK environment in order to build firmware for Vial. This is not the same thing as QMK Toolbox. If you do not have this, you must first follow QMK's guide [here](https://docs.qmk.fm/#/newbs_getting_started).
 > Existing QMK environments may need to be updated, but there is no need to uninstall or remove anything. You can simply move to the appropriate folder when compiling firmware for QMK or Vial-QMK.
 
@@ -49,22 +49,27 @@ The second part of this tutorial will guide you through porting your keyboard to
 
 3. Verify that your installation is complete by running `qmk doctor`.
    - If you have added a new keyboard folder as part of your port, you will see `Git has unstashed/uncommitted changes.` Other than that, the only warning should be `The official repository does not seem to be configured as git remote "upstream".` (This is fine because Vial-QMK is not the official QMK repository.)
-4. Test your Vial-QMK installation by compiling the `default` keymap for your keyboard.
-   - Run `make path/to/your/keyboard:default`. Note that the path does *not* include the folder `vial-qmk/keyboards/` nor does it have a leading slash. It should start with the name of the keyboard or designer, e.g. `make vial_example/vial_atmega32u4:default`
-     If the `default` keyboard doesn't build, nothing based on it will either! Code copy-and-pasted in from other repositories may need to be modified [based on the version of QMK it was created for](https://docs.qmk.fm/#/breaking_changes?id=what-has-been-included-in-past-breaking-changes).
+4. Test that your Vial-QMK installation is valid and working by compiling the `default` keymap for an **existing keyboard** that ideally is available in both qmk and qmk-vial repositories.
+   - Run `make path/to/keyboard:default` in the `vial-qmk` directory. Note that the path does *not* include the folder `vial-qmk/keyboards/` nor does it have a leading slash. It should start with the name of the keyboard or designer, e.g. `make vial_example/vial_atmega32u4:default`
+   - If the existing keyboard do not build using their `default` keymap, nothing else based on your newly installed repository will either!
+5. Test that the `default` keymap for **your** keyboard builds in qmk-vial.
+   - Depending on version changes between QMK and Vial, inconsistencies may occur [based on the version of QMK it was created for](https://docs.qmk.fm/#/breaking_changes?id=what-has-been-included-in-past-breaking-changes).
+   - Code copy-and-pasted in from other repositories (not inheited from QMK main repository) may be made for older versions of QMK and will then need to be modified to the current version **before** attempting to port them to Vial. 
 
-> Note
-> {: .label .label-green }
-> Running `make` is not quite the same as running `qmk compile`. Running `qmk compile` in the wrong directory will default to compiling QMK firmware, not Vial firmware. To avoid any potential confusion, use `make`.
+> Important
+> {: .label .label-yellow }
+> Running `make` is not quite the same as running `qmk compile`. Running `qmk compile` in the wrong directory will default to compiling QMK firmware, not Vial firmware. To avoid any potential confusion, always use `make`. (This is especially important to verify before seeking help!)
 
 
 ## 2. Create a new `vial` keymap
 
 Copy the existing `keymaps/default` folder to `keymaps/vial` with the content intact. Leave the `keymaps/default` folder in place; do not modify or remove it.
 
-> Important
-> {: .label .label-red }
+> Warning!
+> {: .label .label-yellow }
 > When porting to Vial, the resulting keymap should ALWAYS be named `vial` and nothing else! This avoids any confusion about if the keyboard has already been ported or not.
+
+You may obviously name your personal keymaps in whatever fashion you prefer, but to be accepted into the main Vial git and distributed to other users, _only_ keymaps named `vial` is allowed.
 
 ## 3. Enable Vial in your rules file
 
@@ -75,21 +80,27 @@ VIA_ENABLE = yes
 VIAL_ENABLE = yes
 ```
 > Important
-> {: .label .label-red }
-> Both of these rules are required to be in the keymap `rules.mk`. Do not remove `VIA_ENABLE`. 
+> {: .label .label-yellow }
+> Both of these rules are required to be in the keymap `rules.mk`. Do not remove `VIA_ENABLE` as it causes the compile to fail silently! 
 
-> Important
+> Warning!
 > {: .label .label-red }
 > Do NOT include either `VIA_ENABLE` or `VIAL_ENABLE` on a keyboard level `rules.mk`, the structure in layers allows the code in the `keyboards` folder to be backwards compatible with QMK.
+
+Making changes outside the **vial keymap** folder is strongly discouraged, and any code doing so will **not** be accepted in the main Vial git!
+
+If you find outright errors in code in a keyboard, or the keyboards needs to be updated to current version, those changes should be made at QMK level, and then inherited back to Vial, not the other way around, as that breaks the chain of compatability.
 
 ## 4. Move JSON so Vial can find it
 
 Place your keyboard definition JSON (either one made in step 1 of this tutorial or downloaded from the [VIA keyboards repository](https://github.com/the-via/keyboards/tree/master/src)) under `[keyboard_name]/keymaps/vial/vial.json` so that Vial build process can find it. <sup>[(example)](https://github.com/vial-kb/vial-qmk/blob/90f3b0e2e188eccb23ed8a2a690df278a0f1057b/keyboards/vial_example/vial_atmega32u4/keymaps/vial/vial.json)</sup>
 
 > Important
+> {: .label .label-yellow }
+> This file must be named `vial.json`. It cannot have any other name to be valid in compile.
+
+> Warning!
 > {: .label .label-red }
-> This file must be named `vial.json`. It cannot have any other name.
->
 > The Vial keyboard definition (`vial.json`) is not the same as an `info.json` file. You cannot copy an `info.json` file to use as the `vial.json`.
 
 ## 5. Generate and add unique keyboard ID
