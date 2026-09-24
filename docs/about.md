@@ -73,6 +73,13 @@ This site is built using Jekyll. To preview your changes locally, you must insta
 The site will be available at `http://localhost:4000`.
 
 
+## Community projects
+
+Third-party tools built around Vial. They are maintained independently of the Vial project.
+
+* [egno/vial_helper](https://github.com/egno/vial_helper): macOS menu bar app that shows the keymap and layers of a `.vil` export as a floating overlay, toggled from the menu bar or with a global shortcut.
+
+
 ## Licenses
 
 Vial is released under a [GPL-2.0 License](https://github.com/vial-kb/vial-gui/blob/main/COPYING).
