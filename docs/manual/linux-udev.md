@@ -94,7 +94,7 @@ To create a rule for your specific keyboard, use this template:
 KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", ATTRS{idVendor}=="XXXX", ATTRS{idProduct}=="XXXX", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
 ```
 
-Replace the vendor and product ID with the ones you found for your keyboard using [lsusb](#finding-the-vendor-and-product-ids). You may also specify a different group if required. Write this rule to `/etc/udev/rules.d/99-vial.rules` as root. In order for the rule to take effect, you must [reload `udev`](#reloading-udev).
+Replace the vendor and product ID with the ones you found for your keyboard using [lsusb](#finding-the-vendor-and-product-ids). You may also specify a different group if required. Write this rule to `/etc/udev/rules.d/57-vial.rules` as root. In order for the rule to take effect, you must [reload `udev`](#reloading-udev).
 
 The following is an example `udev` rule for the Keychron Q2:
 
